@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #014486;
+  --color-brand-secondary: #0877e1;
+  --color-brand-hover: #065bb5;
+  --color-bg-light: #f0f3f5;
+  --color-text-main: #333333;
+  --color-text-light: #6b7280;
+  
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-white text-text-main antialiased font-normal;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-brand-primary font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-brand-secondary text-white font-bold rounded-none transition-all duration-300 hover:bg-brand-hover shadow-sm;
+  }
+  
+  .btn-outline {
+    @apply px-6 py-3 border-2 border-brand-primary text-brand-primary font-bold rounded-none transition-all duration-300 hover:bg-brand-primary hover:text-white shadow-sm;
+  }
+  
+  .container-custom {
+    @apply max-w-[1200px] mx-auto px-4;
+  }
+  
+  .card-modern {
+    @apply bg-white border border-gray-200 rounded-none shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-lg;
+  }
+}
