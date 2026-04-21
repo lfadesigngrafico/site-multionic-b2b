@@ -43,9 +43,9 @@ export default function Segments() {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-6 hover:shadow-md transition-all group"
+              className="bg-white p-6 rounded-none shadow-sm border border-gray-100 flex items-center space-x-6 hover:shadow-md transition-all group"
             >
-              <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-gray-50 text-brand-secondary group-hover:bg-brand-secondary group-hover:text-white transition-colors duration-300">
+              <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-none bg-gray-50 text-brand-secondary group-hover:bg-brand-secondary group-hover:text-white transition-colors duration-300">
                 {item.icon}
               </div>
               <span className="text-brand-primary font-bold text-base md:text-lg">

@@ -31,7 +31,7 @@ export default function ContactForm() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gray-50 p-8 md:p-10 rounded-[16px] border border-gray-100 shadow-sm"
+            className="bg-gray-50 p-8 md:p-10 rounded-none border border-gray-100 shadow-sm"
           >
             <form className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

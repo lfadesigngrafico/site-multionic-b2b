@@ -87,9 +87,9 @@ function SolutionCard({ item, delay }: any) {
       viewport={{ once: true }}
       transition={{ delay, duration: 0.5 }}
       whileHover={{ y: -10 }}
-      className="bg-white p-8 rounded-[16px] shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col h-full"
+      className="bg-white p-8 rounded-none shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col h-full"
     >
-      <div className="mb-6 p-3 bg-brand-secondary/5 inline-block rounded-xl w-fit">
+      <div className="mb-6 p-3 bg-brand-secondary/5 inline-block rounded-none w-fit">
         {item.icon}
       </div>
       <h3 className="text-xl font-bold text-brand-primary mb-4">

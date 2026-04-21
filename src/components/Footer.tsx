@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, Instagram, Linkedin, Send } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -19,10 +20,10 @@ export default function Footer() {
               Química e inovação criando o padrão de limpeza do futuro. Tecnologia certificada para operações de alta exigência.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-secondary hover:border-brand-secondary transition-all">
+              <a href="#" className="w-10 h-10 rounded-none border border-white/10 flex items-center justify-center hover:bg-brand-secondary hover:border-brand-secondary transition-all">
                 <Linkedin size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-secondary hover:border-brand-secondary transition-all">
+              <a href="#" className="w-10 h-10 rounded-none border border-white/10 flex items-center justify-center hover:bg-brand-secondary hover:border-brand-secondary transition-all">
                 <Instagram size={18} />
               </a>
             </div>
@@ -77,17 +78,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-3">
                 <MapPin size={16} className="text-brand-secondary" />
-                <span className="text-white/60 text-sm">Maringá - Paraná</span>
+                <span className="text-white/60 text-sm">Taubaté - São Paulo</span>
               </li>
             </ul>
             <div className="mt-8 pt-6 border-t border-white/5">
-              <h4 className="text-white font-bold text-[10px] uppercase tracking-widest mb-4">Newsletter</h4>
-              <div className="flex bg-white/5 p-1 rounded-none">
-                <input type="email" placeholder="E-mail" className="bg-transparent border-none outline-none text-xs px-3 w-full" />
-                <button className="bg-brand-secondary p-2 hover:bg-brand-secondary/80 transition-all">
-                  <Send size={14} />
-                </button>
-              </div>
+              <Link to="/contato" className="btn-primary w-full py-3 text-[10px] uppercase font-bold tracking-widest text-center block">Fale Conosco</Link>
             </div>
           </div>
         </div>

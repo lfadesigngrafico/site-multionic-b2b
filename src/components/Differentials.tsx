@@ -47,9 +47,9 @@ export default function Differentials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white p-8 rounded-[16px] shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-lg transition-all"
+              className="bg-white p-8 rounded-none shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-lg transition-all"
             >
-              <div className="mb-6 p-4 bg-bg-light rounded-full text-brand-secondary">
+              <div className="mb-6 p-4 bg-bg-light rounded-none text-brand-secondary">
                 {item.icon}
               </div>
               <h3 className="text-xl font-bold text-brand-primary mb-3">

@@ -61,7 +61,7 @@ export default function BannerCarousel() {
             <button
               key={idx}
               onClick={() => setCurrent(idx)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-3 h-3 rounded-none transition-all duration-300 ${
                 current === idx ? 'bg-brand-secondary w-8' : 'bg-white/50 hover:bg-white/80'
               }`}
             />

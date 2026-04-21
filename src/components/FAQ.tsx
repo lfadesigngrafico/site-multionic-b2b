@@ -40,7 +40,7 @@ export default function FAQ() {
 
         <div className="space-y-4">
           {faqData.map((item, idx) => (
-            <div key={idx} className="bg-white border border-gray-100 rounded-[12px] shadow-sm overflow-hidden">
+            <div key={idx} className="bg-white border border-gray-100 rounded-none shadow-sm overflow-hidden">
               <button 
                 onClick={() => setActiveIndex(activeIndex === idx ? null : idx)}
                 className="w-full flex items-center justify-between px-6 py-5 text-left transition-colors hover:bg-gray-50/50"

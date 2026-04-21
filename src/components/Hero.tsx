@@ -63,8 +63,8 @@ export default function Hero() {
             </div>
             
             {/* Decorative Elements */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand-secondary/10 rounded-full blur-3xl z-0"></div>
-            <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-brand-primary/10 rounded-full blur-3xl z-0"></div>
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand-secondary/10 rounded-none blur-3xl z-0"></div>
+            <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-brand-primary/10 rounded-none blur-3xl z-0"></div>
           </motion.div>
         </div>
       </div>
