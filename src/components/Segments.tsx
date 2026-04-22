@@ -1,4 +1,5 @@
-import { motion } from 'motion/react';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { HardHat, Cog, Milk, Utensils, FlaskConical, Truck } from 'lucide-react';
 
 const segments = [
@@ -11,15 +12,37 @@ const segments = [
 ];
 
 export default function Segments() {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["-25%", "25%"]);
+
   return (
-    <section id="segmentos" className="py-20 bg-[#014486]">
-      <div className="container-custom">
+    <section id="segmentos" ref={targetRef} className="py-20 bg-[#014486] relative overflow-hidden">
+      {/* Parallax Background */}
+      <motion.div 
+        style={{ y }}
+        className="absolute inset-x-0 -top-40 -bottom-40 z-0 pointer-events-none"
+      >
+        <div className="absolute inset-0 bg-[#014486] opacity-50 z-10" />
+        <img 
+          src="https://pages.greatpages.com.br/www.multionic.com.br-sobre/1764934312/imagens/desktop/1301048_1_05014.jpg" 
+          alt="Background Industrial" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+      </motion.div>
+
+      <div className="container-custom relative z-20">
         <div className="max-w-3xl mb-16 text-left">
           <motion.h2 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-2xl md:text-3xl font-bold text-white mb-4 uppercase shimmer-text-white cursor-default"
+            className="text-2xl md:text-3xl font-bold text-white mb-4 uppercase"
           >
             Segmentos atendidos
           </motion.h2>

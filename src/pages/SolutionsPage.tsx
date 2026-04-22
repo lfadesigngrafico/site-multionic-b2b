@@ -162,7 +162,7 @@ const CategoryGrid = () => (
 );
 
 const Packaging = () => (
-  <section className="py-24 bg-gray-50 overflow-hidden">
+  <section className="py-24 bg-[#0877e1] overflow-hidden text-white">
     <div className="container-custom">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <motion.div
@@ -170,10 +170,10 @@ const Packaging = () => (
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-brand-primary mb-6 uppercase">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 uppercase">
             No tamanho certo para o seu negócio
           </h2>
-          <p className="text-black text-lg font-normal leading-relaxed mb-8">
+          <p className="text-white/90 text-lg font-normal leading-relaxed mb-8">
             A Multionic oferece soluções pensadas para operações de diferentes portes. Além de variedade de linhas, você encontra formatos e embalagens adequados para a realidade do seu negócio, ajudando a otimizar consumo, armazenagem e rotina de uso.
           </p>
           <ul className="space-y-4">
@@ -184,8 +184,8 @@ const Packaging = () => (
               "Soluções para uso profissional e industrial"
             ].map((bullet, idx) => (
               <li key={idx} className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-brand-secondary rounded-none"></div>
-                <span className="text-black font-semibold text-base">{bullet}</span>
+                <div className="w-2 h-2 bg-[#97DCFE] rounded-none"></div>
+                <span className="text-white font-semibold text-base">{bullet}</span>
               </li>
             ))}
           </ul>
@@ -194,12 +194,12 @@ const Packaging = () => (
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="relative"
+          className="relative flex justify-center items-center"
         >
           <img 
-            src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=1000" 
-            alt="Packaging variety" 
-            className="rounded-none shadow-xl grayscale"
+            src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1776864450/$5owot05o0ax" 
+            alt="Variedade de Embalagens Multionic" 
+            className="w-full h-auto max-w-[120%] lg:scale-110 object-contain rounded-none shadow-none"
             referrerPolicy="no-referrer"
           />
         </motion.div>
@@ -209,41 +209,65 @@ const Packaging = () => (
 );
 
 const CommercialCTA = () => (
-  <section className="py-24 bg-brand-primary text-white text-center">
-    <div className="container-custom max-w-4xl mx-auto">
-      <motion.h2 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-2xl md:text-4xl font-bold mb-8 uppercase"
-      >
-        Converse com nosso time comercial
-      </motion.h2>
-      <motion.p 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.1 }}
-        className="text-white/80 text-lg md:text-xl font-normal leading-relaxed mb-6"
-      >
-        Se sua empresa precisa de apoio para escolher a melhor solução, entender uma aplicação específica ou avaliar qual produto faz mais sentido para a operação, nosso time está pronto para ajudar.
-      </motion.p>
-      <motion.p 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.2 }}
-        className="text-white/60 text-base mb-12"
-      >
-        Nosso atendimento une visão comercial e direcionamento técnico para tornar a escolha mais segura e mais aderente à realidade do seu negócio.
-      </motion.p>
-      <motion.button 
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="bg-brand-secondary text-white px-12 py-5 font-bold uppercase tracking-tight hover:bg-white hover:text-brand-primary transition-all shadow-xl"
-      >
-        Fale com um especialista
-      </motion.button>
+  <section className="py-24 bg-brand-primary text-white overflow-hidden relative">
+    <div className="container-custom">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        {/* Left Column: Image */}
+        <div className="relative order-2 lg:order-1">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative lg:-mt-32 lg:-mb-32 flex justify-center items-center"
+          >
+            <img 
+              src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1776874436/$ggo9ccer7ac" 
+              alt="Suporte Técnico Comercial Multionic" 
+              className="w-full h-auto object-contain pointer-events-none scale-110"
+              referrerPolicy="no-referrer"
+            />
+          </motion.div>
+        </div>
+
+        {/* Right Column: Text & Buttons */}
+        <div className="text-left order-1 lg:order-2">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 uppercase"
+          >
+            Converse com nosso time comercial
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-white/80 text-lg md:text-xl font-normal leading-relaxed mb-6"
+          >
+            Se sua empresa precisa de apoio para escolher a melhor solução, entender uma aplicação específica ou avaliar qual produto faz mais sentido para a operação, nosso time está pronto para ajudar.
+          </motion.p>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-white/60 text-base mb-12"
+          >
+            Nosso atendimento une visão comercial e direcionamento técnico para tornar a escolha mais segura e mais aderente à realidade do seu negócio.
+          </motion.p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-brand-secondary text-white px-10 py-5 font-bold uppercase tracking-tight hover:bg-white hover:text-brand-primary transition-all shadow-xl"
+            >
+              Fale com um especialista
+            </motion.button>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 );
@@ -310,9 +334,17 @@ const Form = () => (
           <h2 className="text-2xl md:text-3xl font-bold text-brand-primary mb-6 uppercase">
             Entre em contato com nosso time
           </h2>
-          <p className="text-black text-lg font-normal leading-relaxed">
+          <p className="text-black text-lg font-normal leading-relaxed mb-8">
             Preencha o formulário e nos conte brevemente a sua necessidade. Assim, conseguimos direcionar o atendimento com mais contexto e agilidade.
           </p>
+          <div className="mt-8">
+            <img 
+              src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1776874436/$7exmnl7opjk" 
+              alt="Suporte Multionic" 
+              className="w-full h-auto"
+              referrerPolicy="no-referrer"
+            />
+          </div>
         </div>
         <div className="bg-white p-8 md:p-10 rounded-none shadow-sm border border-gray-100">
           <form className="space-y-4">
@@ -342,29 +374,6 @@ const Form = () => (
   </section>
 );
 
-const SeoStrip = () => (
-  <section className="py-20 bg-[#f0f3f5]">
-    <div className="container-custom text-center">
-      <h2 className="text-xl md:text-2xl font-bold text-brand-primary mb-4 uppercase">
-        Soluções sob medida para cada necessidade
-      </h2>
-      <p className="text-black text-base md:text-lg mb-12 font-normal">
-        Conheça nossa linha de produtos voltada para diferentes contextos de limpeza industrial e institucional.
-      </p>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-        {[
-          "Limpeza industrial", "Cozinha industrial", "Lavanderia", "Limpeza geral",
-          "Tratamento de pisos", "Desinfetantes", "Detergentes", "Higiene pessoal"
-        ].map((item, idx) => (
-          <div key={idx} className="flex items-center justify-center bg-white p-4 text-xs font-bold text-brand-primary hover:text-brand-secondary transition-colors cursor-pointer border border-gray-100 uppercase tracking-tighter">
-            {item}
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
 export default function SolutionsPage() {
   return (
     <>
@@ -376,7 +385,6 @@ export default function SolutionsPage() {
       <FAQStrip />
       <PrivateLabel />
       <Form />
-      <SeoStrip />
     </>
   );
 }

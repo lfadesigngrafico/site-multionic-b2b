@@ -33,7 +33,7 @@ export default function Differentials() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl md:text-3xl font-bold text-white mb-4 uppercase shimmer-text-white cursor-default inline-block"
+            className="text-2xl md:text-3xl font-bold text-white mb-4 uppercase"
           >
             Por que empresas escolhem a Multionic
           </motion.h2>
@@ -47,10 +47,10 @@ export default function Differentials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="bg-white p-8 rounded-none shadow-sm border border-transparent flex flex-col items-center text-center hover:shadow-lg transition-all group"
+              whileHover={{ y: -10 }}
+              className="bg-white p-8 rounded-none shadow-sm border border-transparent flex flex-col items-center text-center hover:shadow-xl transition-all duration-300 group"
             >
-              <div className="mb-6 p-4 bg-[#f0f3f5] rounded-none text-brand-secondary group-hover:bg-brand-secondary group-hover:text-white transition-colors duration-300">
+              <div className="mb-6 p-4 bg-[#f0f3f5] rounded-none text-brand-secondary group-hover:bg-brand-secondary group-hover:text-white transition-all duration-300">
                 {item.icon}
               </div>
               <h3 className="text-xl font-bold text-brand-primary mb-3">

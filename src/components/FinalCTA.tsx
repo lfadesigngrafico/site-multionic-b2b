@@ -1,10 +1,16 @@
 import { motion } from 'motion/react';
+import { ShieldCheck } from 'lucide-react';
 
 export default function FinalCTA() {
   const ctaText = "Construa uma operação mais eficiente com a Multionic";
 
   return (
-    <section className="py-24 bg-brand-primary/5 border-t border-gray-100 overflow-hidden relative">
+    <section className="py-24 bg-white border-t border-gray-100 overflow-hidden relative group">
+      {/* Background Icon */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none z-0">
+        <ShieldCheck size={450} strokeWidth={1} className="text-[#014486]" />
+      </div>
+
       <div className="container-custom text-center relative z-10">
         <motion.h2 
           initial="hidden"
@@ -51,13 +57,6 @@ export default function FinalCTA() {
             Solicitar ficha técnica
           </motion.button>
         </div>
-      </div>
-      
-      {/* Abstract Background Decoration */}
-      <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
-        <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path d="M0 0 L100 100 L0 100 Z" fill="#014486" />
-        </svg>
       </div>
     </section>
   );

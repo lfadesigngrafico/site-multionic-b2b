@@ -48,7 +48,7 @@ export default function Solutions() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl md:text-3xl font-bold text-brand-primary mb-4 uppercase shimmer-text cursor-default inline-block"
+            className="text-2xl md:text-3xl font-bold text-brand-primary mb-4 uppercase"
           >
             Soluções para diferentes necessidades da operação
           </motion.h2>

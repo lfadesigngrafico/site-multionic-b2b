@@ -25,34 +25,34 @@ export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-[#062e4c]">
       <div className="container-custom max-w-4xl">
         <div className="text-center mb-12">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl md:text-3xl font-bold text-brand-primary mb-4 uppercase"
+            className="text-2xl md:text-3xl font-bold text-white mb-4 uppercase"
           >
             Dúvidas frequentes
           </motion.h2>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-1">
           {faqData.map((item, idx) => (
-            <div key={idx} className="bg-white border border-gray-100 rounded-none shadow-sm overflow-hidden">
+            <div key={idx} className="bg-[#97dcfe] border-none rounded-none overflow-hidden hover:opacity-95 transition-opacity">
               <button 
                 onClick={() => setActiveIndex(activeIndex === idx ? null : idx)}
-                className="w-full flex items-center justify-between px-6 py-5 text-left transition-colors hover:bg-gray-50/50"
+                className="w-full flex items-center justify-between px-6 py-5 text-left transition-colors"
               >
-                <span className="font-bold text-brand-primary text-base md:text-lg">
+                <span className="font-bold text-[#062e4c] text-base md:text-lg">
                   {item.question}
                 </span>
                 <motion.div
                   animate={{ rotate: activeIndex === idx ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <ChevronDown className="text-brand-secondary w-5 h-5" />
+                  <ChevronDown className="text-[#062e4c] w-5 h-5" />
                 </motion.div>
               </button>
               
@@ -64,7 +64,7 @@ export default function FAQ() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="px-6 pb-6 text-black font-normal text-base leading-relaxed">
+                    <div className="px-6 pb-6 text-[#062e4c] font-medium text-base leading-relaxed bg-[#97dcfe]">
                       {item.answer}
                     </div>
                   </motion.div>
@@ -75,8 +75,8 @@ export default function FAQ() {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-black mb-6 font-normal">Ainda com dúvidas? Fale com nossa equipe.</p>
-          <button className="text-brand-secondary font-bold hover:underline">
+          <p className="text-white mb-6 font-normal">Ainda com dúvidas? Fale com nossa equipe.</p>
+          <button className="text-[#97dcfe] font-bold hover:underline">
             Central de atendimento →
           </button>
         </div>

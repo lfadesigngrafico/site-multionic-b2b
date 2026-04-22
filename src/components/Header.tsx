@@ -45,7 +45,11 @@ export default function Header() {
           {/* Desktop Menu */}
           <nav className="hidden xl:flex items-center space-x-16">
             {navLinks.map((link) => {
-              const isActive = location.pathname === link.href || (link.href.startsWith('/#') && location.pathname === '/' && location.hash === link.href.substring(1));
+              const isAnchor = link.type === 'anchor';
+              const isActive = isAnchor
+                ? location.pathname === '/' && location.hash === link.href.substring(1) && location.hash !== ''
+                : location.pathname === link.href || (link.href !== '/' && location.pathname.startsWith(link.href));
+
               return link.type === 'internal' ? (
                 <Link 
                   key={link.name} 
@@ -101,7 +105,11 @@ export default function Header() {
           >
             <div className="container-custom py-6 flex flex-col space-y-4">
               {navLinks.map((link) => {
-                const isActive = location.pathname === link.href || (link.href.startsWith('/#') && location.pathname === '/' && location.hash === link.href.substring(1));
+                const isAnchor = link.type === 'anchor';
+                const isActive = isAnchor
+                  ? location.pathname === '/' && location.hash === link.href.substring(1) && location.hash !== ''
+                  : location.pathname === link.href || (link.href !== '/' && location.pathname.startsWith(link.href));
+
                 return link.type === 'internal' ? (
                   <Link 
                     key={link.name} 

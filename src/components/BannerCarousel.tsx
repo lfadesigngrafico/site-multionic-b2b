@@ -9,17 +9,17 @@ const banners = [
   },
   {
     id: 2,
-    url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1920&h=430",
+    url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1920&h=700",
     alt: "Laboratório e Inovação 2"
   },
   {
     id: 3,
-    url: "https://images.unsplash.com/photo-1532187863486-abf51ad9866e?auto=format&fit=crop&q=80&w=1920&h=430",
+    url: "https://images.unsplash.com/photo-1532187863486-abf51ad9866e?auto=format&fit=crop&q=80&w=1920&h=700",
     alt: "Produtos Químicos de Alta Performance 3"
   },
   {
     id: 4,
-    url: "https://images.unsplash.com/photo-1558444479-c8a51e975209?auto=format&fit=crop&q=80&w=1920&h=430",
+    url: "https://images.unsplash.com/photo-1558444479-c8a51e975209?auto=format&fit=crop&q=80&w=1920&h=700",
     alt: "Processo Industrial Moderno 4"
   }
 ];
@@ -36,7 +36,7 @@ export default function BannerCarousel() {
 
   return (
     <section className="relative w-full overflow-hidden bg-gray-100 mt-[80px]">
-      <div className="max-w-[1920px] mx-auto relative h-[250px] md:h-[350px] lg:h-[430px]">
+      <div className="w-full relative h-[400px] md:h-[700px]">
         <AnimatePresence mode="wait">
           <motion.div
             key={current}

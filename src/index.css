@@ -52,16 +52,6 @@
     color: transparent;
   }
 
-  .shimmer-text-white:hover {
-    background: linear-gradient(90deg, #ffffff 0%, #ffffff 40%, rgba(255,255,255,0.4) 50%, #ffffff 60%, #ffffff 100%);
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shimmer 4s forwards linear;
-    background-clip: text;
-    color: transparent;
-  }
-
   .card-modern {
     @apply bg-white border border-gray-200 rounded-none shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-lg;
   }

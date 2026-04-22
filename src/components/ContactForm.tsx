@@ -24,6 +24,20 @@ export default function ContactForm() {
             >
               Preencha seus dados e nos conte brevemente sua necessidade. Se sua demanda envolve uma aplicação técnica específica, descreva o contexto de uso.
             </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="mt-6"
+            >
+              <img 
+                src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1776874436/$7exmnl7opjk" 
+                alt="Multionic Soluções" 
+                className="w-full h-auto object-contain"
+                referrerPolicy="no-referrer"
+              />
+            </motion.div>
           </div>
 
           {/* Right Column Form */}
