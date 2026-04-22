@@ -284,7 +284,7 @@ export default function ContactPage() {
               <MessageCircle size={20} />
               Chamar no WhatsApp
             </button>
-            <button className="bg-white/10 text-white backdrop-blur-sm border border-white/20 px-10 py-5 font-bold uppercase tracking-tight hover:bg-white hover:text-brand-primary transition-all">
+            <button className="btn-gray px-10 py-5 font-bold uppercase tracking-tight">
               Solicitar ficha técnica
             </button>
           </div>
@@ -417,7 +417,7 @@ export default function ContactPage() {
               <MessageCircle size={20} />
               Chamar no WhatsApp
             </button>
-            <button className="btn-outline px-12 py-5 font-bold uppercase tracking-tight ring-1 ring-gray-200">
+            <button className="btn-gray px-12 py-5 font-bold uppercase tracking-tight">
               Solicitar ficha técnica
             </button>
           </div>

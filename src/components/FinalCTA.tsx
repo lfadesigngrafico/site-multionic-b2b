@@ -1,16 +1,29 @@
 import { motion } from 'motion/react';
 
 export default function FinalCTA() {
+  const ctaText = "Construa uma operação mais eficiente com a Multionic";
+
   return (
     <section className="py-24 bg-brand-primary/5 border-t border-gray-100 overflow-hidden relative">
       <div className="container-custom text-center relative z-10">
         <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          className="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-primary mb-6 uppercase"
+          className="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-primary mb-6 uppercase cursor-default inline-block shimmer-text"
         >
-          Construa uma operação mais eficiente com a Multionic
+          {ctaText.split("").map((char, index) => (
+            <motion.span
+              key={index}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1 }
+              }}
+              transition={{ delay: index * 0.03, duration: 0.1 }}
+            >
+              {char}
+            </motion.span>
+          ))}
         </motion.h2>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
@@ -33,7 +46,7 @@ export default function FinalCTA() {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="btn-outline px-10 py-5 text-sm font-bold tracking-tight rounded-none shadow-none"
+            className="btn-gray px-10 py-5 text-sm font-bold tracking-tight rounded-none shadow-none"
           >
             Solicitar ficha técnica
           </motion.button>

@@ -33,7 +33,7 @@ export default function ContactBlock() {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-white/10 text-white backdrop-blur-sm px-8 py-4 text-sm font-bold tracking-tight rounded-none hover:bg-white hover:text-brand-primary transition-all duration-300 shadow-none border-none"
+            className="btn-gray px-8 py-4 text-sm font-bold tracking-tight rounded-none shadow-none"
           >
             Solicitar ficha técnica
           </motion.button>

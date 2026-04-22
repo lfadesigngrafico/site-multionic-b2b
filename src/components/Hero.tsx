@@ -1,23 +1,63 @@
 import { motion } from 'motion/react';
 
 export default function Hero() {
+  const titlePart1 = "Química e inovação,";
+  const titlePart2 = "criando o padrão de limpeza do futuro";
+
   return (
-    <section className="relative py-16 lg:py-24 overflow-hidden bg-white">
-      <div className="container-custom relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="relative py-16 lg:py-24 overflow-hidden bg-white text-center">
+      <div className="container-custom relative z-10 w-full flex flex-col items-center">
+        {/* Typewriter Title at the top */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mb-12 w-full group"
+        >
+          <motion.h1 
+            className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight uppercase text-brand-primary cursor-default inline-block shimmer-text"
+          >
+            <div className="block">
+              {titlePart1.split("").map((char, index) => (
+                <motion.span
+                  key={`p1-${index}`}
+                  variants={{
+                    hidden: { opacity: 0 },
+                    visible: { opacity: 1 }
+                  }}
+                  transition={{ delay: index * 0.03, duration: 0.1 }}
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </div>
+            <div className="block mt-2">
+              {titlePart2.split("").map((char, index) => (
+                <motion.span
+                  key={`p2-${index}`}
+                  variants={{
+                    hidden: { opacity: 0 },
+                    visible: { opacity: 1 }
+                  }}
+                  transition={{ delay: (titlePart1.length + index) * 0.03, duration: 0.1 }}
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </div>
+          </motion.h1>
+        </motion.div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-left">
           {/* Left Column Content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-2xl px-4 md:px-0"
+            className="max-w-2xl mx-auto lg:mx-0 px-4 md:px-0 flex flex-col items-center lg:items-start text-center lg:text-left"
           >
-            <h1 className="text-2xl md:text-3xl lg:text-3xl font-bold leading-tight mb-6 uppercase text-brand-primary">
-              Química e inovação, criando o padrão de limpeza do futuro
-            </h1>
-            
-            <p className="text-lg md:text-xl text-black font-normal mb-4 leading-relaxed">
+            <p className="text-lg md:text-xl text-black font-normal mb-6 leading-relaxed">
               Soluções químicas de alta performance para empresas que buscam mais eficiência operacional, segurança e confiança na aplicação.
             </p>
             
@@ -25,7 +65,7 @@ export default function Hero() {
               Quando o produto atual já não atende, surge uma nova exigência técnica ou a operação precisa revisar custo x performance, a Multionic ajuda sua empresa a encontrar a solução mais adequada.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -36,7 +76,7 @@ export default function Hero() {
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-outline flex items-center justify-center whitespace-nowrap shadow-none"
+                className="btn-gray flex items-center justify-center whitespace-nowrap shadow-none"
               >
                 Solicitar ficha técnica
               </motion.button>

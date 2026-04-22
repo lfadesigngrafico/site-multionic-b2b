@@ -125,7 +125,7 @@ export default function DesengraxantesPage() {
                   <button className="btn-primary py-5 px-10 uppercase text-xs font-bold shadow-none rounded-none">
                     Fale com um especialista
                   </button>
-                  <button className="btn-outline py-5 px-10 uppercase text-xs font-bold shadow-none rounded-none ring-1 ring-gray-200">
+                  <button className="btn-gray py-5 px-10 uppercase text-xs font-bold shadow-none rounded-none">
                     Solicitar ficha técnica
                   </button>
                 </div>
@@ -258,7 +258,7 @@ export default function DesengraxantesPage() {
             <button className="bg-brand-secondary text-white px-10 py-5 font-bold uppercase tracking-tight hover:bg-white hover:text-brand-primary transition-all">
               Fale com um especialista
             </button>
-            <button className="bg-white/10 text-white backdrop-blur-sm border border-white/20 px-10 py-5 font-bold uppercase tracking-tight hover:bg-white hover:text-brand-primary transition-all">
+            <button className="btn-gray px-10 py-5 font-bold uppercase tracking-tight">
               Solicitar ficha técnica
             </button>
           </div>

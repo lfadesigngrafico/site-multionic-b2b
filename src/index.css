@@ -29,12 +29,45 @@
   .btn-outline {
     @apply px-6 py-3 border-2 border-brand-primary text-brand-primary font-bold rounded-none transition-all duration-300 hover:bg-brand-primary hover:text-white shadow-sm;
   }
+
+  .btn-gray {
+    @apply px-6 py-3 bg-bg-light text-brand-primary font-bold rounded-none transition-all duration-300 hover:bg-gray-200 shadow-none border-none;
+  }
   
   .container-custom {
     @apply max-w-[1200px] mx-auto px-4;
   }
   
+  .shimmer-text {
+    @apply transition-all duration-300;
+  }
+
+  .shimmer-text:hover {
+    background: linear-gradient(90deg, #014486 0%, #014486 40%, rgba(255,255,255,0.8) 50%, #014486 60%, #014486 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 4s forwards linear;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .shimmer-text-white:hover {
+    background: linear-gradient(90deg, #ffffff 0%, #ffffff 40%, rgba(255,255,255,0.4) 50%, #ffffff 60%, #ffffff 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 4s forwards linear;
+    background-clip: text;
+    color: transparent;
+  }
+
   .card-modern {
     @apply bg-white border border-gray-200 rounded-none shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-lg;
   }
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
 }

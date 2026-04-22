@@ -59,22 +59,22 @@ export default function Clients() {
           <div className="marquee-content flex animate-scroll">
             {/* Set 1 */}
             {logos.map((logo, index) => (
-              <div key={`set1-${index}`} className="flex-shrink-0 px-12 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+              <div key={`set1-${index}`} className="flex-shrink-0 px-12 transition-all duration-300">
                 <img 
                   src={logo} 
                   alt="Client" 
-                  className="h-8 md:h-10 w-auto object-contain"
+                  className="h-12 md:h-16 w-auto object-contain"
                   referrerPolicy="no-referrer"
                 />
               </div>
             ))}
             {/* Set 2 (for loop) */}
             {logos.map((logo, index) => (
-              <div key={`set2-${index}`} className="flex-shrink-0 px-12 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+              <div key={`set2-${index}`} className="flex-shrink-0 px-12 transition-all duration-300">
                 <img 
                   src={logo} 
                   alt="Client" 
-                  className="h-8 md:h-10 w-auto object-contain"
+                  className="h-12 md:h-16 w-auto object-contain"
                   referrerPolicy="no-referrer"
                 />
               </div>

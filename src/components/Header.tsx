@@ -31,7 +31,7 @@ export default function Header() {
       }`}
     >
       <div className="px-4 md:px-8 xl:px-12 flex items-center justify-between w-full">
-        <div className="flex items-center space-x-12">
+        <div className="flex items-center space-x-32">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0" onClick={() => setIsMobileMenuOpen(false)}>
             <img 
@@ -43,7 +43,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Menu */}
-          <nav className="hidden xl:flex items-center space-x-10">
+          <nav className="hidden xl:flex items-center space-x-16">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.href || (link.href.startsWith('/#') && location.pathname === '/' && location.hash === link.href.substring(1));
               return link.type === 'internal' ? (
@@ -73,7 +73,7 @@ export default function Header() {
 
         {/* Desktop Actions */}
         <div className="hidden lg:flex items-center space-x-3">
-          <button className="bg-bg-light text-brand-primary border-none px-4 py-2 text-[10px] font-bold tracking-tight shadow-none rounded-none transition-all duration-300 hover:bg-brand-primary hover:text-white">
+          <button className="btn-gray px-4 py-2 text-[10px] font-bold tracking-tight shadow-none rounded-none transition-all duration-300">
             Solicitar ficha técnica
           </button>
           <button className="btn-primary px-4 py-2 text-[10px] font-bold tracking-tight shadow-none rounded-none">
@@ -127,7 +127,7 @@ export default function Header() {
                 );
               })}
               <div className="pt-4 flex flex-col space-y-3 px-2">
-                <button className="bg-bg-light text-brand-primary border-none px-6 py-4 text-sm font-bold tracking-tight shadow-none rounded-none transition-all duration-300 hover:bg-brand-primary hover:text-white uppercase">
+                <button className="btn-gray px-6 py-4 text-sm font-bold tracking-tight shadow-none rounded-none transition-all duration-300 uppercase">
                   Solicitar ficha técnica
                 </button>
                 <button className="btn-primary w-full py-4 text-sm font-bold tracking-tight shadow-none rounded-none uppercase">
