@@ -5,19 +5,13 @@ import {
   CheckCircle2, 
   Package, 
   MessageSquare, 
-  ArrowRight,
-  Droplet,
-  ChefHat,
-  WashingMachine,
-  Sparkles,
-  Layers,
-  Focus,
-  PlusCircle
+  ArrowRight
 } from 'lucide-react';
 
 const products = [
   {
     name: "Raylin Desengraxante Multiuso",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$751hst5yfa9",
     highlights: ["Ação imediata", "Baixa alcalinidade", "Base aquosa", "Com solvente glicólico"],
     description: "Desenvolvido para a remoção manual de óleos e graxas em máquinas, peças, equipamentos, veículos, pisos e superfícies laváveis. É uma solução de ação rápida, não inflamável, formulada para unir desempenho e segurança na rotina operacional.",
     indication: "Indicado para remoção imediata de óleos e graxas.",
@@ -25,6 +19,7 @@ const products = [
   },
   {
     name: "Raylin Desengraxante Multiuso GF",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$30uu0u4skua",
     highlights: ["Limpeza de tintas gráficas", "Remove óleos e graxas", "Fórmula alcalina", "Base aquosa"],
     description: "Desengraxante multilimpador desenvolvido para potencializar a limpeza de tintas gráficas em chapas, rolos, molhadores, tinteiros, máquinas, peças e equipamentos em geral.",
     indication: "Indicado para limpeza de tintas gráficas.",
@@ -32,6 +27,7 @@ const products = [
   },
   {
     name: "Raylin Desengraxante Multiuso LV",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$bx7zo9m6das",
     highlights: ["Baixa formação de espuma", "Pode ser usado em lavadoras", "pH neutro", "Remove óleos e graxas"],
     description: "Solução indicada para uso em lavadoras de alta pressão e aplicações que exigem baixa formação de espuma. Pode ser utilizada em alumínio e suas ligas.",
     indication: "Indicado para limpeza intensa de pisos, máquinas e equipamentos.",
@@ -39,6 +35,7 @@ const products = [
   },
   {
     name: "Raylin Limpeza Pesada",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$77vufmun6yi",
     highlights: ["Limpeza intensa", "Alta concentração", "Remove óleos e graxas com eficiência", "Fórmula alcalina de base aquosa"],
     description: "Desengraxante para limpeza manual intensa de máquinas, pisos, equipamentos e superfícies em geral.",
     indication: "Indicado para a remoção de óleos e graxas com máxima eficiência.",
@@ -46,6 +43,7 @@ const products = [
   },
   {
     name: "Raylin Limpeza Pesada SE",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$63ido4g5vj",
     highlights: ["Remoção eficaz de sujeira pesada", "Baixa formação de espuma", "Fórmula alcalina e concentrada", "Pode ser utilizado em máquinas lavadoras"],
     description: "Desengraxante indicado para remoção de sujeiras pesadas em máquinas, equipamentos e pisos.",
     indication: "Indicado para remoção eficaz de óleos e graxas.",
@@ -53,6 +51,7 @@ const products = [
   },
   {
     name: "Raylin DSE",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$xc6ce5xudrg",
     highlights: ["Limpeza intensa", "Baixa formação de espuma", "Alcalino", "Pode ser usado em lavadoras"],
     description: "Produto indicado para limpeza manual intensa com versatilidade operacional.",
     indication: "Indicado para uso em lavadoras de alta pressão.",
@@ -60,6 +59,7 @@ const products = [
   },
   {
     name: "Raylin MSE-N",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$vu6jpk2mptl",
     highlights: ["Limpeza geral", "Baixa espuma", "Ideal para limpeza pesada", "Compatível com alumínio"],
     description: "Desengraxante indicado para limpeza de superfícies e operações com máquinas lavadoras.",
     indication: "Indicado para limpeza geral com uso mecanizado.",
@@ -67,6 +67,7 @@ const products = [
   },
   {
     name: "Raylin SNT",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$qriae5c73xf",
     highlights: ["Alta rigidez dielétrica", "Rápida evaporação", "Não inflamável", "Remove óleos e graxas"],
     description: "Desengraxante para componentes elétricos e eletrônicos, mantendo isolamento e segurança.",
     indication: "Indicado para limpeza de motores, geradores e sistemas elétricos.",
@@ -74,6 +75,7 @@ const products = [
   },
   {
     name: "Multisolv-L",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$grec2oyrqe5",
     highlights: ["Não alcalino", "Não solúvel em água", "Baixa toxicidade", "Sem cheiro"],
     description: "Solvente sintético para limpeza intensa em aplicações que exigem solvente.",
     indication: "Indicado para desengraxe técnico de peças e equipamentos.",
@@ -81,14 +83,55 @@ const products = [
   }
 ];
 
-const otherCategories = [
-  { title: "Sabonetes", href: "/solucoes/sabonetes", icon: <Droplet className="w-5 h-5" /> },
-  { title: "Cozinha industrial", href: "/solucoes/cozinha", icon: <ChefHat className="w-5 h-5" /> },
-  { title: "Lavanderia", href: "/solucoes/lavanderia", icon: <WashingMachine className="w-5 h-5" /> },
-  { title: "Limpeza geral", href: "/solucoes/limpeza-geral", icon: <Sparkles className="w-5 h-5" /> },
-  { title: "Tratamento de pisos", href: "/solucoes/pisos", icon: <Layers className="w-5 h-5" /> },
-  { title: "Específicos", href: "/solucoes/especificos", icon: <Focus className="w-5 h-5" /> },
-  { title: "Outros", href: "/solucoes/outros", icon: <PlusCircle className="w-5 h-5" /> },
+const categories = [
+  {
+    title: "Sabonetes",
+    text: "Soluções para assepsia, higiene profissional e cuidados em ambientes que exigem segurança e padronização.",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$q4zmgv0vrp",
+    href: "/solucoes/sabonetes"
+  },
+  {
+    title: "Desengraxantes",
+    text: "Produtos para limpeza técnica, remoção de óleos e graxas e alto desempenho em diferentes contextos industriais.",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$zglgyd5dg0s",
+    href: "/solucoes/desengraxantes"
+  },
+  {
+    title: "Cozinha industrial",
+    text: "Soluções para ambientes que exigem controle, produtividade e limpeza pesada com mais segurança na operação.",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$rkn1g5yuk1a",
+    href: "/solucoes/cozinha"
+  },
+  {
+    title: "Lavanderia",
+    text: "Produtos para processos de lavagem profissional, com foco em desempenho, recorrência e praticidade de uso.",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$ysa0c5u5b7",
+    href: "/solucoes/lavanderia"
+  },
+  {
+    title: "Limpeza geral",
+    text: "Soluções versáteis para conservação, limpeza de rotina e manutenção de ambientes profissionais.",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$rlrsa0w6gop",
+    href: "/solucoes/limpeza-geral"
+  },
+  {
+    title: "Tratamento de pisos",
+    text: "Produtos para conservação, proteção, restauração e melhor resultado na rotina de limpeza e manutenção de pisos.",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$xvptwvqxjcd",
+    href: "/solucoes/pisos"
+  },
+  {
+    title: "Específicos",
+    text: "Soluções desenvolvidas para aplicações técnicas e necessidades mais direcionadas de limpeza profissional.",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$es6y6n9bweo",
+    href: "/solucoes/especificos"
+  },
+  {
+    title: "Outros",
+    text: "Produtos complementares para operações que demandam soluções específicas além das linhas principais.",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$hzt955zerli",
+    href: "/solucoes/outros"
+  }
 ];
 
 export default function DesengraxantesPage() {
@@ -137,9 +180,9 @@ export default function DesengraxantesPage() {
                   transition={{ duration: 1 }}
                 >
                   <img 
-                    src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=800" 
+                    src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$751hst5yfa9" 
                     alt="Industrial cleaning application" 
-                    className="rounded-none shadow-2xl grayscale"
+                    className="rounded-none shadow-none"
                     referrerPolicy="no-referrer"
                   />
                 </motion.div>
@@ -150,25 +193,45 @@ export default function DesengraxantesPage() {
       </section>
 
       {/* 3. INTRODUÇÃO */}
-      <section className="py-20 bg-gray-50 border-y border-gray-100">
-        <div className="container-custom max-w-4xl">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl md:text-3xl font-bold text-brand-primary mb-6 uppercase"
-          >
-            Potência de limpeza para operações que exigem resultado
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-black text-lg font-normal leading-relaxed"
-          >
-            Os desengraxantes Multionic foram desenvolvidos para atender demandas de limpeza técnica em ambientes industriais, operacionais e profissionais. São soluções pensadas para remover resíduos oleosos, graxas e sujeiras pesadas com mais eficiência, segurança e adequação ao contexto de uso. Fórmulas voltadas ao uso industrial, automotivo e operacional que garantem limpeza profunda mesmo em graxas difíceis.
-          </motion.p>
+      <section className="py-12 bg-gray-50 border-y border-gray-100 relative">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Coluna Esquerda: Imagem com Overlap */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative lg:-mt-24 lg:-mb-24 z-10"
+            >
+              <img 
+                src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$ka5fbsbl96n" 
+                alt="Potência de Limpeza Multionic" 
+                className="w-full h-auto rounded-none shadow-xl pointer-events-none"
+                referrerPolicy="no-referrer"
+              />
+            </motion.div>
+
+            {/* Coluna Direita: Texto */}
+            <div>
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-2xl md:text-3xl font-bold text-brand-primary mb-6 uppercase"
+              >
+                Potência de limpeza para operações que exigem resultado
+              </motion.h2>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-black text-lg font-normal leading-relaxed"
+              >
+                Os desengraxantes Multionic foram desenvolvidos para atender demandas de limpeza técnica em ambientes industriais, operacionais e profissionais. São soluções pensadas para remover resíduos oleosos, graxas e sujeiras pesadas com mais eficiência, segurança e adequação ao contexto de uso. Fórmulas voltadas ao uso industrial, automotivo e operacional que garantem limpeza profunda mesmo em graxas difíceis.
+              </motion.p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -183,13 +246,22 @@ export default function DesengraxantesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: (idx % 3) * 0.1 }}
-                className="bg-white border border-gray-100 rounded-none p-8 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+                className="bg-white border border-gray-100 rounded-none shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full overflow-hidden"
               >
-                <div className="mb-6 flex items-center justify-between">
-                  <h3 className="text-xl font-bold text-brand-primary uppercase">
-                    {product.name}
-                  </h3>
+                <div className="w-full aspect-square overflow-hidden bg-white border-b border-gray-50 p-4">
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
+                <div className="p-8 flex flex-col flex-grow">
+                  <div className="mb-6 flex items-center justify-between">
+                    <h3 className="text-xl font-bold text-brand-primary uppercase">
+                      {product.name}
+                    </h3>
+                  </div>
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {product.highlights.map((h, i) => (
@@ -219,48 +291,69 @@ export default function DesengraxantesPage() {
                 <button className="btn-primary w-full py-4 uppercase font-bold text-xs shadow-none border-none tracking-tight">
                   Solicitar orçamento
                 </button>
-              </motion.div>
-            ))}
+              </div>
+            </motion.div>
+          ))}
           </div>
         </div>
       </section>
 
       {/* 5. BLOCO COMERCIAL */}
-      <section className="py-24 bg-brand-primary text-white text-center">
-        <div className="container-custom max-w-4xl mx-auto">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl md:text-4xl font-bold mb-8 uppercase"
-          >
-            Converse com nosso time comercial
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-white/80 text-lg md:text-xl font-normal leading-relaxed mb-6"
-          >
-            Se sua empresa precisa de soluções de alto desempenho para remoção de óleos, graxas e sujeiras pesadas, nosso time está pronto para entender a sua necessidade e indicar a melhor opção para a sua operação.
-          </motion.p>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-white/60 text-base mb-12"
-          >
-            Atendemos diferentes contextos de uso, do desengraxe manual às aplicações mais técnicas e específicas.
-          </motion.p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-brand-secondary text-white px-10 py-5 font-bold uppercase tracking-tight hover:bg-white hover:text-brand-primary transition-all">
-              Fale com um especialista
-            </button>
-            <button className="btn-gray px-10 py-5 font-bold uppercase tracking-tight">
-              Solicitar ficha técnica
-            </button>
+      <section className="py-20 bg-brand-primary text-white relative">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Coluna Esquerda: Imagem com Overlap */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative lg:-mt-40 lg:-mb-40 z-10"
+            >
+              <img 
+                src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$3jzz3494k36"
+                alt="Atendimento Comercial Multionic" 
+                className="w-full h-auto object-contain pointer-events-none"
+                referrerPolicy="no-referrer"
+              />
+            </motion.div>
+
+            {/* Coluna Direita: Texto */}
+            <div className="text-left py-10 lg:py-0">
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-2xl md:text-4xl font-bold mb-8 uppercase text-white"
+              >
+                Converse com nosso time comercial
+              </motion.h2>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-white text-lg md:text-xl font-normal leading-relaxed mb-6"
+              >
+                Se sua empresa precisa de soluções de alto desempenho para remoção de óleos, graxas e sujeiras pesadas, nosso time está pronto para entender a sua necessidade e indicar a melhor opção para a sua operação.
+              </motion.p>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="text-white text-base mb-12"
+              >
+                Atendemos diferentes contextos de uso, do desengraxe manual às aplicações mais técnicas e específicas.
+              </motion.p>
+              <div className="flex flex-col sm:flex-row justify-start gap-4">
+                <button className="bg-brand-secondary text-white px-10 py-5 font-bold uppercase tracking-tight hover:bg-white hover:text-brand-primary transition-all">
+                  Fale com um especialista
+                </button>
+                <button className="btn-gray px-10 py-5 font-bold uppercase tracking-tight">
+                  Solicitar ficha técnica
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -268,28 +361,55 @@ export default function DesengraxantesPage() {
       {/* 6. BLOCO DE EMBALAGENS */}
       <section className="py-24 bg-white">
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-brand-primary mb-4 uppercase">
-              No tamanho certo para o seu negócio
-            </h2>
-            <p className="text-black text-lg font-normal max-w-2xl mx-auto">
-              Escolha entre diferentes formatos e volumes para atender melhor a rotina da sua empresa, com mais eficiência, economia e logística inteligente.
-            </p>
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Coluna Esquerda: Texto e Lista */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-2xl md:text-3xl font-bold text-brand-primary mb-6 uppercase">
+                No tamanho certo para o seu negócio
+              </h2>
+              <p className="text-black text-lg font-normal leading-relaxed mb-8">
+                Escolha entre diferentes formatos e volumes para atender melhor a rotina da sua empresa, com mais eficiência, economia e logística inteligente.
+              </p>
+              
+              <ul className="space-y-4 mb-8">
+                {[
+                  "Galão de 5L", 
+                  "Bombona de 20L", 
+                  "Bombona de 50L", 
+                  "Tambor de 200L", 
+                  "Container de 1000L"
+                ].map((size, idx) => (
+                  <li key={idx} className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-brand-secondary rounded-none"></div>
+                    <span className="text-brand-primary font-bold text-sm uppercase">{size}</span>
+                  </li>
+                ))}
+              </ul>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-            {[
-              "Galão de 5L", "Bombona de 20L", "Bombona de 50L", "Tambor de 200L", "Container de 1000L"
-            ].map((size, idx) => (
-              <div key={idx} className="bg-gray-50 p-8 rounded-none flex flex-col items-center text-center border border-gray-100 hover:bg-white hover:shadow-lg transition-all duration-300">
-                <Package className="w-10 h-10 text-brand-secondary mb-4" />
-                <span className="text-brand-primary font-bold text-xs uppercase tracking-tighter">{size}</span>
-              </div>
-            ))}
+              <p className="text-gray-400 text-[10px] uppercase font-bold tracking-widest">
+                * Para produtos específicos, a disponibilidade pode variar conforme a linha.
+              </p>
+            </motion.div>
+
+            {/* Coluna Direita: Imagem */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative flex justify-center items-center"
+            >
+              <img 
+                src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1776864450/$5owot05o0ax" 
+                alt="Variedade de Embalagens Multionic" 
+                className="w-full h-auto max-w-[110%] object-contain"
+                referrerPolicy="no-referrer"
+              />
+            </motion.div>
           </div>
-          <p className="text-center text-gray-400 text-[10px] mt-8 uppercase font-bold tracking-widest">
-            * Para produtos específicos, a disponibilidade pode variar conforme a linha.
-          </p>
         </div>
       </section>
 
@@ -300,17 +420,38 @@ export default function DesengraxantesPage() {
             <h2 className="text-2xl font-bold text-brand-primary uppercase mb-2">Navegue pelas categorias</h2>
             <p className="text-black text-lg">Conheça outras soluções da linha institucional e industrial da Multionic.</p>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {otherCategories.map((cat, idx) => (
-              <Link 
-                key={idx} 
-                to={cat.href}
-                className="flex items-center space-x-4 bg-white p-6 border border-gray-100 hover:border-brand-secondary hover:shadow-md transition-all group"
-              >
-                <div className="text-brand-secondary group-hover:scale-110 transition-transform">
-                  {cat.icon}
-                </div>
-                <span className="text-brand-primary font-bold text-sm uppercase tracking-tight">{cat.title}</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {categories.map((cat, idx) => (
+              <Link key={idx} to={cat.href}>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.05 }}
+                  whileHover={{ y: -8 }}
+                  className="group bg-white rounded-none border border-gray-100 shadow-sm transition-all duration-300 cursor-pointer h-full flex flex-col overflow-hidden hover:shadow-xl"
+                >
+                  <div className="w-full aspect-square overflow-hidden bg-white">
+                    <img 
+                      src={cat.image} 
+                      alt={cat.title}
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <div className="p-6 md:p-8 flex flex-col flex-grow text-left">
+                    <h3 className="text-lg font-bold text-brand-primary mb-4 uppercase tracking-tight">
+                      {cat.title}
+                    </h3>
+                    <p className="text-black text-sm font-normal leading-relaxed mb-6 flex-grow">
+                      {cat.text}
+                    </p>
+                    <div className="flex items-center text-brand-secondary font-bold text-xs group hover:gap-2 transition-all uppercase tracking-wider mt-auto">
+                      Ver soluções
+                      <ArrowRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </div>
+                  </div>
+                </motion.div>
               </Link>
             ))}
           </div>
@@ -327,9 +468,9 @@ export default function DesengraxantesPage() {
                viewport={{ once: true }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" 
-                alt="Industrial production" 
-                className="rounded-none grayscale shadow-lg"
+                src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1776874436/$vzhrrrp39mr" 
+                alt="Produção Industrial Multionic" 
+                className="w-full h-auto rounded-none"
                 referrerPolicy="no-referrer"
               />
             </motion.div>

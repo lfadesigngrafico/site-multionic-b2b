@@ -1,24 +1,17 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { 
-  Droplet, 
-  Trash2, 
-  ChefHat, 
-  WashingMachine, 
-  Sparkles, 
-  Layers, 
-  Focus, 
-  PlusCircle,
   FileText,
   MessageCircle,
-  Factory
+  Factory,
+  ArrowRight
 } from 'lucide-react';
 
 // Reusable Section components for the Solutions Page
 
 const Hero = () => (
-  <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-white">
-    <div className="container-custom relative z-10">
+  <section className="relative h-[700px] flex items-center overflow-hidden bg-[#014486]">
+    <div className="container-custom relative z-10 w-full">
       <div className="max-w-[1200px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -26,10 +19,10 @@ const Hero = () => (
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold text-brand-primary mb-6 uppercase leading-tight">
+            <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold text-white mb-6 uppercase leading-tight">
               Encontre a solução ideal para o seu negócio
             </h1>
-            <p className="text-black text-lg md:text-xl font-normal leading-relaxed mb-8">
+            <p className="text-white text-lg md:text-xl font-normal leading-relaxed mb-8">
               Conheça nossa linha completa de produtos desenvolvidos para atender diferentes necessidades de limpeza industrial e institucional. Explore as categorias, encontre a solução mais adequada e escolha a embalagem ideal para a sua operação.
             </p>
           </motion.div>
@@ -39,14 +32,13 @@ const Hero = () => (
             transition={{ duration: 1 }}
             className="hidden lg:block"
           >
-            <div className="relative aspect-square">
+            <div className="relative flex justify-center">
               <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" 
-                alt="Technical chemical application" 
-                className="w-full h-full object-cover rounded-none shadow-2xl grayscale"
+                src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1776874436/$zgrm3k6b72f" 
+                alt="Solução ideal Multionic" 
+                className="w-full max-w-full h-auto max-h-[550px] object-contain rounded-none shadow-none"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-brand-secondary/20 rounded-none blur-3xl"></div>
             </div>
           </motion.div>
         </div>
@@ -83,49 +75,49 @@ const categories = [
   {
     title: "Sabonetes",
     text: "Soluções para assepsia, higiene profissional e cuidados em ambientes que exigem segurança e padronização.",
-    icon: <Droplet className="w-8 h-8 text-brand-secondary" />,
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$q4zmgv0vrp",
     href: "/solucoes/sabonetes"
   },
   {
     title: "Desengraxantes",
     text: "Produtos para limpeza técnica, remoção de óleos e graxas e alto desempenho em diferentes contextos industriais.",
-    icon: <Trash2 className="w-8 h-8 text-brand-secondary" />,
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$zglgyd5dg0s",
     href: "/solucoes/desengraxantes"
   },
   {
     title: "Cozinha industrial",
     text: "Soluções para ambientes que exigem controle, produtividade e limpeza pesada com mais segurança na operação.",
-    icon: <ChefHat className="w-8 h-8 text-brand-secondary" />,
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$rkn1g5yuk1a",
     href: "/solucoes/cozinha"
   },
   {
     title: "Lavanderia",
     text: "Produtos para processos de lavagem profissional, com foco em desempenho, recorrência e praticidade de uso.",
-    icon: <WashingMachine className="w-8 h-8 text-brand-secondary" />,
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$ysa0c5u5b7",
     href: "/solucoes/lavanderia"
   },
   {
     title: "Limpeza geral",
     text: "Soluções versáteis para conservação, limpeza de rotina e manutenção de ambientes profissionais.",
-    icon: <Sparkles className="w-8 h-8 text-brand-secondary" />,
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$rlrsa0w6gop",
     href: "/solucoes/limpeza-geral"
   },
   {
     title: "Tratamento de pisos",
     text: "Produtos para conservação, proteção, restauração e melhor resultado na rotina de limpeza e manutenção de pisos.",
-    icon: <Layers className="w-8 h-8 text-brand-secondary" />,
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$xvptwvqxjcd",
     href: "/solucoes/pisos"
   },
   {
     title: "Específicos",
     text: "Soluções desenvolvidas para aplicações técnicas e necessidades mais direcionadas de limpeza profissional.",
-    icon: <Focus className="w-8 h-8 text-brand-secondary" />,
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$es6y6n9bweo",
     href: "/solucoes/especificos"
   },
   {
     title: "Outros",
     text: "Produtos complementares para operações que demandam soluções específicas além das linhas principais.",
-    icon: <PlusCircle className="w-8 h-8 text-brand-secondary" />,
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$hzt955zerli",
     href: "/solucoes/outros"
   }
 ];
@@ -142,17 +134,28 @@ const CategoryGrid = () => (
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
               whileHover={{ y: -8 }}
-              className="group bg-white p-8 rounded-none border border-gray-100 shadow-sm transition-all duration-300 cursor-pointer h-full flex flex-col items-center text-center hover:shadow-xl"
+              className="group bg-white rounded-none border border-gray-100 shadow-sm transition-all duration-300 cursor-pointer h-full flex flex-col overflow-hidden hover:shadow-xl"
             >
-              <div className="mb-6 p-4 bg-gray-50 rounded-none text-brand-secondary group-hover:bg-brand-secondary group-hover:text-white transition-colors">
-                {cat.icon}
+              <div className="w-full aspect-square overflow-hidden bg-white">
+                <img 
+                  src={cat.image} 
+                  alt={cat.title}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  referrerPolicy="no-referrer"
+                />
               </div>
-              <h3 className="text-xl font-bold text-brand-primary mb-4 uppercase">
-                {cat.title}
-              </h3>
-              <p className="text-black text-sm font-normal leading-relaxed">
-                {cat.text}
-              </p>
+              <div className="p-6 md:p-8 flex flex-col flex-grow text-left">
+                <h3 className="text-lg font-bold text-brand-primary mb-4 uppercase tracking-tight">
+                  {cat.title}
+                </h3>
+                <p className="text-black text-sm font-normal leading-relaxed mb-6 flex-grow">
+                  {cat.text}
+                </p>
+                <div className="flex items-center text-brand-secondary font-bold text-xs group hover:gap-2 transition-all uppercase tracking-wider mt-auto">
+                  Ver soluções
+                  <ArrowRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </div>
+              </div>
             </motion.div>
           </Link>
         ))}
@@ -162,7 +165,7 @@ const CategoryGrid = () => (
 );
 
 const Packaging = () => (
-  <section className="py-24 bg-[#0877e1] text-white relative">
+  <section className="py-24 bg-[#333333] text-white relative">
     <div className="container-custom">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <motion.div
@@ -283,24 +286,6 @@ const CommercialCTA = () => (
   </section>
 );
 
-const FAQStrip = () => (
-  <section className="py-12 bg-bg-light border-y border-gray-100">
-    <div className="container-custom flex flex-col lg:flex-row items-center justify-between gap-8">
-      <h3 className="text-brand-primary font-bold text-xl uppercase text-center lg:text-left">
-        Dúvidas como estas ou outras, chame nosso time ou acesse nossa FAQ
-      </h3>
-      <div className="flex flex-col sm:flex-row gap-4">
-        <button className="btn-primary py-4 px-8 whitespace-nowrap shadow-none rounded-none uppercase text-xs">
-          Fale com um especialista
-        </button>
-        <button className="btn-outline py-4 px-8 whitespace-nowrap shadow-none rounded-none uppercase text-xs">
-          Acessar nossa FAQ
-        </button>
-      </div>
-    </div>
-  </section>
-);
-
 const PrivateLabel = () => (
   <section className="py-24 bg-white overflow-hidden">
     <div className="container-custom">
@@ -393,7 +378,6 @@ export default function SolutionsPage() {
       <CategoryGrid />
       <Packaging />
       <CommercialCTA />
-      <FAQStrip />
       <PrivateLabel />
       <Form />
     </>

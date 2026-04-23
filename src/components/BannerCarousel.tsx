@@ -16,6 +16,13 @@ const banners = [
     mobileUrl: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776899813/$pxv0yimwww",
     alt: "Multionic Industrial Banner 2",
     link: "/contato"
+  },
+  {
+    id: 3,
+    desktopUrl: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$ddakzyd0mac",
+    mobileUrl: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$izp9nbpnmf",
+    alt: "Multionic Industrial Banner 3",
+    link: "/solucoes/desengraxantes"
   }
 ];
 

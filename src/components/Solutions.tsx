@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Beaker, Layers, Sparkles, ChefHat, Factory, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const solutions = [
   {
@@ -68,6 +69,23 @@ export default function Solutions() {
             <SolutionCard key={item.id} item={item} delay={idx * 0.1} />
           ))}
         </div>
+
+        {/* Novo Link Ver Todas as Soluções */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6 }}
+          className="mt-16 flex justify-center"
+        >
+          <Link 
+            to="/solucoes" 
+            className="flex items-center gap-2 text-brand-secondary font-black text-sm uppercase tracking-widest hover:gap-4 transition-all duration-300 group"
+          >
+            Ver todas as soluções
+            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
