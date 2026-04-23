@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import SolutionsPage from './pages/SolutionsPage';
 import DesengraxantesPage from './pages/DesengraxantesPage';
+import SegmentsPage from './pages/SegmentsPage';
 import ContactPage from './pages/ContactPage';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -29,6 +30,7 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/solucoes" element={<SolutionsPage />} />
             <Route path="/solucoes/desengraxantes" element={<DesengraxantesPage />} />
+            <Route path="/segmentos" element={<SegmentsPage />} />
             <Route path="/contato" element={<ContactPage />} />
           </Routes>
         </main>

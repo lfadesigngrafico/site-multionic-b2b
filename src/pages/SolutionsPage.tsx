@@ -162,7 +162,7 @@ const CategoryGrid = () => (
 );
 
 const Packaging = () => (
-  <section className="py-24 bg-[#0877e1] overflow-hidden text-white">
+  <section className="py-24 bg-[#0877e1] text-white relative">
     <div className="container-custom">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <motion.div
@@ -209,61 +209,72 @@ const Packaging = () => (
 );
 
 const CommercialCTA = () => (
-  <section className="py-24 bg-brand-primary text-white overflow-hidden relative">
+  <section className="py-20 bg-brand-primary text-white relative">
     <div className="container-custom">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        {/* Left Column: Image */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Coluna Esquerda: Imagem com Overlap Padrão */}
         <div className="relative order-2 lg:order-1">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative lg:-mt-32 lg:-mb-32 flex justify-center items-center"
+            className="relative lg:-mt-40 lg:-mb-40 z-10"
           >
             <img 
-              src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1776874436/$ggo9ccer7ac" 
-              alt="Suporte Técnico Comercial Multionic" 
-              className="w-full h-auto object-contain pointer-events-none scale-110"
+              src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1776874436/$9i1aakymrga"
+              alt="Atendimento Multionic" 
+              className="w-full h-auto object-contain pointer-events-none"
               referrerPolicy="no-referrer"
             />
           </motion.div>
         </div>
 
-        {/* Right Column: Text & Buttons */}
+        {/* Coluna Direita: Texto e Botões */}
         <div className="text-left order-1 lg:order-2">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 uppercase"
+            className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 uppercase text-white"
           >
             Converse com nosso time comercial
           </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-white/80 text-lg md:text-xl font-normal leading-relaxed mb-6"
-          >
-            Se sua empresa precisa de apoio para escolher a melhor solução, entender uma aplicação específica ou avaliar qual produto faz mais sentido para a operação, nosso time está pronto para ajudar.
-          </motion.p>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-white/60 text-base mb-12"
-          >
-            Nosso atendimento une visão comercial e direcionamento técnico para tornar a escolha mais segura e mais aderente à realidade do seu negócio.
-          </motion.p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="space-y-4 mb-10">
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-white text-lg md:text-xl font-normal leading-relaxed"
+            >
+              Se sua empresa precisa de apoio para escolher a melhor solução, entender uma aplicação específica ou avaliar qual produto faz mais sentido para a operação, nosso time está pronto para ajudar.
+            </motion.p>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-white/90 text-base font-normal leading-relaxed"
+            >
+              Nosso atendimento une visão comercial e direcionamento técnico para tornar a escolha mais segura e mais aderente à realidade do seu negócio.
+            </motion.p>
+          </div>
+  
+          <div className="flex flex-col sm:flex-row justify-start gap-4">
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-brand-secondary text-white px-10 py-5 font-bold uppercase tracking-tight hover:bg-white hover:text-brand-primary transition-all shadow-xl"
+              className="bg-brand-secondary text-white px-8 py-4 text-sm font-bold tracking-tight rounded-none hover:bg-white hover:text-brand-primary transition-all duration-300 shadow-none border-none flex items-center justify-center gap-2"
             >
+              <MessageCircle size={20} />
               Fale com um especialista
+            </motion.button>
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="btn-gray px-8 py-4 text-sm font-bold tracking-tight rounded-none shadow-none"
+            >
+              Solicitar ficha técnica
             </motion.button>
           </div>
         </div>
@@ -300,9 +311,9 @@ const PrivateLabel = () => (
            viewport={{ once: true }}
         >
           <img 
-            src="https://images.unsplash.com/photo-1530124560676-547e1e40f368?auto=format&fit=crop&q=80&w=1000" 
-            alt="Industrial production" 
-            className="rounded-none grayscale shadow-lg"
+            src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1776874436/$vzhrrrp39mr" 
+            alt="Laboratório Multionic" 
+            className="w-full h-auto rounded-none shadow-none"
             referrerPolicy="no-referrer"
           />
         </motion.div>

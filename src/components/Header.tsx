@@ -17,8 +17,9 @@ export default function Header() {
   }, []);
 
   const navLinks = [
+    { name: 'Home', href: '/', type: 'internal' },
     { name: 'Soluções', href: '/solucoes', type: 'internal' },
-    { name: 'Segmentos atendidos', href: '/#segmentos', type: 'anchor' },
+    { name: 'Segmentos atendidos', href: '/segmentos', type: 'internal' },
     { name: 'Sua marca, nossa produção', href: '/#marca-propria', type: 'anchor' },
     { name: 'Sobre a Multionic', href: '/#sobre', type: 'anchor' },
     { name: 'Contato', href: '/contato', type: 'internal' },
@@ -27,7 +28,7 @@ export default function Header() {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || location.pathname !== '/' ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'
+        isScrolled || location.pathname !== '/' ? 'bg-white/90 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'
       }`}
     >
       <div className="px-4 md:px-8 xl:px-12 flex items-center justify-between w-full">
@@ -46,9 +47,10 @@ export default function Header() {
           <nav className="hidden xl:flex items-center space-x-16">
             {navLinks.map((link) => {
               const isAnchor = link.type === 'anchor';
-              const isActive = isAnchor
-                ? location.pathname === '/' && location.hash === link.href.substring(1) && location.hash !== ''
-                : location.pathname === link.href || (link.href !== '/' && location.pathname.startsWith(link.href));
+              const isActive = !isAnchor && (
+                location.pathname === link.href || 
+                (link.href !== '/' && location.pathname.startsWith(link.href))
+              );
 
               return link.type === 'internal' ? (
                 <Link 
@@ -101,14 +103,15 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-gray-100 overflow-hidden"
+            className="lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 overflow-hidden"
           >
             <div className="container-custom py-6 flex flex-col space-y-4">
               {navLinks.map((link) => {
                 const isAnchor = link.type === 'anchor';
-                const isActive = isAnchor
-                  ? location.pathname === '/' && location.hash === link.href.substring(1) && location.hash !== ''
-                  : location.pathname === link.href || (link.href !== '/' && location.pathname.startsWith(link.href));
+                const isActive = !isAnchor && (
+                  location.pathname === link.href || 
+                  (link.href !== '/' && location.pathname.startsWith(link.href))
+                );
 
                 return link.type === 'internal' ? (
                   <Link 
