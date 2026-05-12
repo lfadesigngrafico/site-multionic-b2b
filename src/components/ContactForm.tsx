@@ -54,15 +54,15 @@ export default function ContactForm() {
                   <input type="text" className="w-full bg-white border border-gray-200 px-4 py-3 text-black text-sm outline-none focus:border-brand-secondary transition-colors" placeholder="Nome completo" />
                 </div>
                 <div className="space-y-1">
-                  <label className="text-[10px] font-bold text-brand-primary uppercase tracking-widest pl-1">Empresa</label>
-                  <input type="text" className="w-full bg-white border border-gray-200 px-4 py-3 text-black text-sm outline-none focus:border-brand-secondary transition-colors" placeholder="Razão social ou nome fantasia" />
+                  <label className="text-[10px] font-bold text-brand-primary uppercase tracking-widest pl-1">CNPJ</label>
+                  <input type="text" className="w-full bg-white border border-gray-200 px-4 py-3 text-black text-sm outline-none focus:border-brand-secondary transition-colors" placeholder="00.000.000/0000-00" />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-1">
                   <label className="text-[10px] font-bold text-brand-primary uppercase tracking-widest pl-1">E-mail</label>
-                  <input type="email" className="w-full bg-white border border-gray-200 px-4 py-3 text-black text-sm outline-none focus:border-brand-secondary transition-colors" placeholder="seuemail@empresa.com" />
+                  <input type="email" className="w-full bg-white border border-gray-200 px-4 py-3 text-black text-sm outline-none focus:border-brand-secondary transition-colors" placeholder="seuemail@exemplo.com" />
                 </div>
                 <div className="space-y-1">
                   <label className="text-[10px] font-bold text-brand-primary uppercase tracking-widest pl-1">Telefone</label>

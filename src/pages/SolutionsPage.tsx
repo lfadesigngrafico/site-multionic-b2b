@@ -20,7 +20,7 @@ const Hero = () => (
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold text-white mb-6 uppercase leading-tight">
-              Encontre a solução ideal para o seu negócio
+              Nossos Produtos
             </h1>
             <p className="text-white text-lg md:text-xl font-normal leading-relaxed mb-8">
               Conheça nossa linha completa de produtos desenvolvidos para atender diferentes necessidades de limpeza industrial e institucional. Explore as categorias, encontre a solução mais adequada e escolha a embalagem ideal para a sua operação.
@@ -73,51 +73,51 @@ const Intro = () => (
 
 const categories = [
   {
-    title: "Sabonetes",
-    text: "Soluções para assepsia, higiene profissional e cuidados em ambientes que exigem segurança e padronização.",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$q4zmgv0vrp",
+    title: "SABONETES",
+    text: "Higiene e proteção com fórmulas suaves e eficientes. Conheça nossas opções para diferentes necessidades.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b950023172405940.jpg",
     href: "/solucoes/sabonetes"
   },
   {
-    title: "Desengraxantes",
-    text: "Produtos para limpeza técnica, remoção de óleos e graxas e alto desempenho em diferentes contextos industriais.",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$zglgyd5dg0s",
+    title: "DESENGRAXANTES",
+    text: "Remova graxas e resíduos com máxima eficácia. Soluções poderosas para indústrias e oficinas.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b9505e4483220872.jpg",
     href: "/solucoes/desengraxantes"
   },
   {
-    title: "Cozinha industrial",
-    text: "Soluções para ambientes que exigem controle, produtividade e limpeza pesada com mais segurança na operação.",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$rkn1g5yuk1a",
+    title: "COZINHA INDUSTRIAL",
+    text: "Higienização segura e eficiente para cozinhas profissionais. Mantenha o padrão de qualidade do seu negócio.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b952447433171858.jpg",
     href: "/solucoes/cozinha"
   },
   {
-    title: "Lavanderia",
-    text: "Produtos para processos de lavagem profissional, com foco em desempenho, recorrência e praticidade de uso.",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$ysa0c5u5b7",
+    title: "LAVANDERIA",
+    text: "Cuidado e performance para tecidos impecáveis. Descubra nossas soluções para lavagem profissional.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b952f9d683905738.jpg",
     href: "/solucoes/lavanderia"
   },
   {
-    title: "Limpeza geral",
-    text: "Soluções versáteis para conservação, limpeza de rotina e manutenção de ambientes profissionais.",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$rlrsa0w6gop",
+    title: "LIMPEZA GERAL",
+    text: "Produtos versáteis para uma limpeza completa e eficiente. Descubra nossa linha de soluções profissionais.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b9514d2822242195.jpg",
     href: "/solucoes/limpeza-geral"
   },
   {
-    title: "Tratamento de pisos",
-    text: "Produtos para conservação, proteção, restauração e melhor resultado na rotina de limpeza e manutenção de pisos.",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$xvptwvqxjcd",
+    title: "TRATAMENTO DE PISOS",
+    text: "Proteção e brilho para superfícies impecáveis. Encontre o produto ideal para o seu ambiente.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b95101a031881655.jpg",
     href: "/solucoes/pisos"
   },
   {
-    title: "Específicos",
-    text: "Soluções desenvolvidas para aplicações técnicas e necessidades mais direcionadas de limpeza profissional.",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$es6y6n9bweo",
+    title: "ESPECÍFICOS",
+    text: "Soluções químicas avançadas para necessidades especiais. Eficiência e inovação a serviço da sua empresa.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b953650615921925.jpg",
     href: "/solucoes/especificos"
   },
   {
-    title: "Outros",
-    text: "Produtos complementares para operações que demandam soluções específicas além das linhas principais.",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$hzt955zerli",
+    title: "OUTROS",
+    text: "Soluções especiais para demandas únicas. Produtos desenvolvidos para diferentes desafios de limpeza.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b951ed2048352243.jpg",
     href: "/solucoes/outros"
   }
 ];
@@ -125,35 +125,40 @@ const categories = [
 const CategoryGrid = () => (
   <section className="py-24 bg-white">
     <div className="container-custom">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0">
         {categories.map((cat, idx) => (
           <Link key={idx} to={cat.href}>
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.05 }}
-              whileHover={{ y: -8 }}
-              className="group bg-white rounded-none border border-gray-100 shadow-sm transition-all duration-300 cursor-pointer h-full flex flex-col overflow-hidden hover:shadow-xl"
+              transition={{ delay: idx * 0.05, duration: 0.5 }}
+              className="relative aspect-square overflow-hidden group cursor-pointer"
             >
-              <div className="w-full aspect-square overflow-hidden bg-white">
-                <img 
-                  src={cat.image} 
-                  alt={cat.title}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <div className="p-6 md:p-8 flex flex-col flex-grow text-left">
-                <h3 className="text-lg font-bold text-brand-primary mb-4 uppercase tracking-tight">
+              {/* Imagem de Fundo */}
+              <img 
+                src={cat.image} 
+                alt={cat.title}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                referrerPolicy="no-referrer"
+              />
+              
+              {/* Overlay Escurecido Padrão */}
+              <div className="absolute inset-0 bg-black/25 transition-opacity duration-300 group-hover:opacity-0" />
+              
+              {/* Overlay Azul de Hover */}
+              <div className="absolute inset-0 bg-[#0877E1]/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+              {/* Conteúdo Centralizado */}
+              <div className="absolute inset-0 p-6 flex flex-col items-center justify-center text-center">
+                <h3 className="text-white text-base md:text-lg font-bold uppercase tracking-[0.2em] pl-[0.2em] leading-tight transition-transform duration-500 group-hover:-translate-y-8">
                   {cat.title}
                 </h3>
-                <p className="text-black text-sm font-normal leading-relaxed mb-6 flex-grow">
-                  {cat.text}
-                </p>
-                <div className="flex items-center text-brand-secondary font-bold text-xs group hover:gap-2 transition-all uppercase tracking-wider mt-auto">
-                  Ver soluções
-                  <ArrowRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                
+                <div className="absolute inset-x-6 bottom-12 md:bottom-16 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                  <p className="text-white text-xs md:text-sm font-medium leading-relaxed">
+                    {cat.text}
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -272,13 +277,6 @@ const CommercialCTA = () => (
               <MessageCircle size={20} />
               Fale com um especialista
             </motion.button>
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="btn-gray px-8 py-4 text-sm font-bold tracking-tight rounded-none shadow-none"
-            >
-              Solicitar ficha técnica
-            </motion.button>
           </div>
         </div>
       </div>
@@ -349,8 +347,12 @@ const Form = () => (
               <input type="text" className="w-full bg-gray-50 border border-gray-100 px-4 py-3 text-black text-sm outline-none focus:border-brand-secondary" placeholder="Nome completo" />
             </div>
             <div className="space-y-1">
+              <label className="text-[10px] font-bold text-brand-primary uppercase tracking-widest">CNPJ</label>
+              <input type="text" className="w-full bg-gray-50 border border-gray-100 px-4 py-3 text-black text-sm outline-none focus:border-brand-secondary" placeholder="00.000.000/0000-00" />
+            </div>
+            <div className="space-y-1">
               <label className="text-[10px] font-bold text-brand-primary uppercase tracking-widest">E-mail</label>
-              <input type="email" className="w-full bg-gray-50 border border-gray-100 px-4 py-3 text-black text-sm outline-none focus:border-brand-secondary" placeholder="seuemail@empresa.com" />
+              <input type="email" className="w-full bg-gray-50 border border-gray-100 px-4 py-3 text-black text-sm outline-none focus:border-brand-secondary" placeholder="seuemail@exemplo.com" />
             </div>
             <div className="space-y-1">
               <label className="text-[10px] font-bold text-brand-primary uppercase tracking-widest">Telefone</label>

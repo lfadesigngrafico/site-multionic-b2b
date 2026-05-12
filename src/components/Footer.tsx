@@ -47,9 +47,9 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Soluções */}
+          {/* Produtos */}
           <div>
-            <h4 className="text-white font-bold text-xs uppercase tracking-widest mb-6 border-b border-white/10 pb-2">Soluções</h4>
+            <h4 className="text-white font-bold text-xs uppercase tracking-widest mb-6 border-b border-white/10 pb-2">Produtos</h4>
             <ul className="space-y-3">
               <li><Link to="/solucoes/desengraxantes" className="text-white/60 hover:text-white transition-colors text-xs">Desengraxantes industriais</Link></li>
               <li><Link to="/solucoes/pisos" className="text-white/60 hover:text-white transition-colors text-xs">Tratamento de pisos</Link></li>
@@ -79,7 +79,6 @@ export default function Footer() {
             <h4 className="text-white font-bold text-xs uppercase tracking-widest mb-6 border-b border-white/10 pb-2">Contato</h4>
             <ul className="space-y-3">
               <li><Link to="/contato" className="text-white/60 hover:text-white transition-colors text-xs">Fale com um especialista</Link></li>
-              <li><Link to="/contato" className="text-white/60 hover:text-white transition-colors text-xs">Solicitar ficha técnica</Link></li>
               <li><a href="#" className="text-white/60 hover:text-white transition-colors text-xs">WhatsApp</a></li>
             </ul>
           </div>

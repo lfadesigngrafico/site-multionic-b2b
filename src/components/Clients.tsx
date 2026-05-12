@@ -54,27 +54,27 @@ export default function Clients() {
         </motion.p>
       </div>
 
-      <div className="relative w-full overflow-hidden border-y border-gray-100 bg-gray-50/30">
+      <div className="relative w-full overflow-hidden border-y border-gray-100 bg-white">
         <div className="marquee-container flex py-12">
           <div className="marquee-content flex animate-scroll">
             {/* Set 1 */}
             {logos.map((logo, index) => (
-              <div key={`set1-${index}`} className="flex-shrink-0 px-12 transition-all duration-300">
+              <div key={`set1-${index}`} className="flex-shrink-0 px-12 transition-all duration-300 hover:scale-110">
                 <img 
                   src={logo} 
                   alt="Client" 
-                  className="h-12 md:h-16 w-auto object-contain"
+                  className="h-14 md:h-20 lg:h-24 w-auto object-contain brightness-[1.02] contrast-[1.05]"
                   referrerPolicy="no-referrer"
                 />
               </div>
             ))}
             {/* Set 2 (for loop) */}
             {logos.map((logo, index) => (
-              <div key={`set2-${index}`} className="flex-shrink-0 px-12 transition-all duration-300">
+              <div key={`set2-${index}`} className="flex-shrink-0 px-12 transition-all duration-300 hover:scale-110">
                 <img 
                   src={logo} 
                   alt="Client" 
-                  className="h-12 md:h-16 w-auto object-contain"
+                  className="h-14 md:h-20 lg:h-24 w-auto object-contain brightness-[1.02] contrast-[1.05]"
                   referrerPolicy="no-referrer"
                 />
               </div>

@@ -1,5 +1,6 @@
-import BannerCarousel from '../components/BannerCarousel';
-import Hero from '../components/Hero';
+import HomeHeroVideo from '../components/HomeHeroVideo';
+import TrustSection from '../components/TrustSection';
+import CategoryCarousel from '../components/CategoryCarousel';
 import Clients from '../components/Clients';
 import Solutions from '../components/Solutions';
 import Segments from '../components/Segments';
@@ -7,14 +8,15 @@ import Differentials from '../components/Differentials';
 import Certifications from '../components/Certifications';
 import ContactBlock from '../components/ContactBlock';
 import ContactForm from '../components/ContactForm';
-import FAQ from '../components/FAQ';
+import HelpCards from '../components/HelpCards';
 import FinalCTA from '../components/FinalCTA';
 
 export default function HomePage() {
   return (
     <>
-      <BannerCarousel />
-      <Hero />
+      <HomeHeroVideo />
+      <TrustSection />
+      <CategoryCarousel />
       <Clients />
       <Solutions />
       <Segments />
@@ -22,7 +24,7 @@ export default function HomePage() {
       <Certifications />
       <ContactBlock />
       <ContactForm />
-      <FAQ />
+      <HelpCards />
       <FinalCTA />
     </>
   );

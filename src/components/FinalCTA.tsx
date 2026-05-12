@@ -49,13 +49,6 @@ export default function FinalCTA() {
           >
             Solicite nosso contato
           </motion.button>
-          <motion.button 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="btn-gray px-10 py-5 text-sm font-bold tracking-tight rounded-none shadow-none"
-          >
-            Solicitar ficha técnica
-          </motion.button>
         </div>
       </div>
     </section>

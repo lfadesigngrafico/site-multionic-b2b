@@ -5,38 +5,51 @@ import { Link } from 'react-router-dom';
 const solutions = [
   {
     id: 1,
-    title: "Desengraxantes industriais",
-    text: "Soluções para limpeza técnica com eficiência, segurança e alto desempenho.",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$zglgyd5dg0s",
-    buttonText: "Ver soluções"
+    title: "SABONETES",
+    text: "Higiene e proteção com fórmulas suaves e eficientes. Conheça nossas opções para diferentes necessidades.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b950023172405940.jpg"
   },
   {
     id: 2,
-    title: "Tratamento de pisos",
-    text: "Produtos para conservação, proteção e melhor resultado na rotina de limpeza.",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$xvptwvqxjcd",
-    buttonText: "Ver soluções"
+    title: "DESENGRAXANTES",
+    text: "Remova graxas e resíduos com máxima eficácia. Soluções poderosas para indústrias e oficinas.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b9505e4483220872.jpg"
   },
   {
     id: 3,
-    title: "Higiene das mãos",
-    text: "Soluções para assepsia, higiene profissional e cuidados em ambientes de alta exigência.",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$q4zmgv0vrp",
-    buttonText: "Ver soluções"
+    title: "COZINHA INDUSTRIAL",
+    text: "Higienização segura e eficiente para cozinhas profissionais. Mantenha o padrão de qualidade do seu negócio.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b952447433171858.jpg"
   },
   {
     id: 4,
-    title: "Cozinha industrial",
-    text: "Produtos para ambientes que exigem controle, produtividade e limpeza pesada.",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$rkn1g5yuk1a",
-    buttonText: "Ver soluções"
+    title: "LAVANDERIA",
+    text: "Cuidado e performance para tecidos impecáveis. Descubra nossas soluções para lavagem profissional.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b952f9d683905738.jpg"
   },
   {
     id: 5,
-    title: "Sua marca, nossa produção",
-    text: "Estrutura industrial e capacidade produtiva para projetos sob demanda.",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$qevk7jvr9bq",
-    buttonText: "Saiba mais"
+    title: "LIMPEZA GERAL",
+    text: "Produtos versáteis para uma limpeza completa e eficiente. Descubra nossa linha de soluções profissionais.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b9514d2822242195.jpg"
+  },
+  {
+    id: 6,
+    title: "TRATAMENTO DE PISOS",
+    text: "Proteção e brilho para superfícies impecáveis. Encontre o produto ideal para o seu ambiente.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b95101a031881655.jpg"
+  },
+  {
+    id: 7,
+    title: "ESPECÍFICOS",
+    text: "Soluções químicas avançadas para necessidades especiais. Eficiência e inovação a serviço da sua empresa.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b953650615921925.jpg"
+  },
+  {
+    id: 8,
+    title: "OUTROS",
+    text: "Soluções especiais para demandas únicas. Produtos desenvolvidos para diferentes desafios de limpeza.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b951ed2048352243.jpg"
   }
 ];
 
@@ -51,7 +64,7 @@ export default function Solutions() {
             viewport={{ once: true }}
             className="text-2xl md:text-3xl font-bold text-brand-primary mb-4 uppercase"
           >
-            Soluções para diferentes necessidades da operação
+            Produtos para diferentes necessidades da operação
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -64,9 +77,11 @@ export default function Solutions() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0">
           {solutions.map((item, idx) => (
-            <SolutionCard key={item.id} item={item} delay={idx * 0.1} />
+            <Link key={item.id} to="/solucoes">
+              <SolutionCard item={item} delay={idx * 0.05} />
+            </Link>
           ))}
         </div>
 
@@ -82,7 +97,7 @@ export default function Solutions() {
             to="/solucoes" 
             className="flex items-center gap-2 text-brand-secondary font-black text-sm uppercase tracking-widest hover:gap-4 transition-all duration-300 group"
           >
-            Ver todas as soluções
+            Ver todos os produtos
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
           </Link>
         </motion.div>
@@ -94,32 +109,37 @@ export default function Solutions() {
 function SolutionCard({ item, delay }: any) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ delay, duration: 0.5 }}
-      whileHover={{ y: -5 }}
-      className="bg-white rounded-none shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col h-full overflow-hidden"
+      className="relative aspect-square overflow-hidden group cursor-pointer"
     >
-      <div className="w-full aspect-square overflow-hidden bg-white">
-        <img 
-          src={item.image} 
-          alt={item.title}
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-          referrerPolicy="no-referrer"
-        />
-      </div>
-      <div className="p-4 md:p-6 flex flex-col flex-grow">
-        <h3 className="text-sm md:text-base font-bold text-brand-primary mb-3 uppercase tracking-tight leading-tight">
+      {/* Imagem de Fundo */}
+      <img 
+        src={item.image} 
+        alt={item.title}
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        referrerPolicy="no-referrer"
+      />
+      
+      {/* Overlay Escurecido Padrão */}
+      <div className="absolute inset-0 bg-black/25 transition-opacity duration-300 group-hover:opacity-0" />
+      
+      {/* Overlay Azul de Hover */}
+      <div className="absolute inset-0 bg-[#0877E1]/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+      {/* Conteúdo Centralizado */}
+      <div className="absolute inset-0 p-6 flex flex-col items-center justify-center text-center">
+        <h3 className="text-white text-base md:text-lg font-bold uppercase tracking-[0.2em] pl-[0.2em] leading-tight transition-transform duration-500 group-hover:-translate-y-8">
           {item.title}
         </h3>
-        <p className="text-black text-xs md:text-sm mb-6 flex-grow font-normal leading-relaxed overflow-hidden">
-          {item.text}
-        </p>
-        <button className="flex items-center text-brand-secondary font-bold text-[10px] md:text-xs group hover:gap-2 transition-all uppercase tracking-wider mt-auto">
-          {item.buttonText}
-          <ArrowRight className="ml-1 w-3 h-3 transition-transform group-hover:translate-x-1" />
-        </button>
+        
+        <div className="absolute inset-x-6 bottom-12 md:bottom-16 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+          <p className="text-white text-xs md:text-sm font-medium leading-relaxed">
+            {item.text}
+          </p>
+        </div>
       </div>
     </motion.div>
   );

@@ -53,7 +53,7 @@ export default function Segments() {
             transition={{ delay: 0.1 }}
             className="text-white/80 text-lg font-normal leading-relaxed"
           >
-            A Multionic atende diferentes contextos industriais e operacionais, com foco em aplicações que exigem desempenho, segurança e suporte técnico.
+            A Multionic atende a grande variedade de segmentos da indústria em geral, com suporte técnico para as mais diversas necessidades em limpeza industrial, proporcionando a segurança que a sua empresa precisa. Confira abaixo alguns segmentos e fale conosco para mais informações sobre o segmento da sua empresa.
           </motion.p>
         </div>
 

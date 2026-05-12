@@ -53,21 +53,70 @@ const differentials = [
   }
 ];
 
-const faqs = [
-  { q: "Quais são os horários de atendimento?", a: "Nosso atendimento acontece de segunda a sexta-feira, das 8h às 17h. Fora desse horário, você pode enviar sua solicitação pelo formulário, WhatsApp ou e-mail para retorno no próximo período útil." },
-  { q: "Posso visitar a Multionic?", a: "Visitas podem ser avaliadas conforme a necessidade e o contexto do atendimento." },
-  { q: "Como faço para comprar produtos?", a: "O primeiro passo é entrar em contato com nosso time e apresentar sua necessidade." },
-  { q: "Posso falar com alguém antes de definir o produto?", a: "Sim. Nosso time pode orientar o melhor caminho antes da definição." },
-  { q: "Como solicitar ficha técnica?", a: "Você pode solicitar pelos canais desta página, como o botão \"Solicitar ficha técnica\" em nossas seções comerciais." },
-  { q: "A FISPQ fica disponível?", a: "Disponibilizada mediante solicitação oficial para garantir a versão correta." },
-  { q: "Posso solicitar amostra?", a: "Depende de análise técnica e comercial específica para cada projeto." },
-  { q: "Atendimento fora de SP?", a: "Sim, atendemos empresas em todo o território nacional conforme o contexto da operação." },
-  { q: "É possível visita técnica?", a: "Em casos específicos e após uma triagem inicial, visitas técnicas podem ser agendadas via avaliação." },
-  { q: "Melhor canal?", a: "Para agilidade imediata, recomendamos o WhatsApp. Para demandas mais detalhadas ou técnicas, o formulário e e-mail são ideais." },
+const faqGroups = [
+  {
+    title: "SOBRE A MULTIONIC",
+    questions: [
+      { q: "Quem é a Multionic e quais setores atende?", a: "Somos uma indústria química com mais de 40 anos de trajetória, referência no mercado B2B. Nossos produtos atendem empresas dos mais variados segmentos, desde indústrias de grande porte até negócios institucionais e comerciais. Nosso compromisso é desenvolver soluções que garantam higiene, eficiência e segurança em cada aplicação." },
+      { q: "Por que a Multionic é diferente das outras empresas do setor?", a: "Somos mais do que uma indústria química. Somos um parceiro estratégico para nossos clientes, oferecendo não apenas produtos de alta performance, mas também suporte consultivo, inovação contínua e uma estrutura produtiva ágil e escalável. Nosso diferencial está na flexibilidade e na capacidade de personalização para cada demanda. Além disso, somos uma empresa tradicional com mais 40 anos ininterruptos atendendo grandes marcas que têm os mais rigorosos padrões de exigência e qualidade.\n\nSão mais de 4 décadas criando histórias e parcerias confiáveis de longa data." },
+      { q: "Em que regiões do Brasil a Multionic atua?", a: "Nossa operação abrange todo o território nacional, assegurando entregas ágeis e eficientes para empresas de diversos setores." }
+    ]
+  },
+  {
+    title: "PRODUTOS E SOLUÇÕES",
+    questions: [
+      { q: "Quais tipos de produtos a Multionic fabrica?", a: "Desenvolvemos soluções para limpeza institucional e industrial, além de uma linha voltada ao varejo. Nosso portfólio inclui desengraxantes, produtos para tratamento de pisos, desinfetantes, sabonetes, detergentes e outras formulações de alta performance." },
+      { q: "Os produtos Multionic possuem certificações de qualidade?", a: "Sim, seguimos rigorosos padrões de controle de qualidade e estamos em conformidade com todas as regulamentações vigentes. Nossa produção segue normas internacionais para garantir máxima eficiência, segurança e respeito ao meio ambiente." },
+      { q: "Posso solicitar amostras dos produtos?", a: "Entre em contato com nossa equipe e informe sua necessidade. Nosso time técnico avaliará seu contexto e recomendará as melhores soluções, com possibilidade de envio de amostras para testes." }
+    ]
+  },
+  {
+    title: "TERCEIRIZAÇÃO",
+    questions: [
+      { q: "O que significa terceirizar a produção com a Multionic?", a: "Significa transformar seu projeto em um produto de alta qualidade, sem a necessidade de investir em infraestrutura própria. Oferecemos todo o suporte necessário para desenvolver ou expandir produtos de sua linha. Com nossa expertise e tecnologia, você pode focar no crescimento da sua marca, enquanto nós gerenciamos toda a produção com qualidade e segurança. A terceirização é parte fundamental da Multionic desde sua fundação na década de 1980." },
+      { q: "Quais são os modelos de terceirização disponíveis?", a: "Oferecemos três formatos para atender diferentes necessidades:\n\n1️⃣ Envase: Se você já possui a fórmula, cuidamos do envase com o padrão de qualidade Multionic.\n\n2️⃣ Fabricação + Envase: Produzimos e envasamos seus produtos, seguindo nossos rigorosos padrões técnicos.\n\n3️⃣ Desenvolvimento, Fabricação e Envase: Criamos a fórmula ideal para seu negócio, fabricamos e entregamos o produto pronto para o mercado." },
+      { q: "Minha empresa pode colocar sua própria marca nos produtos? Vocês fazem Private Label?", a: "Sim! Trabalhamos com Private Label, garantindo que sua marca esteja presente em produtos de alta performance fabricados pela Multionic. Além disso, oferecemos suporte consultivo para criação de embalagens e personalização estratégica." },
+      { q: "Minha empresa pode colocar sua própria marca nos produtos?", a: "Sim, oferecemos soluções para sua marca própria, permitindo que sua empresa comercialize produtos de alta performance fabricados pela Multionic." }
+    ]
+  },
+  {
+    title: "PEDIDOS E LOGÍSTICA",
+    questions: [
+      { q: "Qual é o pedido mínimo para compras B2B?", a: "O volume mínimo varia conforme o tipo de produto e a complexidade da personalização. Entre em contato com nossa equipe para avaliar sua necessidade e oferecer a melhor solução para o seu negócio." },
+      { q: "Quais são os prazos médios de entrega?", a: "Nosso prazo de entrega varia conforme a demanda e a localização do cliente, mas trabalhamos com uma logística eficiente para garantir agilidade e segurança. Consulte nossa equipe comercial para prazos específicos." },
+      { q: "A Multionic realiza entregas para fora do Brasil?", a: "Atualmente, nosso foco está no mercado nacional, mas para demandas especiais, podemos estudar a viabilidade de exportação. Entre em contato para saber mais." }
+    ]
+  },
+  {
+    title: "ATENDIMENTO COMERCIAL E SUPORTE",
+    questions: [
+      { q: "Como posso falar com o time comercial da Multionic?", a: "Basta clicar aqui → para ser direcionado ao WhatsApp do time comercial da Multionic. Você também pode entrar em contato por e-mail através do formulário na página do departamento comercial clicando aqui → .\n\nSe preferir, ligue para nós no telefone (12) 3686 1511. Nossa equipe está pronta para entender suas necessidades e oferecer as melhores soluções para o seu negócio." },
+      { q: "Quais os horários de atendimento?", a: "Nosso atendimento comercial funciona de segunda a sexta-feira, das 8h às 18h. Mas se precisar de suporte fora desse horário, não se preocupe! Contamos com a Ray, nossa inteligência artificial exclusiva, que está disponível 24 horas por dia, 7 dias por semana, 365 dias por ano via WhatsApp, oferecendo um atendimento conversacional, humanizado e altamente eficiente.\n\nAlém disso, nosso bot de atendimento no Instagram também está sempre ativo, pronto para esclarecer dúvidas, direcionar soluções e agilizar sua experiência, independente do dia ou horário. Nossa tecnologia garante que sua empresa tenha suporte e respostas em tempo real, sem filas de espera e com a qualidade que você merece." },
+      { q: "A Multionic oferece suporte técnico sobre os produtos?", a: "Sim! Nosso time técnico está disponível para esclarecer dúvidas sobre a aplicação dos produtos, melhores práticas e orientações específicas para sua empresa." },
+      { q: "A Multionic assegura a qualidade de seus produtos?", a: "Sim! Todos os produtos da Multionic são desenvolvidos com alto rigor técnico e passam por um controle de qualidade criterioso. Garantimos a conformidade com as especificações técnicas e padrões regulatórios do setor. Caso identifique qualquer inconsistência, nossa equipe está pronta para avaliar e fornecer suporte imediato, assegurando a melhor experiência para sua empresa.\n\nAlém disso, oferecemos suporte técnico especializado para orientar sobre o uso correto dos produtos, garantindo máxima eficiência e segurança em cada aplicação." }
+    ]
+  },
+  {
+    title: "ALGUMAS DÚVIDAS TÉCNICAS COMUNS",
+    questions: [
+      { q: "O que significa um produto ser alcalino, não alcalino ou pH neutro?", a: "O pH de um produto indica seu nível de acidez ou alcalinidade, influenciando diretamente sua eficácia e aplicação:\n\nAlcalino: Indicado para remoção de sujeiras pesadas, como óleos e graxas. Muito utilizado em indústrias e limpeza de equipamentos.\nNão Alcalino: Menos agressivo, indicado para superfícies delicadas ou materiais que podem ser danificados por produtos alcalinos.\npH Neutro: Equilibrado, ideal para limpezas que exigem suavidade sem comprometer a eficácia, como em ambientes hospitalares ou superfícies sensíveis.\n\n✅ Saiba Qual pH é Ideal Para Você\nEntre em contato para saber mais." },
+      { q: "O que é BTX e o que significa BTX-Free?", a: "BTX se refere a compostos químicos como Benzeno, Tolueno e Xileno, substâncias que podem ser agressivas à saúde e ao meio ambiente. Produtos BTX-Free são formulações mais seguras, ideais para locais que exigem menor toxicidade e menor impacto ambiental, sem perder a eficiência na limpeza." },
+      { q: "O que são tensoativos e por que são importantes?", a: "Tensoativos são substâncias que reduzem a tensão superficial entre dois líquidos ou entre um líquido e uma superfície, facilitando a remoção de sujeiras e resíduos. Eles são fundamentais em produtos de limpeza, pois ajudam a dispersar e remover partículas oleosas ou insolúveis em água.\n\n✅ Entenda Como Tensoativos Melhoram a Limpeza\nEntre em contato para saber mais." },
+      { q: "O que é solvente glicólico e qual seu impacto na limpeza?", a: "O solvente glicólico é um poderoso agente de limpeza, altamente eficaz na remoção de óleos, graxas e sujeiras pesadas. Ele oferece alto poder de penetração e dissolução, sendo utilizado em desengraxantes industriais e produtos para limpeza de máquinas, motores e superfícies contaminadas com resíduos difíceis.\n\n✅ Saiba Mais Sobre Solventes Glicólicos" },
+      { q: "Produtos com ou sem espuma: qual escolher?", a: "A escolha entre um produto com ou sem espuma depende do seu tipo de aplicação:\n\nCom espuma: Ideal para limpezas em que a espuma ajuda a prolongar o tempo de contato do produto com a superfície, melhorando a remoção de sujeira.\nSem espuma: Indicado para sistemas automatizados e máquinas lavadoras industriais, onde a espuma pode comprometer a eficiência dos equipamentos.\n\n✅ Descubra a Melhor Opção Para o Seu Negócio" },
+      { q: "Há negociação para compras de grandes volumes?", a: "Para empresas que utilizam grandes quantidades de produtos químicos, a compra em volume oferece benefícios como preços mais competitivos, frete otimizado e redução de custos operacionais. A Multionic também pode oferecer condições exclusivas para compras em larga escala, distribuidores e revendedores.\n\n✅ Solicite uma Cotação Personalizada" },
+      { q: "Quantidade x Preço: como escolher a melhor opção para minha empresa?", a: "Cada operação tem necessidades diferentes. Se sua empresa consome grandes volumes, comprar em maior quantidade pode ser mais vantajoso. No entanto, se precisa testar um produto ou tem menor consumo, oferecemos opções em diferentes tamanhos. Nossa equipe comercial pode ajudar a calcular o melhor custo-benefício para você.\n\n✅ Fale Com Um Especialista e Otimize Seus Custos" },
+      { q: "Como escolher o produto certo para minha necessidade?", a: "A escolha do produto ideal depende de vários fatores: tipo de sujeira, superfície a ser limpa, equipamentos disponíveis e necessidade de compatibilidade química. Se tiver dúvidas, nossa equipe está pronta para indicar a melhor solução para sua realidade.\n\n✅ Descubra a Melhor Solução Para Sua Limpeza" }
+    ]
+  }
 ];
 
 export default function ContactPage() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeId, setActiveId] = useState<string | null>(null);
+
+  const toggleAccordion = (id: string) => {
+    setActiveId(activeId === id ? null : id);
+  };
 
   return (
     <div className="bg-white">
@@ -159,7 +208,7 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-1">
                     <label className="text-[10px] font-bold text-brand-primary uppercase tracking-widest pl-1">Seu melhor e-mail</label>
-                    <input type="email" className="w-full bg-white border border-gray-200 px-4 py-3 text-black text-sm outline-none focus:border-brand-secondary transition-colors" placeholder="exemplo@empresa.com" />
+                    <input type="email" className="w-full bg-white border border-gray-200 px-4 py-3 text-black text-sm outline-none focus:border-brand-secondary transition-colors" placeholder="exemplo@exemplo.com" />
                   </div>
                   <div className="space-y-1">
                     <label className="text-[10px] font-bold text-brand-primary uppercase tracking-widest pl-1">Telefone / WhatsApp</label>
@@ -169,8 +218,8 @@ export default function ContactPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <label className="text-[10px] font-bold text-brand-primary uppercase tracking-widest pl-1">Empresa</label>
-                    <input type="text" className="w-full bg-white border border-gray-200 px-4 py-3 text-black text-sm outline-none focus:border-brand-secondary transition-colors" placeholder="Nome da empresa" />
+                    <label className="text-[10px] font-bold text-brand-primary uppercase tracking-widest pl-1">CNPJ</label>
+                    <input type="text" className="w-full bg-white border border-gray-200 px-4 py-3 text-black text-sm outline-none focus:border-brand-secondary transition-colors" placeholder="00.000.000/0000-00" />
                   </div>
                   <div className="space-y-1">
                     <label className="text-[10px] font-bold text-brand-primary uppercase tracking-widest pl-1">Cidade / Estado</label>
@@ -337,13 +386,6 @@ export default function ContactPage() {
                   <MessageCircle size={20} />
                   Chamar no WhatsApp
                 </motion.button>
-                <motion.button 
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="btn-gray px-8 py-4 text-sm font-bold tracking-tight rounded-none shadow-none"
-                >
-                  Solicitar ficha técnica
-                </motion.button>
               </div>
             </div>
           </div>
@@ -407,7 +449,7 @@ export default function ContactPage() {
       </section>
 
       {/* 8. FAQ COMPLETA */}
-      <section className="py-24 bg-[#062e4c] border-y border-gray-100">
+      <section id="faq" className="py-24 bg-[#062e4c] border-y border-gray-100">
         <div className="container-custom max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 uppercase">
@@ -415,36 +457,48 @@ export default function ContactPage() {
             </h2>
           </div>
 
-          <div className="space-y-1">
-            {faqs.map((item, idx) => (
-              <div key={idx} className="bg-[#97dcfe] border-none rounded-none shadow-sm overflow-hidden">
-                <button 
-                  onClick={() => setActiveIndex(activeIndex === idx ? null : idx)}
-                  className="w-full flex items-center justify-between px-6 py-5 text-left transition-colors hover:opacity-95"
-                >
-                  <span className="font-bold text-[#062e4c] text-base md:text-lg">
-                    {item.q}
-                  </span>
-                  <motion.div
-                    animate={{ rotate: activeIndex === idx ? 180 : 0 }}
-                  >
-                    <ChevronDown className="text-[#062e4c] w-5 h-5" />
-                  </motion.div>
-                </button>
-                <AnimatePresence>
-                  {activeIndex === idx && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <div className="px-6 pb-6 text-[#062e4c] font-medium text-base leading-relaxed">
-                        {item.a}
+          <div className="space-y-12">
+            {faqGroups.map((group, groupIdx) => (
+              <div key={groupIdx} className="space-y-4">
+                <h3 className="text-lg md:text-xl font-black text-white uppercase tracking-wider mb-6 border-b border-white/10 pb-2">
+                  {group.title}
+                </h3>
+                <div className="space-y-1">
+                  {group.questions.map((item, idx) => {
+                    const itemId = `${groupIdx}-${idx}`;
+                    return (
+                      <div key={idx} className="bg-[#97dcfe] border-none rounded-none shadow-sm overflow-hidden">
+                        <button 
+                          onClick={() => toggleAccordion(itemId)}
+                          className="w-full flex items-center justify-between px-6 py-5 text-left transition-colors hover:opacity-95"
+                        >
+                          <span className="font-bold text-[#062e4c] text-base md:text-lg">
+                            {item.q}
+                          </span>
+                          <motion.div
+                            animate={{ rotate: activeId === itemId ? 180 : 0 }}
+                          >
+                            <ChevronDown className="text-[#062e4c] w-5 h-5" />
+                          </motion.div>
+                        </button>
+                        <AnimatePresence>
+                          {activeId === itemId && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.3 }}
+                            >
+                              <div className="px-6 pb-6 text-[#062e4c] font-medium text-base leading-relaxed whitespace-pre-line">
+                                {item.a}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                    );
+                  })}
+                </div>
               </div>
             ))}
           </div>
@@ -452,6 +506,7 @@ export default function ContactPage() {
       </section>
 
       {/* 9. CTA FINAL */}
+
       <section className="py-24 bg-white border-t border-gray-100 overflow-hidden relative group">
         {/* Background Icon */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none z-0">
@@ -484,13 +539,6 @@ export default function ContactPage() {
             >
               <MessageCircle size={20} />
               Chamar no WhatsApp
-            </motion.button>
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="btn-gray px-12 py-5 font-bold uppercase tracking-tight"
-            >
-              Solicitar ficha técnica
             </motion.button>
           </div>
         </div>

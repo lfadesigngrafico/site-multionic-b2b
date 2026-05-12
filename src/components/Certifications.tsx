@@ -1,12 +1,5 @@
 import { motion } from 'motion/react';
-import { ShieldCheck, ClipboardCheck, FileCheck, CheckCircle2 } from 'lucide-react';
-
-const certs = [
-  { name: "Licença Ambiental", icon: <ShieldCheck className="w-12 h-12" /> },
-  { name: "Alvará Sanitário", icon: <ClipboardCheck className="w-12 h-12" /> },
-  { name: "Certificado de Conformidade", icon: <FileCheck className="w-12 h-12" /> },
-  { name: "Normas Técnicas ABNT", icon: <CheckCircle2 className="w-12 h-12" /> },
-];
+import { ShieldCheck } from 'lucide-react';
 
 export default function Certifications() {
   return (
@@ -32,24 +25,40 @@ export default function Certifications() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {certs.map((item, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="flex flex-col items-center justify-center p-8 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
-            >
-              <div className="text-brand-primary mb-4">
-                {item.icon}
-              </div>
-              <span className="text-xs font-bold text-brand-primary uppercase tracking-tighter text-center">
-                {item.name}
-              </span>
-            </motion.div>
-          ))}
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex gap-4 p-8 bg-gray-50 border border-gray-100 shadow-sm"
+          >
+            <div className="text-brand-primary shrink-0">
+              <ShieldCheck className="w-10 h-10" />
+            </div>
+            <div>
+              <h4 className="text-brand-primary font-black uppercase text-sm mb-2 tracking-wider">ISO 9000 & LGPD</h4>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                A Multionic atua de acordo com os rigorosos padrões de excelência da ISO 9001 e em total conformidade com a Lei Geral de Proteção de Dados (LGPD).
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex gap-4 p-8 bg-gray-50 border border-gray-100 shadow-sm"
+          >
+            <div className="text-brand-primary shrink-0">
+              <ShieldCheck className="w-10 h-10" />
+            </div>
+            <div>
+              <h4 className="text-brand-primary font-black uppercase text-sm mb-2 tracking-wider">Selo EURECICLO</h4>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                Seguindo nosso compromisso ambiental, conquistamos o selo EURECICLO.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

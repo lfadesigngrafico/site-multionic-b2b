@@ -18,7 +18,7 @@ export default function Header() {
 
   const navLinks = [
     { name: 'Home', href: '/', type: 'internal' },
-    { name: 'Soluções', href: '/solucoes', type: 'internal' },
+    { name: 'Produtos', href: '/solucoes', type: 'internal' },
     { name: 'Segmentos atendidos', href: '/segmentos', type: 'internal' },
     { name: 'Sua marca, nossa produção', href: '/#marca-propria', type: 'anchor' },
     { name: 'Sobre a Multionic', href: '/#sobre', type: 'anchor' },
@@ -79,9 +79,6 @@ export default function Header() {
 
         {/* Desktop Actions */}
         <div className="hidden lg:flex items-center space-x-3">
-          <button className="btn-gray px-4 py-2 text-[10px] font-bold tracking-tight shadow-none rounded-none transition-all duration-300">
-            Solicitar ficha técnica
-          </button>
           <button className="btn-primary px-4 py-2 text-[10px] font-bold tracking-tight shadow-none rounded-none">
             Fale com um especialista
           </button>
@@ -138,9 +135,6 @@ export default function Header() {
                 );
               })}
               <div className="pt-4 flex flex-col space-y-3 px-2">
-                <button className="btn-gray px-6 py-4 text-sm font-bold tracking-tight shadow-none rounded-none transition-all duration-300 uppercase">
-                  Solicitar ficha técnica
-                </button>
                 <button className="btn-primary w-full py-4 text-sm font-bold tracking-tight shadow-none rounded-none uppercase">
                   Fale com um especialista
                 </button>

@@ -1,21 +1,26 @@
-import { motion } from 'motion/react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { 
+  ChevronDown,
+  ChevronUp,
   ChevronRight, 
   CheckCircle2, 
   Package, 
   MessageSquare, 
-  ArrowRight
+  ArrowRight,
+  Star
 } from 'lucide-react';
 
 const products = [
   {
     name: "Raylin Desengraxante Multiuso",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$751hst5yfa9",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1778611299/$5155ofc9mcw",
     highlights: ["Ação imediata", "Baixa alcalinidade", "Base aquosa", "Com solvente glicólico"],
     description: "Desenvolvido para a remoção manual de óleos e graxas em máquinas, peças, equipamentos, veículos, pisos e superfícies laváveis. É uma solução de ação rápida, não inflamável, formulada para unir desempenho e segurança na rotina operacional.",
     indication: "Indicado para remoção imediata de óleos e graxas.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
+    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC).",
+    isBestSeller: true
   },
   {
     name: "Raylin Desengraxante Multiuso GF",
@@ -85,134 +90,247 @@ const products = [
 
 const categories = [
   {
-    title: "Sabonetes",
-    text: "Soluções para assepsia, higiene profissional e cuidados em ambientes que exigem segurança e padronização.",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$q4zmgv0vrp",
+    title: "SABONETES",
+    text: "Higiene e proteção com fórmulas suaves e eficientes. Conheça nossas opções para diferentes necessidades.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b950023172405940.jpg",
     href: "/solucoes/sabonetes"
   },
   {
-    title: "Desengraxantes",
-    text: "Produtos para limpeza técnica, remoção de óleos e graxas e alto desempenho em diferentes contextos industriais.",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$zglgyd5dg0s",
+    title: "DESENGRAXANTES",
+    text: "Remova graxas e resíduos com máxima eficácia. Soluções poderosas para indústrias e oficinas.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b9505e4483220872.jpg",
     href: "/solucoes/desengraxantes"
   },
   {
-    title: "Cozinha industrial",
-    text: "Soluções para ambientes que exigem controle, produtividade e limpeza pesada com mais segurança na operação.",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$rkn1g5yuk1a",
+    title: "COZINHA INDUSTRIAL",
+    text: "Higienização segura e eficiente para cozinhas profissionais. Mantenha o padrão de qualidade do seu negócio.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b952447433171858.jpg",
     href: "/solucoes/cozinha"
   },
   {
-    title: "Lavanderia",
-    text: "Produtos para processos de lavagem profissional, com foco em desempenho, recorrência e praticidade de uso.",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$ysa0c5u5b7",
+    title: "LAVANDERIA",
+    text: "Cuidado e performance para tecidos impecáveis. Descubra nossas soluções para lavagem profissional.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b952f9d683905738.jpg",
     href: "/solucoes/lavanderia"
   },
   {
-    title: "Limpeza geral",
-    text: "Soluções versáteis para conservação, limpeza de rotina e manutenção de ambientes profissionais.",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$rlrsa0w6gop",
+    title: "LIMPEZA GERAL",
+    text: "Produtos versáteis para uma limpeza completa e eficiente. Descubra nossa linha de soluções profissionais.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b9514d2822242195.jpg",
     href: "/solucoes/limpeza-geral"
   },
   {
-    title: "Tratamento de pisos",
-    text: "Produtos para conservação, proteção, restauração e melhor resultado na rotina de limpeza e manutenção de pisos.",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$xvptwvqxjcd",
+    title: "TRATAMENTO DE PISOS",
+    text: "Proteção e brilho para superfícies impecáveis. Encontre o produto ideal para o seu ambiente.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b95101a031881655.jpg",
     href: "/solucoes/pisos"
   },
   {
-    title: "Específicos",
-    text: "Soluções desenvolvidas para aplicações técnicas e necessidades mais direcionadas de limpeza profissional.",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$es6y6n9bweo",
+    title: "ESPECÍFICOS",
+    text: "Soluções químicas avançadas para necessidades especiais. Eficiência e inovação a serviço da sua empresa.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b953650615921925.jpg",
     href: "/solucoes/especificos"
   },
   {
-    title: "Outros",
-    text: "Produtos complementares para operações que demandam soluções específicas além das linhas principais.",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$hzt955zerli",
+    title: "OUTROS",
+    text: "Soluções especiais para demandas únicas. Produtos desenvolvidos para diferentes desafios de limpeza.",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b951ed2048352243.jpg",
     href: "/solucoes/outros"
   }
 ];
 
+const ProductCard: React.FC<{ product: any; idx: number }> = ({ product, idx }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: (idx % 3) * 0.1 }}
+      className="bg-[#F8F9FA] border border-gray-100 rounded-none shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full overflow-hidden"
+    >
+      {/* 1. Imagem e Tag LÍDER DE VENDAS */}
+      <div className="relative w-full aspect-square overflow-hidden bg-[#F8F9FA] border-b border-gray-50 p-4">
+        {product.isBestSeller && (
+          <div className="absolute top-0 right-0 z-10 flex items-center gap-2.5 bg-brand-secondary text-white px-5 py-4 rounded-bl-[25px] shadow-xl">
+            <div className="flex items-center justify-center w-8 h-8 rounded-full border-2 border-white/40">
+              <Star size={14} fill="white" strokeWidth={0} />
+            </div>
+            <div className="flex flex-col leading-[1]">
+              <span className="text-[14px] font-bold uppercase tracking-tight opacity-90">LÍDER DE</span>
+              <span className="text-[16px] font-black uppercase tracking-tight">VENDAS</span>
+            </div>
+          </div>
+        )}
+        <img 
+          src={product.image} 
+          alt={product.name}
+          className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+
+      {/* 2. Conteúdo Fixo */}
+      <div className="p-8 pb-0 flex flex-col">
+        <h3 className="text-xl font-bold text-brand-primary uppercase mb-6 min-h-[3rem]">
+          {product.name}
+        </h3>
+
+        <div className="flex flex-wrap gap-2 mb-8">
+          {product.highlights.map((h: string, i: number) => (
+            <span key={i} className="text-[10px] font-bold uppercase tracking-wider text-brand-secondary bg-brand-secondary/5 px-2 py-1 rounded">
+              {h}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* 3. Área de Expansão / Botão Saiba Mais */}
+      <div className="mt-auto flex flex-col">
+        {/* Botão Saiba Mais - Apenas Mobile */}
+        {!isExpanded && (
+          <button 
+            onClick={() => setIsExpanded(true)}
+            className="md:hidden w-full bg-[#3B59C8] hover:bg-brand-primary text-white py-4 px-8 flex items-center justify-between transition-colors duration-300 shadow-lg group"
+          >
+            <span className="text-sm font-black uppercase tracking-widest">Saiba mais</span>
+            <ChevronDown size={24} strokeWidth={3} />
+          </button>
+        )}
+
+        {/* Detalhes do Produto - Sempre visíveis no desktop, toggle no mobile */}
+        <div className={`${isExpanded ? 'block' : 'hidden md:block'} border-t border-gray-100`}>
+          <div className="p-8 pt-6 flex flex-col">
+            <p className="text-black text-sm font-normal leading-relaxed mb-8">
+              {product.description}
+            </p>
+
+            <div className="bg-white p-6 rounded-none mb-8 border border-gray-100">
+              <span className="text-[10px] uppercase font-bold text-gray-400 block mb-3 tracking-widest">Indicação principal</span>
+              <p className="text-brand-primary font-bold text-base leading-snug">{product.indication}</p>
+            </div>
+
+            <div className="mb-10">
+              <span className="text-[10px] uppercase font-bold text-gray-400 block mb-3 tracking-widest">Disponível em</span>
+              <div className="flex items-start space-x-3">
+                <Package size={18} className="text-gray-400 flex-shrink-0" />
+                <p className="text-[12px] text-gray-500 font-medium leading-tight">{product.packaging}</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 gap-4 mb-8">
+              <button className="btn-primary w-full py-4 uppercase font-bold text-xs shadow-none border-none tracking-widest">
+                Solicitar orçamento
+              </button>
+              <button className="btn-gray w-full py-4 uppercase font-bold text-xs shadow-none border-none tracking-widest">
+                Solicitar ficha técnica
+              </button>
+            </div>
+
+            {/* Botão de fechar - Apenas Mobile */}
+            <button 
+              onClick={() => setIsExpanded(false)}
+              className="md:hidden w-full flex items-center justify-center py-2 text-gray-400 hover:text-brand-primary transition-colors cursor-pointer group"
+            >
+              <ChevronUp size={32} strokeWidth={2} className="group-hover:-translate-y-1 transition-transform" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
 export default function DesengraxantesPage() {
   return (
     <div className="bg-white">
-      {/* 1. HERO */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-white overflow-hidden">
-        <div className="container-custom relative z-10">
-          <div className="max-w-[1200px] mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                {/* 2. BREADCRUMB */}
-                <div className="flex items-center space-x-2 text-xs text-gray-500 mb-6 uppercase tracking-widest font-bold">
-                  <span>Você está em</span>
-                  <ChevronRight size={10} />
-                  <Link to="/" className="hover:text-brand-secondary transition-colors">Home</Link>
-                  <ChevronRight size={10} />
-                  <Link to="/solucoes" className="hover:text-brand-secondary transition-colors">Soluções</Link>
-                  <ChevronRight size={10} />
-                  <span className="text-brand-primary">Desengraxantes industriais</span>
-                </div>
+      {/* 1. HERO / BANNER PRINCIPAL */}
+      <section className="relative h-[500px] flex items-center overflow-hidden">
+        {/* Imagem de Fundo com Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias-desengraxantes/1764873651/imagens/desktop/1295641_1_173895050767a6476b104cc.jpg" 
+            alt="Desengraxantes Industriais Banner"
+            className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
 
-                <h1 className="text-3xl md:text-5xl font-bold text-brand-primary mb-6 uppercase leading-tight">
-                  Desengraxantes industriais para limpeza técnica de alta performance
-                </h1>
-                <p className="text-black text-lg md:text-xl font-normal leading-relaxed mb-10">
-                  Soluções desenvolvidas para remover óleos, graxas e sujeiras pesadas com eficiência, segurança e melhor desempenho em diferentes aplicações industriais.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="btn-primary py-5 px-10 uppercase text-xs font-bold shadow-none rounded-none">
-                    Fale com um especialista
-                  </button>
-                  <button className="btn-gray py-5 px-10 uppercase text-xs font-bold shadow-none rounded-none">
-                    Solicitar ficha técnica
-                  </button>
-                </div>
-              </motion.div>
-              <div className="hidden lg:block relative">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 1 }}
-                >
-                  <img 
-                    src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$751hst5yfa9" 
-                    alt="Industrial cleaning application" 
-                    className="rounded-none shadow-none"
-                    referrerPolicy="no-referrer"
-                  />
-                </motion.div>
+        <div className="container-custom relative z-10 w-full">
+          <div className="max-w-[1200px] text-left">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="flex flex-col"
+            >
+              <span className="text-white text-[10px] md:text-sm font-bold uppercase tracking-[0.4em] mb-3 opacity-90">
+                CATEGORIAS
+              </span>
+              <h1 className="text-3xl md:text-5xl font-black text-white uppercase leading-tight tracking-tight mb-8">
+                DESENGRAXANTES
+              </h1>
+              <p className="text-white/90 text-lg md:text-xl font-medium leading-relaxed max-w-2xl">
+                Remova graxas e resíduos com máxima eficácia. Soluções poderosas para indústrias, maquinários e peças.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. MENU DE CATEGORIAS (OVERLAP) */}
+      <div className="relative z-20 -mt-12 mb-12">
+        <div className="container-custom px-0 md:px-4">
+          <div className="bg-[#014486] shadow-2xl py-6 px-4 md:px-10">
+            <div className="flex flex-col items-center">
+              <span className="text-white/60 text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] mb-6 border-b border-white/10 pb-4 w-full text-center">
+                OUTRAS CATEGORIAS
+              </span>
+              
+              <div className="flex flex-nowrap items-center justify-start md:justify-center gap-x-4 md:gap-x-8 overflow-x-auto w-full scrollbar-hide pb-2 md:pb-0">
+                {[
+                  { name: "Sabonetes", href: "/solucoes/sabonetes" },
+                  { name: "Desengraxantes", href: "/solucoes/desengraxantes" },
+                  { name: "Cozinha industrial", href: "/solucoes/cozinha" },
+                  { name: "Lavanderia", href: "/solucoes/lavanderia" },
+                  { name: "Limpeza geral", href: "/solucoes/limpeza-geral" },
+                  { name: "Tratamento de pisos", href: "/solucoes/pisos" },
+                  { name: "Específicos", href: "/solucoes/especificos" },
+                  { name: "Outros", href: "/solucoes/outros" }
+                ].map((cat, i) => (
+                  <Link 
+                    key={i} 
+                    to={cat.href}
+                    className={`text-white text-xs md:text-[13px] font-medium transition-colors transition-all whitespace-nowrap hover:text-brand-secondary ${cat.name === 'Desengraxantes' ? 'text-[#00D1FF] font-black' : ''}`}
+                  >
+                    {cat.name}
+                  </Link>
+                ))}
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 3. GRADE DE PRODUTOS */}
+      <section className="py-24 bg-white">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+            {products.map((product, idx) => (
+              <ProductCard key={idx} product={product} idx={idx} />
+            ))}
           </div>
         </div>
       </section>
 
       {/* 3. INTRODUÇÃO */}
-      <section className="py-12 bg-gray-50 border-y border-gray-100 relative">
+      <section className="py-24 bg-gray-50 border-y border-gray-100 relative overflow-visible">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Coluna Esquerda: Imagem com Overlap */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative lg:-mt-24 lg:-mb-24 z-10"
-            >
-              <img 
-                src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$ka5fbsbl96n" 
-                alt="Potência de Limpeza Multionic" 
-                className="w-full h-auto rounded-none shadow-xl pointer-events-none"
-                referrerPolicy="no-referrer"
-              />
-            </motion.div>
-
-            {/* Coluna Direita: Texto */}
-            <div>
+            {/* Coluna Esquerda: Texto */}
+            <div className="order-2 lg:order-1">
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -231,74 +349,26 @@ export default function DesengraxantesPage() {
                 Os desengraxantes Multionic foram desenvolvidos para atender demandas de limpeza técnica em ambientes industriais, operacionais e profissionais. São soluções pensadas para remover resíduos oleosos, graxas e sujeiras pesadas com mais eficiência, segurança e adequação ao contexto de uso. Fórmulas voltadas ao uso industrial, automotivo e operacional que garantem limpeza profunda mesmo em graxas difíceis.
               </motion.p>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* 4. GRADE DE PRODUTOS */}
-      <section className="py-24 bg-white">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: (idx % 3) * 0.1 }}
-                className="bg-white border border-gray-100 rounded-none shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full overflow-hidden"
-              >
-                <div className="w-full aspect-square overflow-hidden bg-white border-b border-gray-50 p-4">
-                  <img 
-                    src={product.image} 
-                    alt={product.name}
-                    className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-                <div className="p-8 flex flex-col flex-grow">
-                  <div className="mb-6 flex items-center justify-between">
-                    <h3 className="text-xl font-bold text-brand-primary uppercase">
-                      {product.name}
-                    </h3>
-                  </div>
-
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {product.highlights.map((h, i) => (
-                    <span key={i} className="text-[10px] font-bold uppercase tracking-wider text-brand-secondary bg-brand-secondary/5 px-2 py-1 rounded">
-                      {h}
-                    </span>
-                  ))}
-                </div>
-
-                <p className="text-black text-sm font-normal leading-relaxed mb-6 flex-grow">
-                  {product.description}
-                </p>
-
-                <div className="bg-gray-50/50 p-4 rounded-none mb-6 border border-gray-100">
-                  <span className="text-[10px] uppercase font-bold text-gray-500 block mb-1">Indicação principal</span>
-                  <p className="text-brand-primary font-bold text-sm">{product.indication}</p>
-                </div>
-
-                <div className="mb-8">
-                  <span className="text-[10px] uppercase font-bold text-gray-400 block mb-2">Disponível em</span>
-                  <div className="flex items-start space-x-2">
-                    <Package size={14} className="text-gray-400 mt-1 flex-shrink-0" />
-                    <p className="text-[11px] text-gray-500 font-normal leading-tight">{product.packaging}</p>
-                  </div>
-                </div>
-
-                <button className="btn-primary w-full py-4 uppercase font-bold text-xs shadow-none border-none tracking-tight">
-                  Solicitar orçamento
-                </button>
-              </div>
+            {/* Coluna Direita: Imagem com Overlap */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative lg:mb-[-8rem] z-10 order-1 lg:order-2"
+            >
+              <img 
+                src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$ka5fbsbl96n" 
+                alt="Potência de Limpeza Multionic" 
+                className="w-full h-auto rounded-none shadow-xl pointer-events-none"
+                referrerPolicy="no-referrer"
+              />
             </motion.div>
-          ))}
           </div>
         </div>
       </section>
 
-      {/* 5. BLOCO COMERCIAL */}
+      {/* 4. BLOCO COMERCIAL */}
       <section className="py-20 bg-brand-primary text-white relative">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -348,9 +418,6 @@ export default function DesengraxantesPage() {
               <div className="flex flex-col sm:flex-row justify-start gap-4">
                 <button className="bg-brand-secondary text-white px-10 py-5 font-bold uppercase tracking-tight hover:bg-white hover:text-brand-primary transition-all">
                   Fale com um especialista
-                </button>
-                <button className="btn-gray px-10 py-5 font-bold uppercase tracking-tight">
-                  Solicitar ficha técnica
                 </button>
               </div>
             </div>
@@ -420,35 +487,40 @@ export default function DesengraxantesPage() {
             <h2 className="text-2xl font-bold text-brand-primary uppercase mb-2">Navegue pelas categorias</h2>
             <p className="text-black text-lg">Conheça outras soluções da linha institucional e industrial da Multionic.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0">
             {categories.map((cat, idx) => (
               <Link key={idx} to={cat.href}>
                 <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ delay: idx * 0.05 }}
-                  whileHover={{ y: -8 }}
-                  className="group bg-white rounded-none border border-gray-100 shadow-sm transition-all duration-300 cursor-pointer h-full flex flex-col overflow-hidden hover:shadow-xl"
+                  transition={{ delay: idx * 0.05, duration: 0.5 }}
+                  className="relative aspect-square overflow-hidden group cursor-pointer"
                 >
-                  <div className="w-full aspect-square overflow-hidden bg-white">
-                    <img 
-                      src={cat.image} 
-                      alt={cat.title}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-                  <div className="p-6 md:p-8 flex flex-col flex-grow text-left">
-                    <h3 className="text-lg font-bold text-brand-primary mb-4 uppercase tracking-tight">
+                  {/* Imagem de Fundo */}
+                  <img 
+                    src={cat.image} 
+                    alt={cat.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    referrerPolicy="no-referrer"
+                  />
+                  
+                  {/* Overlay Escurecido Padrão */}
+                  <div className="absolute inset-0 bg-black/25 transition-opacity duration-300 group-hover:opacity-0" />
+                  
+                  {/* Overlay Azul de Hover */}
+                  <div className="absolute inset-0 bg-[#0877E1]/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                  {/* Conteúdo Centralizado */}
+                  <div className="absolute inset-0 p-6 flex flex-col items-center justify-center text-center">
+                    <h3 className="text-white text-base md:text-lg font-bold uppercase tracking-[0.2em] pl-[0.2em] leading-tight transition-transform duration-500 group-hover:-translate-y-8">
                       {cat.title}
                     </h3>
-                    <p className="text-black text-sm font-normal leading-relaxed mb-6 flex-grow">
-                      {cat.text}
-                    </p>
-                    <div className="flex items-center text-brand-secondary font-bold text-xs group hover:gap-2 transition-all uppercase tracking-wider mt-auto">
-                      Ver soluções
-                      <ArrowRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    
+                    <div className="absolute inset-x-6 bottom-12 md:bottom-16 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                      <p className="text-white text-xs md:text-sm font-medium leading-relaxed">
+                        {cat.text}
+                      </p>
                     </div>
                   </div>
                 </motion.div>

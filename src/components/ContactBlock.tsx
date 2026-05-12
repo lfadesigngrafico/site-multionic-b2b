@@ -50,13 +50,6 @@ export default function ContactBlock() {
               >
                 Fale com um especialista
               </motion.button>
-              <motion.button 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-gray px-8 py-4 text-sm font-bold tracking-tight rounded-none shadow-none"
-              >
-                Solicitar ficha técnica
-              </motion.button>
             </div>
           </div>
         </div>
