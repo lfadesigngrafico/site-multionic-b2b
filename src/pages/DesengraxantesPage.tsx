@@ -132,9 +132,9 @@ const categories = [
     href: "/solucoes/especificos"
   },
   {
-    title: "OUTROS",
+    title: "SUA MARCA, NOSSA PRODUÇÃO",
     text: "Soluções especiais para demandas únicas. Produtos desenvolvidos para diferentes desafios de limpeza.",
-    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b951ed2048352243.jpg",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1779725014/$dx814ryzur",
     href: "/solucoes/outros"
   }
 ];
@@ -298,7 +298,7 @@ export default function DesengraxantesPage() {
                   { name: "Limpeza geral", href: "/solucoes/limpeza-geral" },
                   { name: "Tratamento de pisos", href: "/solucoes/pisos" },
                   { name: "Específicos", href: "/solucoes/especificos" },
-                  { name: "Outros", href: "/solucoes/outros" }
+                  { name: "Sua marca, nossa produção", href: "/solucoes/outros" }
                 ].map((cat, i) => (
                   <Link 
                     key={i} 

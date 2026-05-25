@@ -47,9 +47,9 @@ const solutions = [
   },
   {
     id: 8,
-    title: "OUTROS",
+    title: "SUA MARCA, NOSSA PRODUÇÃO",
     text: "Soluções especiais para demandas únicas. Produtos desenvolvidos para diferentes desafios de limpeza.",
-    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b951ed2048352243.jpg"
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1779725014/$dx814ryzur"
   }
 ];
 

@@ -10,7 +10,13 @@ import {
 // Reusable Section components for the Solutions Page
 
 const Hero = () => (
-  <section className="relative h-[700px] flex items-center overflow-hidden bg-[#014486]">
+  <section 
+    className="relative h-[700px] flex items-center overflow-hidden bg-[#014486] bg-cover bg-center bg-no-repeat"
+    style={{ 
+      backgroundImage: "url('https://pages.greatpages.com.br/www.multionic.com.br-b2b/1764936323/imagens/desktop/1124971_1_17344573766761b820a1b9d190769909.jpg')" 
+    }}
+  >
+    <div className="absolute inset-0 bg-[#014486]/60 pointer-events-none" />
     <div className="container-custom relative z-10 w-full">
       <div className="max-w-[1200px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -74,91 +80,92 @@ const Intro = () => (
 const categories = [
   {
     title: "SABONETES",
-    text: "Higiene e proteção com fórmulas suaves e eficientes. Conheça nossas opções para diferentes necessidades.",
-    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b950023172405940.jpg",
+    text: "Soluções para assepsia, higiene profissional e cuidados em ambientes que exigem segurança e padronização.",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$q4zmgv0vrp",
     href: "/solucoes/sabonetes"
   },
   {
     title: "DESENGRAXANTES",
-    text: "Remova graxas e resíduos com máxima eficácia. Soluções poderosas para indústrias e oficinas.",
-    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b9505e4483220872.jpg",
+    text: "Produtos para limpeza técnica, remoção de óleos e graxas e alto desempenho em diferentes contextos industriais.",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$zglgyd5dg0s",
     href: "/solucoes/desengraxantes"
   },
   {
     title: "COZINHA INDUSTRIAL",
-    text: "Higienização segura e eficiente para cozinhas profissionais. Mantenha o padrão de qualidade do seu negócio.",
-    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b952447433171858.jpg",
+    text: "Soluções para ambientes que exigem controle, produtividade e limpeza pesada com mais segurança na operação.",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$rkn1g5yuk1a",
     href: "/solucoes/cozinha"
   },
   {
     title: "LAVANDERIA",
-    text: "Cuidado e performance para tecidos impecáveis. Descubra nossas soluções para lavagem profissional.",
-    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b952f9d683905738.jpg",
+    text: "Produtos para processos de lavagem profissional, com foco em desempenho, recorrência e praticidade de uso.",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$ysa0c5u5b7",
     href: "/solucoes/lavanderia"
   },
   {
     title: "LIMPEZA GERAL",
-    text: "Produtos versáteis para uma limpeza completa e eficiente. Descubra nossa linha de soluções profissionais.",
-    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b9514d2822242195.jpg",
+    text: "Soluções versáteis para conservação, limpeza de rotina e manutenção de ambientes profissionais.",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$rlrsa0w6gop",
     href: "/solucoes/limpeza-geral"
   },
   {
     title: "TRATAMENTO DE PISOS",
-    text: "Proteção e brilho para superfícies impecáveis. Encontre o produto ideal para o seu ambiente.",
-    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b95101a031881655.jpg",
+    text: "Produtos para conservação, proteção, restauração e melhor resultado na rotina de limpeza e manutenção de pisos.",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$xvptwvqxjcd",
     href: "/solucoes/pisos"
   },
   {
     title: "ESPECÍFICOS",
-    text: "Soluções químicas avançadas para necessidades especiais. Eficiência e inovação a serviço da sua empresa.",
-    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b953650615921925.jpg",
+    text: "Soluções desenvolvidas para aplicações técnicas e necessidades mais direcionadas de limpeza profissional.",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$es6y6n9bweo",
     href: "/solucoes/especificos"
   },
   {
-    title: "OUTROS",
-    text: "Soluções especiais para demandas únicas. Produtos desenvolvidos para diferentes desafios de limpeza.",
-    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b951ed2048352243.jpg",
+    title: "SUA MARCA, NOSSA PRODUÇÃO",
+    text: "Produtos complementares para operações que demandam soluções específicas além das linhas principais.",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$qevk7jvr9bq",
     href: "/solucoes/outros"
   }
 ];
 
 const CategoryGrid = () => (
-  <section className="py-24 bg-white">
+  <section className="py-24 bg-[#F8F9FA] border-b border-gray-100">
     <div className="container-custom">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {categories.map((cat, idx) => (
-          <Link key={idx} to={cat.href}>
+          <Link key={idx} to={cat.href} className="group flex flex-col h-full">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05, duration: 0.5 }}
-              className="relative aspect-square overflow-hidden group cursor-pointer"
+              className="bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full overflow-hidden"
             >
-              {/* Imagem de Fundo */}
-              <img 
-                src={cat.image} 
-                alt={cat.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                referrerPolicy="no-referrer"
-              />
-              
-              {/* Overlay Escurecido Padrão */}
-              <div className="absolute inset-0 bg-black/25 transition-opacity duration-300 group-hover:opacity-0" />
-              
-              {/* Overlay Azul de Hover */}
-              <div className="absolute inset-0 bg-[#0877E1]/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Imagem */}
+              <div className="relative aspect-square overflow-hidden bg-gray-50 border-b border-gray-50">
+                <img 
+                  src={cat.image} 
+                  alt={cat.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
 
-              {/* Conteúdo Centralizado */}
-              <div className="absolute inset-0 p-6 flex flex-col items-center justify-center text-center">
-                <h3 className="text-white text-base md:text-lg font-bold uppercase tracking-[0.2em] pl-[0.2em] leading-tight transition-transform duration-500 group-hover:-translate-y-8">
+              {/* Informações */}
+              <div className="p-8 flex flex-col flex-grow text-left">
+                <h3 className="text-[16px] md:text-[18px] font-bold text-brand-primary uppercase mb-4 tracking-tight">
                   {cat.title}
                 </h3>
                 
-                <div className="absolute inset-x-6 bottom-12 md:bottom-16 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                  <p className="text-white text-xs md:text-sm font-medium leading-relaxed">
-                    {cat.text}
-                  </p>
+                <p className="text-gray-650 text-sm font-normal leading-relaxed mb-6">
+                  {cat.text}
+                </p>
+                
+                <div className="mt-auto">
+                  <span className="inline-flex items-center gap-1.5 text-brand-secondary font-bold text-xs uppercase tracking-wider group-hover:gap-2.5 transition-all duration-300">
+                    Ver soluções
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </span>
                 </div>
               </div>
             </motion.div>
@@ -323,7 +330,7 @@ const PrivateLabel = () => (
 const Form = () => (
   <section className="py-24 bg-gray-50">
     <div className="container-custom">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-brand-primary mb-6 uppercase">
             Entre em contato com nosso time
@@ -331,14 +338,6 @@ const Form = () => (
           <p className="text-black text-lg font-normal leading-relaxed mb-8">
             Preencha o formulário e nos conte brevemente a sua necessidade. Assim, conseguimos direcionar o atendimento com mais contexto e agilidade.
           </p>
-          <div className="mt-8">
-            <img 
-              src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1776874436/$7exmnl7opjk" 
-              alt="Suporte Multionic" 
-              className="w-full h-auto"
-              referrerPolicy="no-referrer"
-            />
-          </div>
         </div>
         <div className="bg-white p-8 md:p-10 rounded-none shadow-sm border border-gray-100">
           <form className="space-y-4">

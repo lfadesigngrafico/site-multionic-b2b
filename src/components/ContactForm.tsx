@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 
 export default function ContactForm() {
   return (
@@ -6,37 +7,57 @@ export default function ContactForm() {
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left Column Text */}
-          <div>
+          <div className="text-left flex flex-col justify-center h-full">
             <motion.h2 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-2xl md:text-3xl font-bold text-brand-primary mb-6 uppercase leading-tight"
+              className="text-2xl md:text-3xl font-bold text-[#014486] mb-6 uppercase leading-tight"
             >
-              Ou, se preferir, utilize nosso formulário de contato
+              Não sabe qual solução usar na sua operação?
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-black text-lg font-normal mb-8 leading-relaxed"
+              className="text-gray-750 text-base md:text-lg font-normal mb-8 leading-relaxed"
             >
-              Preencha seus dados e nos conte brevemente sua necessidade. Se sua demanda envolve uma aplicação técnica específica, descreva o contexto de uso.
+              Nossa equipe técnica ajuda sua empresa a encontrar a solução ideal para cada necessidade operacional.
             </motion.p>
+            
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 }}
+              className="space-y-4 mb-10 text-left"
+            >
+              {[
+                "Atendimento consultivo",
+                "Avaliação da necessidade",
+                "Soluções para diferentes operações",
+                "Suporte técnico especializado"
+              ].map((bullet, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <span className="text-[#0877E1] font-bold text-lg">✔</span>
+                  <span className="text-gray-800 text-sm md:text-base font-medium">{bullet}</span>
+                </div>
+              ))}
+            </motion.div>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="mt-6"
             >
-              <img 
-                src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1776874436/$7exmnl7opjk" 
-                alt="Multionic Soluções" 
-                className="w-full h-auto object-contain"
-                referrerPolicy="no-referrer"
-              />
+              <Link 
+                to="/contato"
+                className="btn-primary inline-flex items-center justify-center !px-10 !py-4 uppercase text-sm font-bold shadow-md rounded-none hover:bg-brand-secondary transition-all w-full sm:w-auto text-center"
+              >
+                Falar com especialista
+              </Link>
             </motion.div>
           </div>
 

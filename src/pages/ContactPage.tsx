@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Phone, 
@@ -118,6 +118,17 @@ export default function ContactPage() {
     setActiveId(activeId === id ? null : id);
   };
 
+  useEffect(() => {
+    if (window.location.hash === '#faq') {
+      const el = document.getElementById('faq');
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }, 300);
+      }
+    }
+  }, []);
+
   return (
     <div className="bg-white">
       {/* 1. HERO BANNER */}
@@ -165,7 +176,7 @@ export default function ContactPage() {
       {/* 3. BLOCO DE FORMULÁRIO (PRINCIPAL) */}
       <section className="py-24 bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -177,14 +188,6 @@ export default function ContactPage() {
               <p className="text-black text-lg font-normal leading-relaxed mb-8">
                 Conte brevemente sua necessidade e nossa equipe fará o direcionamento mais adequado para o seu atendimento.
               </p>
-              <div className="mt-8">
-                <img 
-                  src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1776874436/$7exmnl7opjk" 
-                  alt="Suporte Multionic" 
-                  className="w-full h-auto"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
             </motion.div>
 
             <motion.div
