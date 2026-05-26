@@ -14,8 +14,8 @@ export default function HomePage() {
     <>
       <HomeHeroVideo />
       <TrustSection />
-      <Challenges />
       <Solutions />
+      <Challenges />
       <Clients />
       <Differentials />
       <Certifications />

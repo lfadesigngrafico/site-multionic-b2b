@@ -121,8 +121,8 @@ const categories = [
     href: "/solucoes/especificos"
   },
   {
-    title: "SUA MARCA, NOSSA PRODUÇÃO",
-    text: "Produtos complementares para operações que demandam soluções específicas além das linhas principais.",
+    title: "TRANSFORMAMOS SUA VISÃO EM PRODUTOS DE ALTA QUALIDADE",
+    text: "Cuidamos de cada detalhe da fabricação para atender grandes demandas em terceirização, enquanto você foca no crescimento do seu negócio.",
     image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$qevk7jvr9bq",
     href: "/solucoes/outros"
   }

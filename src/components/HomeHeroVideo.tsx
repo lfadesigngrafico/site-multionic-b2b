@@ -43,25 +43,6 @@ export default function HomeHeroVideo() {
               <p className="text-base md:text-[20px] text-white font-medium leading-relaxed">
                 Há mais de 40 anos a Multionic desenvolve soluções técnicas para limpeza, higienização e eficiência operacional em indústrias, cozinhas industriais, lavanderias e operações profissionais.
               </p>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 pt-2 text-white font-medium text-sm md:text-[16px]">
-                <div className="flex items-center gap-2">
-                  <span className="text-[#00D1FF] font-bold">✔</span>
-                  <span className="text-white/90">Redução de desperdício químico</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-[#00D1FF] font-bold">✔</span>
-                  <span className="text-white/90">Alta performance operacional</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-[#00D1FF] font-bold">✔</span>
-                  <span className="text-white/90">Suporte técnico especializado</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-[#00D1FF] font-bold">✔</span>
-                  <span className="text-white/90">Soluções para diferentes segmentos</span>
-                </div>
-              </div>
             </motion.div>
 
             <motion.div

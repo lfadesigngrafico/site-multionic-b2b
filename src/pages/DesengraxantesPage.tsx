@@ -132,8 +132,8 @@ const categories = [
     href: "/solucoes/especificos"
   },
   {
-    title: "SUA MARCA, NOSSA PRODUÇÃO",
-    text: "Soluções especiais para demandas únicas. Produtos desenvolvidos para diferentes desafios de limpeza.",
+    title: "TRANSFORMAMOS SUA VISÃO EM PRODUTOS DE ALTA QUALIDADE",
+    text: "Cuidamos de cada detalhe da fabricação para atender grandes demandas em terceirização, enquanto você foca no crescimento do seu negócio.",
     image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1779725014/$dx814ryzur",
     href: "/solucoes/outros"
   }
@@ -513,12 +513,12 @@ export default function DesengraxantesPage() {
 
                   {/* Conteúdo Centralizado */}
                   <div className="absolute inset-0 p-6 flex flex-col items-center justify-center text-center">
-                    <h3 className="text-white text-base md:text-lg font-bold uppercase tracking-[0.2em] pl-[0.2em] leading-tight transition-transform duration-500 group-hover:-translate-y-8">
+                    <h3 className="text-white text-base md:text-lg font-bold uppercase tracking-[0.2em] pl-[0.2em] leading-tight transition-all duration-500 group-hover:opacity-0 group-hover:scale-95">
                       {cat.title}
                     </h3>
                     
-                    <div className="absolute inset-x-6 bottom-12 md:bottom-16 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                      <p className="text-white text-xs md:text-sm font-medium leading-relaxed">
+                    <div className="absolute inset-0 p-6 flex items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
+                      <p className="text-white text-xs md:text-sm font-medium leading-relaxed max-w-[90%]">
                         {cat.text}
                       </p>
                     </div>
