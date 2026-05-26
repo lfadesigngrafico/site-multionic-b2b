@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 
 export default function ContactBlock() {
   return (
@@ -43,13 +44,15 @@ export default function ContactBlock() {
             </motion.p>
     
             <div className="flex flex-col sm:flex-row justify-start gap-4">
-              <motion.button 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-brand-secondary text-white px-8 py-4 text-sm font-bold tracking-tight rounded-none hover:bg-white hover:text-brand-primary transition-all duration-300 shadow-none border-none"
-              >
-                Fale com um especialista
-              </motion.button>
+              <Link to="/contato" className="w-full sm:w-auto">
+                <motion.button 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full sm:w-auto bg-brand-secondary text-white px-8 py-4 text-sm font-bold tracking-tight rounded-none hover:bg-white hover:text-brand-primary transition-all duration-300 shadow-none border-none text-center"
+                >
+                  Fale com um especialista
+                </motion.button>
+              </Link>
             </div>
           </div>
         </div>

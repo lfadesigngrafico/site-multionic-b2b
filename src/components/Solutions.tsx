@@ -47,8 +47,8 @@ const solutions = [
   },
   {
     id: 8,
-    title: "TRANSFORMAMOS SUA VISÃO EM PRODUTOS DE ALTA QUALIDADE",
-    text: "Cuidamos de cada detalhe da fabricação para atender grandes demandas em terceirização, enquanto você foca no crescimento do seu negócio.",
+    title: "SUA MARCA, NOSSA PRODUÇÃO",
+    text: "Transformamos sua visão em produtos de alta qualidade. Cuidamos de cada detalhe da fabricação para atender grandes demandas em terceirização, enquanto você foca no crescimento do seu negócio.",
     image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1779725014/$dx814ryzur"
   }
 ];
@@ -136,7 +136,7 @@ function SolutionCard({ item, delay }: any) {
         </h3>
         
         <div className="absolute inset-0 p-6 flex items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
-          <p className="text-white text-xs md:text-sm font-medium leading-relaxed max-w-[90%]">
+          <p className="text-white text-xs md:text-sm font-medium leading-relaxed max-w-[90%] whitespace-pre-line">
             {item.text}
           </p>
         </div>

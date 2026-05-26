@@ -121,8 +121,8 @@ const categories = [
     href: "/solucoes/especificos"
   },
   {
-    title: "TRANSFORMAMOS SUA VISÃO EM PRODUTOS DE ALTA QUALIDADE",
-    text: "Cuidamos de cada detalhe da fabricação para atender grandes demandas em terceirização, enquanto você foca no crescimento do seu negócio.",
+    title: "SUA MARCA, NOSSA PRODUÇÃO",
+    text: "Transformamos sua visão em produtos de alta qualidade. Cuidamos de cada detalhe da fabricação para atender grandes demandas em terceirização, enquanto você foca no crescimento do seu negócio.",
     image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$qevk7jvr9bq",
     href: "/solucoes/outros"
   }
@@ -157,7 +157,7 @@ const CategoryGrid = () => (
                   {cat.title}
                 </h3>
                 
-                <p className="text-gray-650 text-sm font-normal leading-relaxed mb-6">
+                <p className="text-gray-650 text-sm font-normal leading-relaxed mb-6 whitespace-pre-line">
                   {cat.text}
                 </p>
                 
