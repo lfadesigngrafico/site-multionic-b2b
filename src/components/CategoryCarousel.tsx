@@ -10,7 +10,7 @@ const categories = [
   { name: "LAVANDERIA", image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b952f9d683905738.jpg" },
   { name: "LIMPEZA GERAL", image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b9514d2822242195.jpg" },
   { name: "TRATAMENTO DE PISOS", image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b95101a031881655.jpg" },
-  { name: "ESPECÍFICOS", image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b953650615921925.jpg" },
+  { name: "PRODUTOS ESPECÍFICOS", image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b953650615921925.jpg" },
   { name: "SUA MARCA, NOSSA PRODUÇÃO", image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1779725014/$dx814ryzur" }
 ];
 

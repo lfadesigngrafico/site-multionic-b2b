@@ -126,7 +126,7 @@ const categories = [
     href: "/solucoes/pisos"
   },
   {
-    title: "ESPECÍFICOS",
+    title: "PRODUTOS ESPECÍFICOS",
     text: "Soluções químicas avançadas para necessidades especiais. Eficiência e inovação a serviço da sua empresa.",
     image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b953650615921925.jpg",
     href: "/solucoes/especificos"

@@ -115,7 +115,7 @@ const categories = [
     href: "/solucoes/pisos"
   },
   {
-    title: "ESPECÍFICOS",
+    title: "PRODUTOS ESPECÍFICOS",
     text: "Soluções desenvolvidas para aplicações técnicas e necessidades mais direcionadas de limpeza profissional.",
     image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$es6y6n9bweo",
     href: "/solucoes/especificos"

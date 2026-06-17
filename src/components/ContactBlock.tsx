@@ -50,7 +50,7 @@ export default function ContactBlock() {
                   whileTap={{ scale: 0.95 }}
                   className="w-full sm:w-auto bg-[#6DB0DF] hover:bg-[#5ca0cf] text-white px-8 py-4 text-sm font-bold tracking-tight rounded-none transition-all duration-300 shadow-none border-none text-center"
                 >
-                  Fale com um especialista
+                  Solicitar avaliação técnica
                 </motion.button>
               </Link>
             </div>
