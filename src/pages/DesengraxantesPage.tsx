@@ -509,7 +509,7 @@ export default function DesengraxantesPage() {
                   <div className="absolute inset-0 bg-black/25 transition-opacity duration-300 group-hover:opacity-0" />
                   
                   {/* Overlay Azul de Hover */}
-                  <div className="absolute inset-0 bg-[#0877E1]/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-[#3B529B]/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   {/* Conteúdo Centralizado */}
                   <div className="absolute inset-0 p-6 flex flex-col items-center justify-center text-center">

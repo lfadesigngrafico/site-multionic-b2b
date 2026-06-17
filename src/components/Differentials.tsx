@@ -1,37 +1,37 @@
 import { motion } from 'motion/react';
-import { Headset, Zap, Briefcase, Leaf, Award } from 'lucide-react';
+import { Headset, FlaskConical, Coins, Layers, Award } from 'lucide-react';
 
 const differentials = [
   {
     title: "Suporte técnico especializado",
-    text: "Nossa equipe ajuda empresas a encontrar soluções mais eficientes para cada necessidade operacional, com atendimento próximo e suporte técnico especializado.",
+    text: "Nossa equipe ajuda empresas a encontrar soluções mais eficientes para cada necessidade operacional.",
     icon: <Headset className="w-10 h-10" />
   },
   {
-    title: "Alta performance operacional",
-    text: "Produtos desenvolvidos para aumentar eficiência, rendimento e padronização nos processos de limpeza, higienização e conservação profissional.",
-    icon: <Zap className="w-10 h-10" />
+    title: "Soluções desenvolvidas para diferentes aplicações",
+    text: "Produtos formulados para atender rotinas de limpeza, higienização e manutenção em ambientes industriais e institucionais.",
+    icon: <FlaskConical className="w-10 h-10" />
   },
   {
-    title: "Soluções para diferentes operações",
-    text: "Atendimento especializado para indústrias, cozinhas industriais, lavanderias e ambientes profissionais, com soluções adaptadas para diferentes necessidades operacionais.",
-    icon: <Briefcase className="w-10 h-10" />
+    title: "Mais rendimento e economia operacional",
+    text: "Produtos concentrados e orientações técnicas que ajudam a otimizar consumo e reduzir desperdícios.",
+    icon: <Coins className="w-10 h-10" />
   },
   {
-    title: "Eficiência com redução de desperdício",
-    text: "Soluções que ajudam a otimizar consumo, processos e produtividade operacional, contribuindo para mais eficiência no dia a dia das operações.",
-    icon: <Leaf className="w-10 h-10" />
+    title: "Portfólio para diferentes necessidades",
+    text: "Linhas desenvolvidas para limpeza industrial, cozinhas profissionais, lavanderias, tratamento de pisos e muito mais.",
+    icon: <Layers className="w-10 h-10" />
   },
   {
-    title: "Experiência e desenvolvimento contínuo",
-    text: "Décadas de atuação desenvolvendo soluções técnicas para diferentes desafios do mercado, com foco em qualidade, inovação e evolução constante.",
+    title: "Mais de 40 anos desenvolvendo soluções",
+    text: "Experiência acumulada atendendo diferentes segmentos e desafios operacionais.",
     icon: <Award className="w-10 h-10" />
   }
 ];
 
 export default function Differentials() {
   return (
-    <section className="py-24 bg-[#74a9e5]">
+    <section className="py-24 bg-[#75BFBA]">
       <div className="container-custom max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
           <motion.h2 
@@ -53,7 +53,7 @@ export default function Differentials() {
               transition={{ delay: idx * 0.1 }}
               className={`flex items-start gap-6 ${idx >= 3 ? 'lg:col-span-1 lg:translate-x-[50%]' : ''}`}
             >
-              <div className="flex-shrink-0 w-24 h-24 rounded-full bg-[#3462ba] flex items-center justify-center text-white shadow-lg">
+              <div className="flex-shrink-0 w-24 h-24 rounded-full bg-[#018E6D] flex items-center justify-center text-white shadow-lg">
                 {item.icon}
               </div>
               <div className="flex flex-col justify-center pt-2">

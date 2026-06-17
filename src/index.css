@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-primary: #014486;
+  --color-brand-primary: #3B529B;
   --color-brand-secondary: #0877e1;
   --color-brand-hover: #065bb5;
   --color-bg-light: #f0f3f5;
@@ -43,7 +43,7 @@
   }
 
   .shimmer-text:hover {
-    background: linear-gradient(90deg, #014486 0%, #014486 40%, rgba(255,255,255,0.8) 50%, #014486 60%, #014486 100%);
+    background: linear-gradient(90deg, #3B529B 0%, #3B529B 40%, rgba(255,255,255,0.8) 50%, #3B529B 60%, #3B529B 100%);
     background-size: 200% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

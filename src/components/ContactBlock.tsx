@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function ContactBlock() {
   return (
-    <section className="py-20 bg-brand-primary text-white relative">
+    <section className="py-20 bg-[#3B529B] text-white relative">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Coluna Esquerda: Imagem com Overlap */}
@@ -48,7 +48,7 @@ export default function ContactBlock() {
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full sm:w-auto bg-brand-secondary text-white px-8 py-4 text-sm font-bold tracking-tight rounded-none hover:bg-white hover:text-brand-primary transition-all duration-300 shadow-none border-none text-center"
+                  className="w-full sm:w-auto bg-[#6DB0DF] hover:bg-[#5ca0cf] text-white px-8 py-4 text-sm font-bold tracking-tight rounded-none transition-all duration-300 shadow-none border-none text-center"
                 >
                   Fale com um especialista
                 </motion.button>

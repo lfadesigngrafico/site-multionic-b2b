@@ -50,7 +50,7 @@ export default function Clients() {
           transition={{ delay: 0.1 }}
           className="text-black text-base md:text-lg max-w-2xl mx-auto font-normal"
         >
-          Empresas de diferentes segmentos já contam com a Multionic para elevar padrão de limpeza, segurança e desempenho operacional.
+          Empresas de diferentes segmentos utilizam as soluções Multionic para apoiar suas rotinas de limpeza, higienização e manutenção.
         </motion.p>
       </div>
 

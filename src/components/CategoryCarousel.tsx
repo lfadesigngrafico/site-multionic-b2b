@@ -44,7 +44,7 @@ export default function CategoryCarousel() {
           <div className="absolute left-0 lg:left-10 z-40 hidden md:block">
             <button 
               onClick={prevSlide}
-              className="p-4 text-[#014486] hover:scale-125 transition-transform duration-300"
+              className="p-4 text-[#3B529B] hover:scale-125 transition-transform duration-300"
               aria-label="Anterior"
             >
               <ChevronLeft size={64} strokeWidth={2.5} />
@@ -54,7 +54,7 @@ export default function CategoryCarousel() {
           <div className="absolute right-0 lg:right-10 z-40 hidden md:block">
             <button 
               onClick={nextSlide}
-              className="p-4 text-[#014486] hover:scale-125 transition-transform duration-300"
+              className="p-4 text-[#3B529B] hover:scale-125 transition-transform duration-300"
               aria-label="Próximo"
             >
               <ChevronRight size={64} strokeWidth={2.5} />
@@ -118,13 +118,13 @@ export default function CategoryCarousel() {
         <div className="flex justify-center gap-8 mt-12 md:hidden">
           <button 
             onClick={prevSlide}
-            className="p-3 bg-gray-100 rounded-full text-[#014486] active:scale-95"
+            className="p-3 bg-gray-100 rounded-full text-[#3B529B] active:scale-95"
           >
             <ChevronLeft size={32} />
           </button>
           <button 
             onClick={nextSlide}
-            className="p-3 bg-gray-100 rounded-full text-[#014486] active:scale-95"
+            className="p-3 bg-gray-100 rounded-full text-[#3B529B] active:scale-95"
           >
             <ChevronRight size={32} />
           </button>

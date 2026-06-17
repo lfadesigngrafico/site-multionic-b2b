@@ -27,10 +27,10 @@ export default function HomeHeroVideo() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-2xl md:text-[30px] lg:text-[30px] font-bold uppercase text-white leading-tight mb-8"
+              className="text-xl md:text-2xl lg:text-[26px] font-bold uppercase text-white leading-tight mb-8"
             >
               Soluções químicas industriais<br />
-              <span className="font-normal">para operações que exigem eficiência máxima</span>
+              <span className="font-normal text-sm sm:text-base md:text-[20px] lg:text-[20px] block mt-2 whitespace-normal md:whitespace-nowrap">para operações que exigem eficiência, segurança e desempenho.</span>
             </motion.h1>
 
             <motion.div
@@ -53,9 +53,9 @@ export default function HomeHeroVideo() {
             >
               <Link 
                 to="/solucoes"
-                className="btn-primary inline-flex items-center justify-center !px-12 !py-5 uppercase text-sm font-bold shadow-none rounded-none transform transition-transform duration-300 hover:scale-[1.05]"
+                className="bg-[#6DB0DF] hover:bg-[#5ca0cf] text-white inline-flex items-center justify-center !px-12 !py-5 uppercase text-sm font-bold shadow-none rounded-none transform transition-transform duration-300 hover:scale-[1.05] transition-colors"
               >
-                Conhecer soluções
+                Conheça nossos produtos
               </Link>
             </motion.div>
           </div>

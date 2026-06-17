@@ -32,11 +32,11 @@ export default function Certifications() {
             viewport={{ once: true }}
             className="flex gap-4 p-8 bg-gray-50 border border-gray-100 shadow-sm"
           >
-            <div className="text-brand-primary shrink-0">
+            <div className="shrink-0" style={{ color: '#3B529B' }}>
               <ShieldCheck className="w-10 h-10" />
             </div>
             <div>
-              <h4 className="text-brand-primary font-black uppercase text-sm mb-2 tracking-wider">ISO 9000 & LGPD</h4>
+              <h4 className="font-black uppercase text-sm mb-2 tracking-wider" style={{ color: '#3B529B' }}>ISO 9001 e SGQ</h4>
               <p className="text-gray-700 text-sm leading-relaxed">
                 A Multionic atua de acordo com os rigorosos padrões de excelência da ISO 9001 e em total conformidade com a Lei Geral de Proteção de Dados (LGPD).
               </p>
@@ -49,11 +49,11 @@ export default function Certifications() {
             viewport={{ once: true }}
             className="flex gap-4 p-8 bg-gray-50 border border-gray-100 shadow-sm"
           >
-            <div className="text-brand-primary shrink-0">
+            <div className="shrink-0" style={{ color: '#3B529B' }}>
               <ShieldCheck className="w-10 h-10" />
             </div>
             <div>
-              <h4 className="text-brand-primary font-black uppercase text-sm mb-2 tracking-wider">Selo EURECICLO</h4>
+              <h4 className="font-black uppercase text-sm mb-2 tracking-wider" style={{ color: '#3B529B' }}>Selo EURECICLO</h4>
               <p className="text-gray-700 text-sm leading-relaxed">
                 Seguindo nosso compromisso ambiental, conquistamos o selo EURECICLO.
               </p>

@@ -12,10 +12,19 @@ export default function ContactForm() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-2xl md:text-3xl font-bold text-[#014486] mb-6 uppercase leading-tight"
+              className="text-2xl md:text-3xl font-bold text-[#3B529B] mb-4 uppercase leading-tight"
             >
               Não sabe qual solução usar na sua operação?
             </motion.h2>
+            <motion.h3
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.05 }}
+              className="text-lg md:text-xl font-bold text-[#3B529B] mb-4 uppercase leading-tight"
+            >
+              Nem toda necessidade exige o mesmo produto
+            </motion.h3>
             <motion.p 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -54,9 +63,9 @@ export default function ContactForm() {
             >
               <Link 
                 to="/contato"
-                className="btn-primary inline-flex items-center justify-center !px-10 !py-4 uppercase text-sm font-bold shadow-md rounded-none hover:bg-brand-secondary transition-all w-full sm:w-auto text-center"
+                className="bg-[#6DB0DF] hover:bg-[#5ca0cf] text-white inline-flex items-center justify-center !px-10 !py-4 uppercase text-sm font-bold shadow-md rounded-none transition-all w-full sm:w-auto text-center"
               >
-                Falar com especialista
+                Solicitar avaliação técnica
               </Link>
             </motion.div>
           </div>
@@ -113,7 +122,7 @@ export default function ContactForm() {
                 <textarea className="w-full bg-white border border-gray-200 px-4 py-3 text-black text-sm outline-none focus:border-brand-secondary transition-colors h-32" placeholder="Conte-nos como podemos ajudar sua operação..."></textarea>
               </div>
 
-              <button className="btn-primary w-full py-4 text-sm font-bold tracking-tight shadow-none border-none uppercase mt-4">
+              <button className="bg-[#6DB0DF] hover:bg-[#5ca0cf] text-white w-full py-4 text-sm font-bold tracking-tight shadow-none border-none uppercase mt-4 transition-colors">
                 Enviar Mensagem
               </button>
             </form>

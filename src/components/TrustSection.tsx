@@ -26,7 +26,7 @@ export default function TrustSection() {
           {/* Left Column: Title Block with Glassmorphism and Hover Shine Text */}
           <div 
             onMouseEnter={handleMouseEnter}
-            className="md:col-span-5 backdrop-blur-md bg-[#0877E1]/90 border border-white/20 p-8 md:p-12 lg:p-16 flex flex-col justify-center text-left shadow-2xl rounded-none relative overflow-hidden cursor-pointer min-h-[300px] md:min-h-full transition-all duration-300 hover:border-white/30"
+            className="md:col-span-5 backdrop-blur-md bg-[#3B529B]/90 border border-white/20 p-8 md:p-12 lg:p-16 flex flex-col justify-center text-left shadow-2xl rounded-none relative overflow-hidden cursor-pointer min-h-[300px] md:min-h-full transition-all duration-300 hover:border-white/30"
           >
             <style>{`
               @keyframes textShine {
@@ -65,7 +65,8 @@ export default function TrustSection() {
               Força,<br />
               experiência<br />
               e confiança<br />
-              do mercado:
+              para sua<br />
+              operação
             </motion.h3>
           </div>
           
@@ -77,7 +78,7 @@ export default function TrustSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="flex-1 backdrop-blur-md bg-[#014486]/90 border border-white/10 p-6 md:p-8 flex flex-col items-center text-center justify-center shadow-xl rounded-none transition-all duration-300 hover:scale-[1.01] hover:bg-[#014486]/95 hover:border-white/20"
+              className="flex-1 backdrop-blur-md bg-[#6DB0DF]/90 border border-white/10 p-6 md:p-8 flex flex-col items-center text-center justify-center shadow-xl rounded-none transition-all duration-300 hover:scale-[1.01] hover:bg-[#6DB0DF]/95 hover:border-white/20"
             >
               <span className="text-white/60 text-xs md:text-sm tracking-[0.2em] font-semibold uppercase mb-2">Indústria</span>
               <h4 className="text-white text-xl md:text-2xl lg:text-3xl font-black mb-2 uppercase leading-none tracking-tighter">
@@ -94,7 +95,7 @@ export default function TrustSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex-1 backdrop-blur-md bg-[#013b7a]/90 border border-white/10 p-6 md:p-8 flex flex-col items-center text-center justify-center shadow-xl rounded-none transition-all duration-300 hover:scale-[1.01] hover:bg-[#013b7a]/95 hover:border-white/20"
+              className="flex-1 backdrop-blur-md bg-[#7FBFD1]/90 border border-white/10 p-6 md:p-8 flex flex-col items-center text-center justify-center shadow-xl rounded-none transition-all duration-300 hover:scale-[1.01] hover:bg-[#7FBFD1]/95 hover:border-white/20"
             >
               <span className="text-white/60 text-xs md:text-sm tracking-[0.2em] font-semibold uppercase mb-2">Varejo</span>
               <h4 className="text-white text-xl md:text-2xl lg:text-3xl font-black mb-2 uppercase leading-none tracking-tighter">
@@ -111,14 +112,14 @@ export default function TrustSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex-1 backdrop-blur-md bg-[#014486]/90 border border-white/10 p-6 md:p-8 flex flex-col items-center text-center justify-center shadow-xl rounded-none transition-all duration-300 hover:scale-[1.01] hover:bg-[#014486]/95 hover:border-white/20"
+              className="flex-1 backdrop-blur-md bg-[#75BFBA]/90 border border-white/10 p-6 md:p-8 flex flex-col items-center text-center justify-center shadow-xl rounded-none transition-all duration-300 hover:scale-[1.01] hover:bg-[#75BFBA]/95 hover:border-white/20"
             >
               <span className="text-white/60 text-xs md:text-sm tracking-[0.2em] font-semibold uppercase mb-2">Terceirização</span>
               <h4 className="text-white text-xl md:text-2xl lg:text-3xl font-black mb-2 uppercase leading-none tracking-tighter">
                 CONFIANÇA DO MERCADO
               </h4>
               <p className="text-white/80 text-xs md:text-sm font-normal">
-                Produzindo para quem é referência
+                A escolha de quem é referência
               </p>
             </motion.div>
           </div>
