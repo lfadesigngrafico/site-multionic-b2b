@@ -29,7 +29,9 @@ const Hero = () => (
               Nossos Produtos
             </h1>
             <p className="text-white text-lg md:text-xl font-normal leading-relaxed mb-8">
-              Conheça nossa linha completa de produtos desenvolvidos para atender diferentes necessidades de limpeza industrial e institucional. Explore as categorias, encontre a solução mais adequada e escolha a embalagem ideal para a sua operação.
+              Conheça as soluções desenvolvidas pela Multionic para atender diferentes necessidades de limpeza, higienização e eficiência operacional em ambientes industriais, institucionais e profissionais.
+              <br /><br />
+              Explore as categorias e encontre a solução mais adequada para a sua operação.
             </p>
           </motion.div>
           <motion.div
@@ -71,7 +73,7 @@ const Intro = () => (
         transition={{ delay: 0.1 }}
         className="text-black text-lg font-normal leading-relaxed"
       >
-        Nossa linha contempla produtos para atender as mais diversas necessidades de limpeza industrial e institucional. Escolha a categoria que mais faz sentido para a sua operação e encontre a solução ideal.
+        Soluções desenvolvidas para diferentes aplicações, processos e necessidades operacionais. Selecione a categoria mais alinhada à realidade da sua operação.
       </motion.p>
     </div>
   </section>
@@ -80,51 +82,51 @@ const Intro = () => (
 const categories = [
   {
     title: "SABONETES",
-    text: "Soluções para assepsia, higiene profissional e cuidados em ambientes que exigem segurança e padronização.",
+    text: "Soluções para assepsia e higienização das mãos em ambientes industriais, institucionais e profissionais.",
     image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$q4zmgv0vrp",
-    href: "/solucoes/sabonetes"
+    href: "/produtos/sabonetes"
   },
   {
     title: "DESENGRAXANTES",
-    text: "Produtos para limpeza técnica, remoção de óleos e graxas e alto desempenho em diferentes contextos industriais.",
+    text: "Produtos para remoção de óleos, graxas e resíduos industriais em equipamentos, peças, máquinas e superfícies operacionais.",
     image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$zglgyd5dg0s",
-    href: "/solucoes/desengraxantes"
+    href: "/produtos/desengraxantes"
   },
   {
     title: "COZINHA INDUSTRIAL",
-    text: "Soluções para ambientes que exigem controle, produtividade e limpeza pesada com mais segurança na operação.",
+    text: "Soluções para higienização de cozinhas profissionais, áreas de manipulação de alimentos e operações de food service.",
     image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$rkn1g5yuk1a",
-    href: "/solucoes/cozinha"
+    href: "/produtos/cozinha"
   },
   {
     title: "LAVANDERIA",
-    text: "Produtos para processos de lavagem profissional, com foco em desempenho, recorrência e praticidade de uso.",
+    text: "Produtos para lavagem, higienização e padronização de processos em lavanderias profissionais e industriais.",
     image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$ysa0c5u5b7",
-    href: "/solucoes/lavanderia"
+    href: "/produtos/lavanderia"
   },
   {
     title: "LIMPEZA GERAL",
-    text: "Soluções versáteis para conservação, limpeza de rotina e manutenção de ambientes profissionais.",
+    text: "Soluções para limpeza e manutenção de ambientes profissionais, institucionais e operacionais.",
     image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$rlrsa0w6gop",
-    href: "/solucoes/limpeza-geral"
+    href: "/produtos/limpeza-geral"
   },
   {
     title: "TRATAMENTO DE PISOS",
-    text: "Produtos para conservação, proteção, restauração e melhor resultado na rotina de limpeza e manutenção de pisos.",
+    text: "Produtos para conservação, proteção, restoration e manutenção de pisos submetidos a diferentes níveis de tráfego e utilização.",
     image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$xvptwvqxjcd",
-    href: "/solucoes/pisos"
+    href: "/produtos/pisos"
   },
   {
     title: "PRODUTOS ESPECÍFICOS",
-    text: "Soluções desenvolvidas para aplicações técnicas e necessidades mais direcionadas de limpeza profissional.",
+    text: "Soluções desenvolvidas para aplicações técnicas e necessidades operacionais específicas.",
     image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$es6y6n9bweo",
-    href: "/solucoes/especificos"
+    href: "/produtos/especificos"
   },
   {
     title: "SUA MARCA, NOSSA PRODUÇÃO",
-    text: "Transformamos sua visão em produtos de alta qualidade. Cuidamos de cada detalhe da fabricação para atender grandes demandas em terceirização, enquanto você foca no crescimento do seu negócio.",
+    text: "Desenvolvimento e fabricação de soluções químicas para empresas que desejam ampliar seu portfólio com marca própria e suporte industrial especializado.",
     image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$qevk7jvr9bq",
-    href: "/solucoes/outros"
+    href: "/produtos/outros"
   }
 ];
 
@@ -186,20 +188,19 @@ const Packaging = () => (
           viewport={{ once: true }}
         >
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 uppercase">
-            No tamanho certo para o seu negócio
+            SOLUÇÕES ADEQUADAS PARA DIFERENTES ESCALAS DE OPERAÇÃO
           </h2>
           <p className="text-white/90 text-lg font-normal leading-relaxed mb-8">
-            A Multionic oferece soluções pensadas para operações de diferentes portes. Além de variedade de linhas, você encontra formatos e embalagens adequados para a realidade do seu negócio, ajudando a otimizar consumo, armazenagem e rotina de uso.
+            A Multionic oferece produtos em diferentes formatos e volumes para atender desde operações específicas até ambientes com alto consumo e grande demanda operacional.
           </p>
           <ul className="space-y-4">
             {[
-              "Embalagens para diferentes escalas de operação",
-              "Mais praticidade no abastecimento",
-              "Melhor adequação ao consumo do negócio",
-              "Soluções para uso profissional e industrial"
+              "Embalagens para diferentes níveis de consumo",
+              "Melhor aproveitamento e controle operacional",
+              "Soluções para aplicações profissionais e industriais"
             ].map((bullet, idx) => (
               <li key={idx} className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-[#97DCFE] rounded-none"></div>
+                <span className="text-[#97DCFE] font-bold text-lg">✔</span>
                 <span className="text-white font-semibold text-base">{bullet}</span>
               </li>
             ))}
@@ -252,7 +253,7 @@ const CommercialCTA = () => (
             viewport={{ once: true }}
             className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 uppercase text-white"
           >
-            Converse com nosso time comercial
+            Fale com um especialista Multionic
           </motion.h2>
           <div className="space-y-4 mb-10">
             <motion.p 
@@ -262,7 +263,7 @@ const CommercialCTA = () => (
               transition={{ delay: 0.1 }}
               className="text-white text-lg md:text-xl font-normal leading-relaxed"
             >
-              Se sua empresa precisa de apoio para escolher a melhor solução, entender uma aplicação específica ou avaliar qual produto faz mais sentido para a operação, nosso time está pronto para ajudar.
+              Nossa equipe está preparada para auxiliar na escolha da solução mais adequada para sua aplicação, processo ou necessidade operacional.
             </motion.p>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -271,7 +272,7 @@ const CommercialCTA = () => (
               transition={{ delay: 0.2 }}
               className="text-white/90 text-base font-normal leading-relaxed"
             >
-              Nosso atendimento une visão comercial e direcionamento técnico para tornar a escolha mais segura e mais aderente à realidade do seu negócio.
+              Receba orientação técnica e encontre a melhor alternativa para a realidade da sua empresa.
             </motion.p>
           </div>
   
@@ -282,7 +283,7 @@ const CommercialCTA = () => (
               className="bg-brand-secondary text-white px-8 py-4 text-sm font-bold tracking-tight rounded-none hover:bg-white hover:text-brand-primary transition-all duration-300 shadow-none border-none flex items-center justify-center gap-2"
             >
               <MessageCircle size={20} />
-              Fale com um especialista
+              Solicitar avaliação técnica
             </motion.button>
           </div>
         </div>
@@ -316,10 +317,12 @@ const PrivateLabel = () => (
             Sua marca, nossa produção
           </h2>
           <p className="text-black text-lg font-normal leading-relaxed mb-8">
-            Também atuamos com soluções sob demanda para empresas que buscam estrutura industrial, capacidade produtiva e apoio para projetos com marca própria.
+            Transforme sua ideia em uma linha própria de produtos com o suporte industrial, técnico e produtivo da Multionic.
+            <br /><br />
+            Desenvolvemos soluções para empresas que buscam ampliar seu portfólio com qualidade, segurança e capacidade produtiva especializada.
           </p>
           <button className="btn-primary py-5 px-10 shadow-none rounded-none uppercase font-bold text-xs">
-            Saiba mais sobre nossas soluções de terceirização
+            Saiba mais sobre terceirização
           </button>
         </motion.div>
       </div>
@@ -336,7 +339,9 @@ const Form = () => (
             Entre em contato com nosso time
           </h2>
           <p className="text-black text-lg font-normal leading-relaxed mb-8">
-            Preencha o formulário e nos conte brevemente a sua necessidade. Assim, conseguimos direcionar o atendimento com mais contexto e agilidade.
+            Preencha o formulário e nossa equipe retornará para entender sua necessidade e indicar a solução mais adequada para a sua operação.
+            <br /><br />
+            Com mais contexto, conseguimos oferecer um atendimento mais rápido, assertivo e alinhado à sua realidade.
           </p>
         </div>
         <div className="bg-white p-8 md:p-10 rounded-none shadow-sm border border-gray-100">

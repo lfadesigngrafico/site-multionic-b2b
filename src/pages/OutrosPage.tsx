@@ -1,92 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { 
-  ChevronDown,
-  ChevronUp,
-  ChevronRight, 
-  CheckCircle2, 
-  Package, 
-  MessageSquare, 
-  ArrowRight,
-  Star
-} from 'lucide-react';
-
-const products = [
-  {
-    name: "Raylin Desengraxante Multiuso",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1778611299/$5155ofc9mcw",
-    highlights: ["Ação imediata", "Baixa alcalinidade", "Base aquosa", "Com solvente glicólico"],
-    description: "Desenvolvido para a remoção manual de óleos e graxas em máquinas, peças, equipamentos, veículos, pisos e superfícies laváveis. É uma solução de ação rápida, não inflamável, formulada para unir desempenho e segurança na rotina operacional.",
-    indication: "Indicado para remoção imediata de óleos e graxas.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC).",
-    isBestSeller: true
-  },
-  {
-    name: "Raylin Desengraxante Multiuso GF",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$30uu0u4skua",
-    highlights: ["Limpeza de tintas gráficas", "Remove óleos e graxas", "Fórmula alcalina", "Base aquosa"],
-    description: "Desengraxante multilimpador desenvolvido para potencializar a limpeza de tintas gráficas em chapas, rolos, molhadores, tinteiros, máquinas, peças e equipamentos em geral.",
-    indication: "Indicado para limpeza de tintas gráficas.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
-  },
-  {
-    name: "Raylin Desengraxante Multiuso LV",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$bx7zo9m6das",
-    highlights: ["Baixa formação de espuma", "Pode ser usado em lavadoras", "pH neutro", "Remove óleos e graxas"],
-    description: "Solução indicada para uso em lavadoras de alta pressão e aplicações que exigem baixa formação de espuma. Pode ser utilizada em alumínio e suas ligas.",
-    indication: "Indicado para limpeza intensa de pisos, máquinas e equipamentos.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
-  },
-  {
-    name: "Raylin Limpeza Pesada",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$77vufmun6yi",
-    highlights: ["Limpeza intensa", "Alta concentração", "Remove óleos e graxas com eficiência", "Fórmula alcalina de base aquosa"],
-    description: "Desengraxante para limpeza manual intensa de máquinas, pisos, equipamentos e superfícies em geral.",
-    indication: "Indicado para a remoção de óleos e graxas com máxima eficiência.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
-  },
-  {
-    name: "Raylin Limpeza Pesada SE",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$63ido4g5vj",
-    highlights: ["Remoção eficaz de sujeira pesada", "Baixa formação de espuma", "Fórmula alcalina e concentrada", "Pode ser utilizado em máquinas lavadoras"],
-    description: "Desengraxante indicado para remoção de sujeiras pesadas em máquinas, equipamentos e pisos.",
-    indication: "Indicado para remoção eficaz de óleos e graxas.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
-  },
-  {
-    name: "Raylin DSE",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$xc6ce5xudrg",
-    highlights: ["Limpeza intensa", "Baixa formação de espuma", "Alcalino", "Pode ser usado em lavadoras"],
-    description: "Produto indicado para limpeza manual intensa com versatilidade operacional.",
-    indication: "Indicado para uso em lavadoras de alta pressão.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
-  },
-  {
-    name: "Raylin MSE-N",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$vu6jpk2mptl",
-    highlights: ["Limpeza geral", "Baixa espuma", "Ideal para limpeza pesada", "Compatível com alumínio"],
-    description: "Desengraxante indicado para limpeza de superfícies e operações com máquinas lavadoras.",
-    indication: "Indicado para limpeza geral com uso mecanizado.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
-  },
-  {
-    name: "Raylin SNT",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$qriae5c73xf",
-    highlights: ["Alta rigidez dielétrica", "Rápida evaporação", "Não inflamável", "Remove óleos e graxas"],
-    description: "Desengraxante para componentes elétricos e eletrônicos, mantendo isolamento e segurança.",
-    indication: "Indicado para limpeza de motores, geradores e sistemas elétricos.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
-  },
-  {
-    name: "Multisolv-L",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$grec2oyrqe5",
-    highlights: ["Não alcalino", "Não solúvel em água", "Baixa toxicidade", "Sem cheiro"],
-    description: "Solvente sintético para limpeza intensa em aplicações que exigem solvente.",
-    indication: "Indicado para desengraxe técnico de peças e equipamentos.",
-    packaging: "Galão de 5L e bombona de 20L."
-  }
-];
+import { ChevronDown } from 'lucide-react';
 
 const categories = [
   {
@@ -139,111 +54,16 @@ const categories = [
   }
 ];
 
-const ProductCard: React.FC<{ product: any; idx: number }> = ({ product, idx }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: (idx % 3) * 0.1 }}
-      className="bg-[#F8F9FA] border border-gray-100 rounded-none shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full overflow-hidden"
-    >
-      {/* 1. Imagem e Tag LÍDER DE VENDAS */}
-      <div className="relative w-full aspect-square overflow-hidden bg-[#F8F9FA] border-b border-gray-50 p-4">
-        {product.isBestSeller && (
-          <div className="absolute top-0 right-0 z-10 flex items-center gap-2.5 bg-brand-secondary text-white px-5 py-4 rounded-bl-[25px] shadow-xl">
-            <div className="flex items-center justify-center w-8 h-8 rounded-full border-2 border-white/40">
-              <Star size={14} fill="white" strokeWidth={0} />
-            </div>
-            <div className="flex flex-col leading-[1]">
-              <span className="text-[14px] font-bold uppercase tracking-tight opacity-90">LÍDER DE</span>
-              <span className="text-[16px] font-black uppercase tracking-tight">VENDAS</span>
-            </div>
-          </div>
-        )}
-        <img 
-          src={product.image} 
-          alt={product.name}
-          className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
-          referrerPolicy="no-referrer"
-        />
-      </div>
-
-      {/* 2. Conteúdo Fixo */}
-      <div className="p-8 pb-0 flex flex-col">
-        <h3 className="text-xl font-bold text-brand-primary uppercase mb-6 min-h-[3rem]">
-          {product.name}
-        </h3>
-
-        <div className="flex flex-wrap gap-2 mb-8">
-          {product.highlights.map((h: string, i: number) => (
-            <span key={i} className="text-[10px] font-bold uppercase tracking-wider text-brand-secondary bg-brand-secondary/5 px-2 py-1 rounded">
-              {h}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* 3. Área de Expansão / Botão Saiba Mais */}
-      <div className="mt-auto flex flex-col">
-        {/* Botão Saiba Mais - Apenas Mobile */}
-        {!isExpanded && (
-          <button 
-            onClick={() => setIsExpanded(true)}
-            className="md:hidden w-full bg-[#3B59C8] hover:bg-brand-primary text-white py-4 px-8 flex items-center justify-between transition-colors duration-300 shadow-lg group"
-          >
-            <span className="text-sm font-black uppercase tracking-widest">Saiba mais</span>
-            <ChevronDown size={24} strokeWidth={3} />
-          </button>
-        )}
-
-        {/* Detalhes do Produto - Sempre visíveis no desktop, toggle no mobile */}
-        <div className={`${isExpanded ? 'block' : 'hidden md:block'} border-t border-gray-100`}>
-          <div className="p-8 pt-6 flex flex-col">
-            <p className="text-black text-sm font-normal leading-relaxed mb-8">
-              {product.description}
-            </p>
-
-            <div className="bg-white p-6 rounded-none mb-8 border border-gray-100">
-              <span className="text-[10px] uppercase font-bold text-gray-400 block mb-3 tracking-widest">Indicação principal</span>
-              <p className="text-brand-primary font-bold text-base leading-snug">{product.indication}</p>
-            </div>
-
-            <div className="mb-10">
-              <span className="text-[10px] uppercase font-bold text-gray-400 block mb-3 tracking-widest">Disponível em</span>
-              <div className="flex items-start space-x-3">
-                <Package size={18} className="text-gray-400 flex-shrink-0" />
-                <p className="text-[12px] text-gray-500 font-medium leading-tight">{product.packaging}</p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 gap-4 mb-8">
-              <button className="btn-primary w-full py-4 uppercase font-bold text-xs shadow-none border-none tracking-widest">
-                Solicitar orçamento
-              </button>
-              <button className="btn-gray w-full py-4 uppercase font-bold text-xs shadow-none border-none tracking-widest">
-                Solicitar ficha técnica
-              </button>
-            </div>
-
-            {/* Botão de fechar - Apenas Mobile */}
-            <button 
-              onClick={() => setIsExpanded(false)}
-              className="md:hidden w-full flex items-center justify-center py-2 text-gray-400 hover:text-brand-primary transition-colors cursor-pointer group"
-            >
-              <ChevronUp size={32} strokeWidth={2} className="group-hover:-translate-y-1 transition-transform" />
-            </button>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
-
-export default function DesengraxantesPage() {
+export default function OutrosPage() {
   const [activeFaqId, setActiveFaqId] = useState<number | null>(null);
+
+  useEffect(() => {
+    document.title = "Sua marca, nossa produção | Multionic";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Desenvolva produtos químicos com sua própria marca. Conte com fabricação, envase, suporte técnico e controle de qualidade da Multionic.");
+    }
+  }, []);
 
   const toggleFaqAccordion = (idx: number) => {
     setActiveFaqId(activeFaqId === idx ? null : idx);
@@ -256,8 +76,8 @@ export default function DesengraxantesPage() {
         {/* Imagem de Fundo com Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias-desengraxantes/1764873651/imagens/desktop/1295641_1_173895050767a6476b104cc.jpg" 
-            alt="Desengraxantes Industriais Banner"
+            src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1784156031/$4nrwhl9ocn" 
+            alt="Sua marca, nossa produção Banner"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
@@ -276,10 +96,10 @@ export default function DesengraxantesPage() {
                 CATEGORIAS
               </span>
               <h1 className="text-3xl md:text-5xl font-black text-white uppercase leading-tight tracking-tight mb-8">
-                Desengraxantes Industriais
+                Sua Marca, Nossa Produção
               </h1>
               <p className="text-white/90 text-lg md:text-xl font-medium leading-relaxed max-w-2xl">
-                Remova óleos, graxas e resíduos com mais eficiência. Soluções desenvolvidas para limpeza técnica de máquinas, equipamentos, peças e ambientes industriais.
+                Desenvolvemos e fabricamos soluções químicas para empresas que desejam criar ou expandir sua própria linha de produtos com suporte técnico e estrutura industrial especializada.
               </p>
             </motion.div>
           </div>
@@ -309,7 +129,7 @@ export default function DesengraxantesPage() {
                   <Link 
                     key={i} 
                     to={cat.href}
-                    className={`text-white text-xs md:text-[13px] font-medium transition-colors transition-all whitespace-nowrap hover:text-brand-secondary ${cat.name === 'Desengraxantes' ? 'text-[#00D1FF] font-black' : ''}`}
+                    className={`text-white text-xs md:text-[13px] font-medium transition-colors transition-all whitespace-nowrap hover:text-brand-secondary ${cat.name === 'Sua marca, nossa produção' ? 'text-[#00D1FF] font-black' : ''}`}
                   >
                     {cat.name}
                   </Link>
@@ -320,30 +140,19 @@ export default function DesengraxantesPage() {
         </div>
       </div>
 
-      {/* 3. GRADE DE PRODUTOS */}
-      <section className="py-24 bg-white">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
-            {products.map((product, idx) => (
-              <ProductCard key={idx} product={product} idx={idx} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* 3. INTRODUÇÃO */}
       <section className="py-24 bg-gray-50 border-y border-gray-100 relative overflow-visible">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Coluna Esquerda: Texto */}
-            <div className="order-2 lg:order-1">
+            <div className="order-2 lg:order-1 text-left">
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="text-2xl md:text-3xl font-bold text-brand-primary mb-6 uppercase"
               >
-                Potência de limpeza para operações que exigem resultado
+                Estrutura industrial para apoiar o crescimento da sua marca
               </motion.h2>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -352,11 +161,9 @@ export default function DesengraxantesPage() {
                 transition={{ delay: 0.1 }}
                 className="text-black text-lg font-normal leading-relaxed"
               >
-                Os desengraxantes Multionic foram desenvolvidos para atender demandas de limpeza técnica em ambientes industriais, operacionais e profissionais.
+                A Multionic oferece soluções de fabricação e desenvolvimento para empresas que desejam atuar com marca própria.
                 <br /><br />
-                São soluções voltadas para remoção de resíduos oleosos, graxas e sujeiras pesadas, contribuindo para a manutenção de equipamentos, superfícies e processos produtivos.
-                <br /><br />
-                Com opções para diferentes aplicações, oferecem eficiência, segurança e desempenho em operações que exigem limpeza profunda e alta produtividade.
+                Com experiência produtiva, suporte técnico e estrutura industrial, apoiamos projetos em diferentes stages, do envase ao desenvolvimento completo de novos produtos.
               </motion.p>
             </div>
 
@@ -368,8 +175,8 @@ export default function DesengraxantesPage() {
               className="relative lg:mb-[-8rem] z-10 order-1 lg:order-2"
             >
               <img 
-                src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1784156031/$k3jerm0lu5i" 
-                alt="Potência de Limpeza Multionic" 
+                src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1784156031/$zzbrmkz53gr" 
+                alt="Estrutura industrial Multionic" 
                 className="w-full h-auto rounded-none shadow-xl pointer-events-none"
                 referrerPolicy="no-referrer"
               />
@@ -437,6 +244,7 @@ export default function DesengraxantesPage() {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              className="text-left"
             >
               <h2 className="text-2xl md:text-3xl font-bold text-brand-primary mb-6 uppercase">
                 Soluções para diferentes escalas de operação
@@ -445,7 +253,7 @@ export default function DesengraxantesPage() {
                 A Multionic oferece produtos em diferentes formatos e volumes para atender desde aplicações específicas até operações com alta demanda de consumo.
               </p>
               
-              <ul className="space-y-4 mb-8">
+              <ul className="space-y-4 mb-8 text-left">
                 {[
                   "Embalagens para diferentes necessidades operacionais",
                   "Melhor aproveitamento e controle de estoque",
@@ -481,7 +289,7 @@ export default function DesengraxantesPage() {
       {/* 7. NAVEGAÇÃO ENTRE CATEGORIAS */}
       <section className="py-24 bg-bg-light border-y border-gray-100">
         <div className="container-custom">
-          <div className="mb-12">
+          <div className="mb-12 text-left">
             <h2 className="text-2xl font-bold text-brand-primary uppercase mb-2">Navegue pelas categorias</h2>
             <p className="text-black text-lg">Conheça outras soluções da linha institucional e industrial da Multionic.</p>
           </div>
@@ -528,43 +336,8 @@ export default function DesengraxantesPage() {
         </div>
       </section>
 
-      {/* 8. BLOCO SUA MARCA */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-               initial={{ opacity: 0, scale: 0.95 }}
-               whileInView={{ opacity: 1, scale: 1 }}
-               viewport={{ once: true }}
-            >
-              <img 
-                src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1776874436/$vzhrrrp39mr" 
-                alt="Produção Industrial Multionic" 
-                className="w-full h-auto rounded-none"
-                referrerPolicy="no-referrer"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-2xl md:text-3xl font-bold text-brand-primary mb-6 uppercase">
-                Sua marca, nossa produção
-              </h2>
-              <p className="text-black text-lg font-normal leading-relaxed mb-8">
-                Também atuamos com soluções sob demanda para empresas que buscam estrutura industrial, capacidade produtiva e apoio para projetos com marca própria.
-              </p>
-              <button className="btn-primary py-5 px-10 shadow-none rounded-none uppercase font-bold text-xs">
-                Saiba mais sobre nossas soluções de terceirização
-              </button>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* 9. FAQ SECTION (Mesmo estilo e cores que HomeFAQ) */}
-      <section id="desengraxantes-faq" className="py-24 bg-[#6DB0DF] border-t border-gray-100">
+      {/* 8. FAQ SECTION */}
+      <section id="outros-faq" className="py-24 bg-[#6DB0DF] border-t border-gray-100">
         <div className="container-custom max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 uppercase">
@@ -575,24 +348,24 @@ export default function DesengraxantesPage() {
           <div className="space-y-4">
             {[
               {
-                q: "Como escolher o desengraxante industrial ideal?",
-                a: "A escolha depende do tipo de resíduo, superfície, método de aplicação e grau de sujidade. Nossa equipe técnica pode orientar a solução mais adequada para cada operação."
+                q: "O que é fabricação de produtos químicos para marca própria?",
+                a: "É o modelo em que uma empresa desenvolve ou comercializa produtos utilizando sua própria marca com apoio de uma estrutura industrial especializada."
               },
               {
-                q: "Os desengraxantes Multionic podem ser usados em máquinas e equipamentos?",
-                a: "Sim. Existem soluções desenvolvidas para auxiliar na remoção de óleos, graxas e resíduos em máquinas, equipamentos e componentes industriais."
+                q: "A Multionic realiza apenas envase?",
+                a: "Além do envase, podem ser avaliados projetos envolvendo fabricação e desenvolvimento de produtos."
               },
               {
-                q: "Os desengraxantes podem ser utilizados em peças metálicas?",
-                a: "Sim. A linha conta com opções voltadas para limpeza de peças, componentes e superfícies metálicas em diferentes processos industriais."
+                q: "Posso desenvolver uma formulação exclusiva?",
+                a: "Dependendo do projeto, nossa equipe pode avaliar alternativas de desenvolvimento."
               },
               {
-                q: "Existe desengraxante para limpeza pesada?",
-                a: "Sim. Algumas formulações são indicadas para operações que exigem maior poder de remoção de resíduos oleosos e incrustações."
+                q: "Quais segmentos podem trabalhar com marca própria?",
+                a: "Distribuidores, atacadistas, redes varejistas, empresas de limpeza profissional e indústrias são alguns exemplos."
               },
               {
-                q: "Como saber qual produto é mais indicado para minha aplicação?",
-                a: "Nossa equipe técnica pode avaliar sua necessidade e indicar a solução mais adequada para sua operação."
+                q: "Como iniciar um projeto de marca própria?",
+                a: "O primeiro passo é apresentar a necessidade para avaliação técnica e comercial. Nossa equipe pode te ajudar, entre em contato!"
               }
             ].map((item, idx) => (
               <div key={idx} className="bg-[#3B529B] border-none rounded-none shadow-sm overflow-hidden text-left">

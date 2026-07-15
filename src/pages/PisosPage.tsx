@@ -14,77 +14,36 @@ import {
 
 const products = [
   {
-    name: "Raylin Desengraxante Multiuso",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1778611299/$5155ofc9mcw",
-    highlights: ["Ação imediata", "Baixa alcalinidade", "Base aquosa", "Com solvente glicólico"],
-    description: "Desenvolvido para a remoção manual de óleos e graxas em máquinas, peças, equipamentos, veículos, pisos e superfícies laváveis. É uma solução de ação rápida, não inflamável, formulada para unir desempenho e segurança na rotina operacional.",
-    indication: "Indicado para remoção imediata de óleos e graxas.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC).",
-    isBestSeller: true
+    name: "Raylin Detergente Multiclean",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias-tratamento-pisos/1783443868/imagens/desktop/1295651_1_174905810216469593.png",
+    highlights: ["Alta performance.", "Remove sujidades orgânicas.", "Seguro para cera."],
+    description: "Detergente neutro com alta performance e elevada ação desengordurante.Ideal para a remoção de sujidades orgânicas em utensílios e superfícies em geral, especialmente em pisos encerados. Não ataca a cera sendo, portanto, o produto ideal para a manutenção de pisos tratados. Possui base aquosa e tensoativo biodegradável.",
+    indication: "Indicado para a remoção de sujidades orgânicas em utensílios e superfícies em geral, especialmente em pisos encerados.",
+    packaging: "Galão de 5L (caixa com 2 galões de 5L), Bombona de 20L, Bombona de 50L. Para outras litragens, consultar disponibilidade."
   },
   {
-    name: "Raylin Desengraxante Multiuso GF",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$30uu0u4skua",
-    highlights: ["Limpeza de tintas gráficas", "Remove óleos e graxas", "Fórmula alcalina", "Base aquosa"],
-    description: "Desengraxante multilimpador desenvolvido para potencializar a limpeza de tintas gráficas em chapas, rolos, molhadores, tinteiros, máquinas, peças e equipamentos em geral.",
-    indication: "Indicado para limpeza de tintas gráficas.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
+    name: "Raylin Selador Acrílico",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias-tratamento-pisos/1783443868/imagens/desktop/1295651_1_174905811264748695.png",
+    highlights: ["Base niveladora.", "Melhora aderência.", "Corrige irregularidades."],
+    description: "Base niveladora para pisos porosos pode ser utilizado em todos os tipos de pisos laváveis. Melhora a aderência de ceras acrílicas e corrige pequenas irregularidades do piso, sua formulação com matérias-primas nivelantes proporciona uma película plana e uniforme nos pisos tratados.",
+    indication: "Indicado como base niveladora de pisos.",
+    packaging: "Galão de 5L (caixa com 2 galões de 5L)."
   },
   {
-    name: "Raylin Desengraxante Multiuso LV",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$bx7zo9m6das",
-    highlights: ["Baixa formação de espuma", "Pode ser usado em lavadoras", "pH neutro", "Remove óleos e graxas"],
-    description: "Solução indicada para uso em lavadoras de alta pressão e aplicações que exigem baixa formação de espuma. Pode ser utilizada em alumínio e suas ligas.",
-    indication: "Indicado para limpeza intensa de pisos, máquinas e equipamentos.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
+    name: "Raylin Cera auto brilho",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias-tratamento-pisos/1783443868/imagens/desktop/1295651_1_174905812464986608.png",
+    highlights: ["Conservação e proteção.", "Piso brilhante e antiderrapante.", "Sem cor e cheiro.", "Consulte versões."],
+    description: "Cera Acrílica Indicada para conservação e proteção de pisos frios e laváveis, indicado para locais de tráfego intenso, deixando uma película brilhante e antiderrapante após a sua aplicação. Produto sem cor e sem cheiro, com nivelantes e plastificantes que facilitam a sua aplicação e dispersão de forma manual ou com enceradeiras. Consulte versões.",
+    indication: "Indicada para conservação e proteção de pisos frios e laváveis.",
+    packaging: "Galão de 5L (caixa com 2 galões de 5L)."
   },
   {
-    name: "Raylin Limpeza Pesada",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$77vufmun6yi",
-    highlights: ["Limpeza intensa", "Alta concentração", "Remove óleos e graxas com eficiência", "Fórmula alcalina de base aquosa"],
-    description: "Desengraxante para limpeza manual intensa de máquinas, pisos, equipamentos e superfícies em geral.",
-    indication: "Indicado para a remoção de óleos e graxas com máxima eficiência.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
-  },
-  {
-    name: "Raylin Limpeza Pesada SE",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$63ido4g5vj",
-    highlights: ["Remoção eficaz de sujeira pesada", "Baixa formação de espuma", "Fórmula alcalina e concentrada", "Pode ser utilizado em máquinas lavadoras"],
-    description: "Desengraxante indicado para remoção de sujeiras pesadas em máquinas, equipamentos e pisos.",
-    indication: "Indicado para remoção eficaz de óleos e graxas.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
-  },
-  {
-    name: "Raylin DSE",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$xc6ce5xudrg",
-    highlights: ["Limpeza intensa", "Baixa formação de espuma", "Alcalino", "Pode ser usado em lavadoras"],
-    description: "Produto indicado para limpeza manual intensa com versatilidade operacional.",
-    indication: "Indicado para uso em lavadoras de alta pressão.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
-  },
-  {
-    name: "Raylin MSE-N",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$vu6jpk2mptl",
-    highlights: ["Limpeza geral", "Baixa espuma", "Ideal para limpeza pesada", "Compatível com alumínio"],
-    description: "Desengraxante indicado para limpeza de superfícies e operações com máquinas lavadoras.",
-    indication: "Indicado para limpeza geral com uso mecanizado.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
-  },
-  {
-    name: "Raylin SNT",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$qriae5c73xf",
-    highlights: ["Alta rigidez dielétrica", "Rápida evaporação", "Não inflamável", "Remove óleos e graxas"],
-    description: "Desengraxante para componentes elétricos e eletrônicos, mantendo isolamento e segurança.",
-    indication: "Indicado para limpeza de motores, geradores e sistemas elétricos.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
-  },
-  {
-    name: "Multisolv-L",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$grec2oyrqe5",
-    highlights: ["Não alcalino", "Não solúvel em água", "Baixa toxicidade", "Sem cheiro"],
-    description: "Solvente sintético para limpeza intensa em aplicações que exigem solvente.",
-    indication: "Indicado para desengraxe técnico de peças e equipamentos.",
-    packaging: "Galão de 5L e bombona de 20L."
+    name: "Raylin Removedor de Ceras e Resinas",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias-tratamento-pisos/1783443868/imagens/desktop/1295651_1_174905813652823595.png",
+    highlights: ["Removedor alcalino.", "Remove ceras e resinas.", "Prepara o piso.", "Ideal para pisos desgastados."],
+    description: "Removedor alcalino, indicado para a remoção de ceras e resinas de pisos em geral. Remove camadas de ceras já desgastadas, proporciona grande economia de tempo e mão-de-obra, deixando o piso pronto para novas aplicações de ceras. Consulte versões.",
+    indication: "Indicado para a remoção de ceras e resinas de pisos em geral.",
+    packaging: "Galão de 5L (caixa com 2 galões de 5L)."
   }
 ];
 
@@ -242,7 +201,7 @@ const ProductCard: React.FC<{ product: any; idx: number }> = ({ product, idx }) 
   );
 };
 
-export default function DesengraxantesPage() {
+export default function PisosPage() {
   const [activeFaqId, setActiveFaqId] = useState<number | null>(null);
 
   const toggleFaqAccordion = (idx: number) => {
@@ -256,8 +215,8 @@ export default function DesengraxantesPage() {
         {/* Imagem de Fundo com Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias-desengraxantes/1764873651/imagens/desktop/1295641_1_173895050767a6476b104cc.jpg" 
-            alt="Desengraxantes Industriais Banner"
+            src="https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias-tratamento-pisos/1783443868/imagens/desktop/1295651_1_173895070367a6482f6a728.jpg" 
+            alt="Tratamento de pisos Banner"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
@@ -276,10 +235,10 @@ export default function DesengraxantesPage() {
                 CATEGORIAS
               </span>
               <h1 className="text-3xl md:text-5xl font-black text-white uppercase leading-tight tracking-tight mb-8">
-                Desengraxantes Industriais
+                Tratamento de Pisos
               </h1>
               <p className="text-white/90 text-lg md:text-xl font-medium leading-relaxed max-w-2xl">
-                Remova óleos, graxas e resíduos com mais eficiência. Soluções desenvolvidas para limpeza técnica de máquinas, equipamentos, peças e ambientes industriais.
+                Soluções para conservação, proteção e manutenção de pisos profissionais. Mais durabilidade, segurança e melhor aparência para diferentes ambientes operacionais.
               </p>
             </motion.div>
           </div>
@@ -309,7 +268,7 @@ export default function DesengraxantesPage() {
                   <Link 
                     key={i} 
                     to={cat.href}
-                    className={`text-white text-xs md:text-[13px] font-medium transition-colors transition-all whitespace-nowrap hover:text-brand-secondary ${cat.name === 'Desengraxantes' ? 'text-[#00D1FF] font-black' : ''}`}
+                    className={`text-white text-xs md:text-[13px] font-medium transition-colors transition-all whitespace-nowrap hover:text-brand-secondary ${cat.name === 'Tratamento de pisos' ? 'text-[#00D1FF] font-black' : ''}`}
                   >
                     {cat.name}
                   </Link>
@@ -343,7 +302,7 @@ export default function DesengraxantesPage() {
                 viewport={{ once: true }}
                 className="text-2xl md:text-3xl font-bold text-brand-primary mb-6 uppercase"
               >
-                Potência de limpeza para operações que exigem resultado
+                Conservação e desempenho para ambientes de alto tráfego
               </motion.h2>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -352,11 +311,9 @@ export default function DesengraxantesPage() {
                 transition={{ delay: 0.1 }}
                 className="text-black text-lg font-normal leading-relaxed"
               >
-                Os desengraxantes Multionic foram desenvolvidos para atender demandas de limpeza técnica em ambientes industriais, operacionais e profissionais.
+                A linha de tratamento de pisos Multionic foi desenvolvida para auxiliar na proteção, conservação e recuperação de diferentes tipos de superfícies.
                 <br /><br />
-                São soluções voltadas para remoção de resíduos oleosos, graxas e sujeiras pesadas, contribuindo para a manutenção de equipamentos, superfícies e processos produtivos.
-                <br /><br />
-                Com opções para diferentes aplicações, oferecem eficiência, segurança e desempenho em operações que exigem limpeza profunda e alta produtividade.
+                As soluções contribuem para aumentar a durabilidade dos pisos, melhorar a aparência dos ambientes e apoiar processos de manutenção em operações profissionais, comerciais e industriais.
               </motion.p>
             </div>
 
@@ -368,7 +325,7 @@ export default function DesengraxantesPage() {
               className="relative lg:mb-[-8rem] z-10 order-1 lg:order-2"
             >
               <img 
-                src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1784156031/$k3jerm0lu5i" 
+                src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1784156031/$4tzsqn45u15" 
                 alt="Potência de Limpeza Multionic" 
                 className="w-full h-auto rounded-none shadow-xl pointer-events-none"
                 referrerPolicy="no-referrer"
@@ -564,7 +521,7 @@ export default function DesengraxantesPage() {
       </section>
 
       {/* 9. FAQ SECTION (Mesmo estilo e cores que HomeFAQ) */}
-      <section id="desengraxantes-faq" className="py-24 bg-[#6DB0DF] border-t border-gray-100">
+      <section id="pisos-faq" className="py-24 bg-[#6DB0DF] border-t border-gray-100">
         <div className="container-custom max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 uppercase">
@@ -575,24 +532,24 @@ export default function DesengraxantesPage() {
           <div className="space-y-4">
             {[
               {
-                q: "Como escolher o desengraxante industrial ideal?",
-                a: "A escolha depende do tipo de resíduo, superfície, método de aplicação e grau de sujidade. Nossa equipe técnica pode orientar a solução mais adequada para cada operação."
+                q: "Quais tipos de pisos podem receber tratamento profissional?",
+                a: "As soluções podem ser utilizadas em diferentes superfícies, conforme a necessidade de conservação, proteção ou recuperação do piso."
               },
               {
-                q: "Os desengraxantes Multionic podem ser usados em máquinas e equipamentos?",
-                a: "Sim. Existem soluções desenvolvidas para auxiliar na remoção de óleos, graxas e resíduos em máquinas, equipamentos e componentes industriais."
+                q: "O tratamento de pisos ajuda a aumentar a durabilidade da superfície?",
+                a: "Sim. O tratamento adequado contribui para preservar características do piso e reduzir desgastes causados pelo uso contínuo."
               },
               {
-                q: "Os desengraxantes podem ser utilizados em peças metálicas?",
-                a: "Sim. A linha conta com opções voltadas para limpeza de peças, componentes e superfícies metálicas em diferentes processos industriais."
+                q: "Existem soluções para ambientes de alto tráfego?",
+                a: "Sim. A linha possui opções desenvolvidas para ambientes submetidos a circulação intensa de pessoas e equipamentos."
               },
               {
-                q: "Existe desengraxante para limpeza pesada?",
-                a: "Sim. Algumas formulações são indicadas para operações que exigem maior poder de remoção de resíduos oleosos e incrustações."
+                q: "Qual a diferença entre limpeza e tratamento de pisos?",
+                a: "A limpeza remove sujeiras e resíduos. Já o tratamento busca proteger, conservar e prolongar a vida útil da superfície."
               },
               {
-                q: "Como saber qual produto é mais indicado para minha aplicação?",
-                a: "Nossa equipe técnica pode avaliar sua necessidade e indicar a solução mais adequada para sua operação."
+                q: "Como escolher a solução ideal para meu piso?",
+                a: "A recomendação depende do tipo de piso, nível de tráfego e objetivo da operação."
               }
             ].map((item, idx) => (
               <div key={idx} className="bg-[#3B529B] border-none rounded-none shadow-sm overflow-hidden text-left">

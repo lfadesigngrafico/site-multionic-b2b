@@ -2,5 +2,5 @@
   "name": "Multionic - Soluções Químicas B2B",
   "description": "Site institucional moderno para Multionic, especializada em produtos químicos de limpeza de alta performance.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

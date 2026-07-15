@@ -51,13 +51,13 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold text-xs uppercase tracking-widest mb-6 border-b border-white/10 pb-2">Produtos</h4>
             <ul className="space-y-3">
-              <li><Link to="/solucoes/desengraxantes" className="text-white/60 hover:text-white transition-colors text-xs">Desengraxantes industriais</Link></li>
-              <li><Link to="/solucoes/pisos" className="text-white/60 hover:text-white transition-colors text-xs">Tratamento de pisos</Link></li>
-              <li><Link to="/solucoes/sabonetes" className="text-white/60 hover:text-white transition-colors text-xs">Higiene das mãos</Link></li>
-              <li><Link to="/solucoes/cozinha" className="text-white/60 hover:text-white transition-colors text-xs">Cozinha industrial</Link></li>
-              <li><Link to="/solucoes/lavanderia" className="text-white/60 hover:text-white transition-colors text-xs">Lavanderia</Link></li>
-              <li><Link to="/solucoes/limpeza-geral" className="text-white/60 hover:text-white transition-colors text-xs">Limpeza geral</Link></li>
-              <li><Link to="/solucoes/outros" className="text-white/60 hover:text-white transition-colors text-xs">Sua marca, nossa produção</Link></li>
+              <li><Link to="/produtos/desengraxantes" className="text-white/60 hover:text-white transition-colors text-xs">Desengraxantes industriais</Link></li>
+              <li><Link to="/produtos/pisos" className="text-white/60 hover:text-white transition-colors text-xs">Tratamento de pisos</Link></li>
+              <li><Link to="/produtos/sabonetes" className="text-white/60 hover:text-white transition-colors text-xs">Higiene das mãos</Link></li>
+              <li><Link to="/produtos/cozinha" className="text-white/60 hover:text-white transition-colors text-xs">Cozinha industrial</Link></li>
+              <li><Link to="/produtos/lavanderia" className="text-white/60 hover:text-white transition-colors text-xs">Lavanderia</Link></li>
+              <li><Link to="/produtos/limpeza-geral" className="text-white/60 hover:text-white transition-colors text-xs">Limpeza geral</Link></li>
+              <li><Link to="/b2b/sua-marca-nossa-producao" className="text-white/60 hover:text-white transition-colors text-xs">Sua marca, nossa produção</Link></li>
             </ul>
           </div>
 

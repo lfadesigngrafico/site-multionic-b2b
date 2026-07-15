@@ -108,7 +108,7 @@ export default function Challenges() {
           className="text-center mt-16 md:mt-20"
         >
           <Link
-            to="/solucoes"
+            to="/produtos"
             className="bg-[#6DB0DF] hover:bg-[#5ca0cf] text-white inline-flex items-center gap-3 justify-center !px-12 !py-5 uppercase text-sm font-bold shadow-lg rounded-none transform transition-transform duration-300 hover:scale-[1.05] group transition-colors"
           >
             Encontrar a solução ideal

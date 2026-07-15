@@ -14,77 +14,52 @@ import {
 
 const products = [
   {
-    name: "Raylin Desengraxante Multiuso",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1778611299/$5155ofc9mcw",
-    highlights: ["Ação imediata", "Baixa alcalinidade", "Base aquosa", "Com solvente glicólico"],
-    description: "Desenvolvido para a remoção manual de óleos e graxas em máquinas, peças, equipamentos, veículos, pisos e superfícies laváveis. É uma solução de ação rápida, não inflamável, formulada para unir desempenho e segurança na rotina operacional.",
-    indication: "Indicado para remoção imediata de óleos e graxas.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC).",
-    isBestSeller: true
+    name: "Efficax Aluminium",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias-cozinha-industrial/1783442972/imagens/desktop/1295657_1_174766763404002261.png",
+    highlights: ["Detergente alcalino.", "Ideal para utensílios de alumínio.", "Uso exclusivo em máquinas automáticas."],
+    description: "Detergente para lavagem mecânica de louças, ideal para lavagem de utensílios de alumínio, atuando em água de elevada dureza. Deve ser utilizado somente em máquinas automáticas com dosadores. Não deve ser utilizado manualmente.",
+    indication: "Ideal para lavagem de utensílios de alumínio.",
+    packaging: "Galão de 5L (caixa com 2 galões de 5L) e Bombona de 20L. Para outras litragens, consultar disponibilidade."
   },
   {
-    name: "Raylin Desengraxante Multiuso GF",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$30uu0u4skua",
-    highlights: ["Limpeza de tintas gráficas", "Remove óleos e graxas", "Fórmula alcalina", "Base aquosa"],
-    description: "Desengraxante multilimpador desenvolvido para potencializar a limpeza de tintas gráficas em chapas, rolos, molhadores, tinteiros, máquinas, peças e equipamentos em geral.",
-    indication: "Indicado para limpeza de tintas gráficas.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
+    name: "Efficax CL",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias-cozinha-industrial/1783442972/imagens/desktop/1295657_1_174766767030736713.png",
+    highlights: ["Detergente alcalino clorado.", "Para máquinas automáticas.", "Remoção de gorduras eficiente.", "Ideal para utensílios de cozinha."],
+    description: "Detergente alcalino clorado indicado para uso em máquinas automáticas para a lavagem de utensílios de cozinha como copos, pratos, talheres etc. Excelente poder de remoção de gorduras.",
+    indication: "Indicado para uso em máquinas automáticas para a lavagem de utensílios de cozinha como copos, pratos, talheres etc.",
+    packaging: "Galão de 5L (caixa com 2 galões de 5L) e Bombona de 20L. Para outras litragens, consultar disponibilidade."
   },
   {
-    name: "Raylin Desengraxante Multiuso LV",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$bx7zo9m6das",
-    highlights: ["Baixa formação de espuma", "Pode ser usado em lavadoras", "pH neutro", "Remove óleos e graxas"],
-    description: "Solução indicada para uso em lavadoras de alta pressão e aplicações que exigem baixa formação de espuma. Pode ser utilizada em alumínio e suas ligas.",
-    indication: "Indicado para limpeza intensa de pisos, máquinas e equipamentos.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
+    name: "Efficax DT",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias-cozinha-industrial/1783442972/imagens/desktop/1295657_1_174905505913143622.png",
+    highlights: ["Desengraxante semipastoso.", "Alto desempenho e concentração.", "Ideal para cozinhas industriais.", "Limpeza de pisos, paredes e utensílios.", "Alta espuma e viscosidade."],
+    description: "Detergente desengraxante estruturado semipastoso de alto desempenho. Indicado para uso em cozinhas industriais. Produto altamente concentrado de ótimo rendimento com mais espuma e viscosidade, o que facilita a limpeza manual de superfícies como pisos e paredes, além de louças e utensílios.",
+    indication: "Indicado para uso em cozinhas industriais.",
+    packaging: "Galão de 5L (caixa com 2 galões de 5L) e Bombona de 20L. Para outras litragens, consultar disponibilidade."
   },
   {
-    name: "Raylin Limpeza Pesada",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$77vufmun6yi",
-    highlights: ["Limpeza intensa", "Alta concentração", "Remove óleos e graxas com eficiência", "Fórmula alcalina de base aquosa"],
-    description: "Desengraxante para limpeza manual intensa de máquinas, pisos, equipamentos e superfícies em geral.",
-    indication: "Indicado para a remoção de óleos e graxas com máxima eficiência.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
+    name: "Efficax SEC",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias-cozinha-industrial/1783442972/imagens/desktop/1295657_1_174905501503339148.png",
+    highlights: ["Secante abrilhantador.", "Para máquinas lavadoras automáticas.."],
+    description: "Secante abrilhantador para louças e utensílios indicado para uso na água de enxágue em máquinas lavadoras automáticas. Possui um poderoso aditivo que acelera a secagem ao mesmo tempo em que confere brilho aos utensílios e louças lavadas.",
+    indication: "Indicado para uso na água de enxágue em máquinas lavadoras automáticas.",
+    packaging: "Galão de 5L (caixa com 2 galões de 5L) e Bombona de 20L. Para outras litragens, consultar disponibilidade."
   },
   {
-    name: "Raylin Limpeza Pesada SE",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$63ido4g5vj",
-    highlights: ["Remoção eficaz de sujeira pesada", "Baixa formação de espuma", "Fórmula alcalina e concentrada", "Pode ser utilizado em máquinas lavadoras"],
-    description: "Desengraxante indicado para remoção de sujeiras pesadas em máquinas, equipamentos e pisos.",
-    indication: "Indicado para remoção eficaz de óleos e graxas.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
+    name: "Raylin D",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias-cozinha-industrial/1783442972/imagens/desktop/1295657_1_174766772915965122.png",
+    highlights: ["Desincrustante de alto rendimento.", "Remove óleos e gorduras carbonizadas.", "Solúvel em água e não inflamável.", "Produto multilimpador altamente alcalino."],
+    description: "Desincrustante indicado para remoção de óleos, gordura carbonizada (animal e vegetal), entre outras sujidades orgânicas. Produto multilimpador altamente alcalino, solúvel em água, não inflamável e de alto rendimento. Pode ser utilizado em superfícies em geral como máquinas, chapas, coifas, utensílios, etc.",
+    indication: "Indicado para remoção de óleos, gordura carbonizada (animal e vegetal), entre outras sujidades orgânicas.",
+    packaging: "Galão de 5L (caixa com 2 galões de 5L) e Bombona de 20L. Para outras litragens, consultar disponibilidade."
   },
   {
-    name: "Raylin DSE",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$xc6ce5xudrg",
-    highlights: ["Limpeza intensa", "Baixa formação de espuma", "Alcalino", "Pode ser usado em lavadoras"],
-    description: "Produto indicado para limpeza manual intensa com versatilidade operacional.",
-    indication: "Indicado para uso em lavadoras de alta pressão.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
-  },
-  {
-    name: "Raylin MSE-N",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$vu6jpk2mptl",
-    highlights: ["Limpeza geral", "Baixa espuma", "Ideal para limpeza pesada", "Compatível com alumínio"],
-    description: "Desengraxante indicado para limpeza de superfícies e operações com máquinas lavadoras.",
-    indication: "Indicado para limpeza geral com uso mecanizado.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
-  },
-  {
-    name: "Raylin SNT",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$qriae5c73xf",
-    highlights: ["Alta rigidez dielétrica", "Rápida evaporação", "Não inflamável", "Remove óleos e graxas"],
-    description: "Desengraxante para componentes elétricos e eletrônicos, mantendo isolamento e segurança.",
-    indication: "Indicado para limpeza de motores, geradores e sistemas elétricos.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
-  },
-  {
-    name: "Multisolv-L",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$grec2oyrqe5",
-    highlights: ["Não alcalino", "Não solúvel em água", "Baixa toxicidade", "Sem cheiro"],
-    description: "Solvente sintético para limpeza intensa em aplicações que exigem solvente.",
-    indication: "Indicado para desengraxe técnico de peças e equipamentos.",
-    packaging: "Galão de 5L e bombona de 20L."
+    name: "Raylin Detergente Desinfetante",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias-cozinha-industrial/1783442972/imagens/desktop/1295657_1_177575481583908305.png",
+    highlights: ["Dois efeitos em única aplicação: limpa e desinfeta simultaneamente.", "Eficácia comprovada contra microrganismos de importância sanitária."],
+    description: "Desinfetante para indústria alimentícia e afins que limpa e desinfeta em uma única operação. É formulado com 2% de Hipoclorito de Sódio estabilizado, o que garante uma perda muito menor de teor ativo ao longo do tempo.",
+    indication: "Indicado para limpeza e desinfecção de utensílios, equipamentos e área de preparo, consumo e estocagem de alimentos em indústrias alimentícias, cozinhas e outras aplicações que exijam efeito bactericida.",
+    packaging: "Galão de 5L (caixa com 2 galões de 5L). Para outras litragens, consultar disponibilidade."
   }
 ];
 
@@ -242,7 +217,7 @@ const ProductCard: React.FC<{ product: any; idx: number }> = ({ product, idx }) 
   );
 };
 
-export default function DesengraxantesPage() {
+export default function CozinhaPage() {
   const [activeFaqId, setActiveFaqId] = useState<number | null>(null);
 
   const toggleFaqAccordion = (idx: number) => {
@@ -256,8 +231,8 @@ export default function DesengraxantesPage() {
         {/* Imagem de Fundo com Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias-desengraxantes/1764873651/imagens/desktop/1295641_1_173895050767a6476b104cc.jpg" 
-            alt="Desengraxantes Industriais Banner"
+            src="https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias-cozinha-industrial/1783442972/imagens/desktop/1295657_1_173895078967a6488535b81.jpg" 
+            alt="Cozinha Industrial Banner"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
@@ -276,10 +251,10 @@ export default function DesengraxantesPage() {
                 CATEGORIAS
               </span>
               <h1 className="text-3xl md:text-5xl font-black text-white uppercase leading-tight tracking-tight mb-8">
-                Desengraxantes Industriais
+                Cozinha Industrial
               </h1>
               <p className="text-white/90 text-lg md:text-xl font-medium leading-relaxed max-w-2xl">
-                Remova óleos, graxas e resíduos com mais eficiência. Soluções desenvolvidas para limpeza técnica de máquinas, equipamentos, peças e ambientes industriais.
+                Soluções para higienização de cozinhas profissionais e áreas de manipulação de alimentos. Mais eficiência, segurança e padronização operacional.
               </p>
             </motion.div>
           </div>
@@ -309,7 +284,7 @@ export default function DesengraxantesPage() {
                   <Link 
                     key={i} 
                     to={cat.href}
-                    className={`text-white text-xs md:text-[13px] font-medium transition-colors transition-all whitespace-nowrap hover:text-brand-secondary ${cat.name === 'Desengraxantes' ? 'text-[#00D1FF] font-black' : ''}`}
+                    className={`text-white text-xs md:text-[13px] font-medium transition-colors transition-all whitespace-nowrap hover:text-brand-secondary ${cat.name === 'Cozinha industrial' ? 'text-[#00D1FF] font-black' : ''}`}
                   >
                     {cat.name}
                   </Link>
@@ -343,7 +318,7 @@ export default function DesengraxantesPage() {
                 viewport={{ once: true }}
                 className="text-2xl md:text-3xl font-bold text-brand-primary mb-6 uppercase"
               >
-                Potência de limpeza para operações que exigem resultado
+                Higienização profissional para operações alimentícias
               </motion.h2>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -352,11 +327,9 @@ export default function DesengraxantesPage() {
                 transition={{ delay: 0.1 }}
                 className="text-black text-lg font-normal leading-relaxed"
               >
-                Os desengraxantes Multionic foram desenvolvidos para atender demandas de limpeza técnica em ambientes industriais, operacionais e profissionais.
+                A linha para cozinhas industriais foi desenvolvida para atender ambientes que exigem elevados padrões de limpeza e controle operacional.
                 <br /><br />
-                São soluções voltadas para remoção de resíduos oleosos, graxas e sujeiras pesadas, contribuindo para a manutenção de equipamentos, superfícies e processos produtivos.
-                <br /><br />
-                Com opções para diferentes aplicações, oferecem eficiência, segurança e desempenho em operações que exigem limpeza profunda e alta produtividade.
+                As soluções apoiam processos de higienização em cozinhas profissionais, restaurantes industriais e operações de food service, contribuindo para ambientes mais seguros e organizados.
               </motion.p>
             </div>
 
@@ -368,7 +341,7 @@ export default function DesengraxantesPage() {
               className="relative lg:mb-[-8rem] z-10 order-1 lg:order-2"
             >
               <img 
-                src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1784156031/$k3jerm0lu5i" 
+                src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1784156031/$zymj40c5gzg" 
                 alt="Potência de Limpeza Multionic" 
                 className="w-full h-auto rounded-none shadow-xl pointer-events-none"
                 referrerPolicy="no-referrer"
@@ -564,7 +537,7 @@ export default function DesengraxantesPage() {
       </section>
 
       {/* 9. FAQ SECTION (Mesmo estilo e cores que HomeFAQ) */}
-      <section id="desengraxantes-faq" className="py-24 bg-[#6DB0DF] border-t border-gray-100">
+      <section id="cozinha-faq" className="py-24 bg-[#6DB0DF] border-t border-gray-100">
         <div className="container-custom max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 uppercase">
@@ -575,24 +548,24 @@ export default function DesengraxantesPage() {
           <div className="space-y-4">
             {[
               {
-                q: "Como escolher o desengraxante industrial ideal?",
-                a: "A escolha depende do tipo de resíduo, superfície, método de aplicação e grau de sujidade. Nossa equipe técnica pode orientar a solução mais adequada para cada operação."
+                q: "Quais ambientes podem utilizar os produtos da linha cozinha industrial?",
+                a: "As soluções foram desenvolvidas para cozinhas profissionais, áreas de manipulação de alimentos e operações de food service."
               },
               {
-                q: "Os desengraxantes Multionic podem ser usados em máquinas e equipamentos?",
-                a: "Sim. Existem soluções desenvolvidas para auxiliar na remoção de óleos, graxas e resíduos em máquinas, equipamentos e componentes industriais."
+                q: "Os produtos auxiliam na remoção de gordura pesada?",
+                a: "Sim. Existem soluções específicas para higienização de superfícies e equipamentos expostos a resíduos gordurosos."
               },
               {
-                q: "Os desengraxantes podem ser utilizados em peças metálicas?",
-                a: "Sim. A linha conta com opções voltadas para limpeza de peças, componentes e superfícies metálicas em diferentes processos industriais."
+                q: "A linha pode ser utilizada em restaurantes industriais?",
+                a: "Sim. Os produtos podem apoiar rotinas de limpeza e higienização em diferentes operações alimentícias."
               },
               {
-                q: "Existe desengraxante para limpeza pesada?",
-                a: "Sim. Algumas formulações são indicadas para operações que exigem maior poder de remoção de resíduos oleosos e incrustações."
+                q: "Como manter um padrão de higienização em cozinhas profissionais?",
+                a: "A combinação entre procedimentos adequados e produtos específicos ajuda a aumentar a eficiência dos processos."
               },
               {
-                q: "Como saber qual produto é mais indicado para minha aplicação?",
-                a: "Nossa equipe técnica pode avaliar sua necessidade e indicar a solução mais adequada para sua operação."
+                q: "Como saber qual solução utilizar?",
+                a: "Nossa equipe técnica pode auxiliar na avaliação da aplicação e indicar a alternativa mais adequada."
               }
             ].map((item, idx) => (
               <div key={idx} className="bg-[#3B529B] border-none rounded-none shadow-sm overflow-hidden text-left">

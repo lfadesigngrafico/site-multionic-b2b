@@ -52,7 +52,7 @@ export default function HomeHeroVideo() {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <Link 
-                to="/solucoes"
+                to="/produtos"
                 className="bg-[#6DB0DF] hover:bg-[#5ca0cf] text-white inline-flex items-center justify-center !px-12 !py-5 uppercase text-sm font-bold shadow-none rounded-none transform transition-transform duration-300 hover:scale-[1.05] transition-colors"
               >
                 Conheça nossos produtos

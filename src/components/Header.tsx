@@ -6,28 +6,47 @@ import { Link, useLocation } from 'react-router-dom';
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      const currentScrollY = window.scrollY;
+      setIsScrolled(currentScrollY > 10);
+      
+      if (isMobileMenuOpen) {
+        setIsVisible(true);
+        setLastScrollY(currentScrollY);
+        return;
+      }
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY, isMobileMenuOpen]);
 
   const navLinks = [
     { name: 'Home', href: '/', type: 'internal' },
-    { name: 'Produtos', href: '/solucoes', type: 'internal' },
+    { name: 'Produtos', href: '/produtos', type: 'internal' },
     { name: 'Segmentos atendidos', href: '/segmentos', type: 'internal' },
-    { name: 'Sua marca, nossa produção', href: '/#marca-propria', type: 'anchor' },
+    { name: 'Sua marca, nossa produção', href: '/b2b/sua-marca-nossa-producao', type: 'internal' },
     { name: 'Sobre a Multionic', href: '/#sobre', type: 'anchor' },
     { name: 'Contato', href: '/contato', type: 'internal' },
   ];
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 transform ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      } ${
         isScrolled || location.pathname !== '/' ? 'bg-white/90 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'
       }`}
     >

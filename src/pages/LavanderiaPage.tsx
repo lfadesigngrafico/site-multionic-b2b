@@ -14,77 +14,44 @@ import {
 
 const products = [
   {
-    name: "Raylin Desengraxante Multiuso",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1778611299/$5155ofc9mcw",
-    highlights: ["Ação imediata", "Baixa alcalinidade", "Base aquosa", "Com solvente glicólico"],
-    description: "Desenvolvido para a remoção manual de óleos e graxas em máquinas, peças, equipamentos, veículos, pisos e superfícies laváveis. É uma solução de ação rápida, não inflamável, formulada para unir desempenho e segurança na rotina operacional.",
-    indication: "Indicado para remoção imediata de óleos e graxas.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC).",
-    isBestSeller: true
+    name: "Cetim Alvejante Clorado",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias-lavanderia/1772472506/imagens/desktop/1295658_1_174905689318612476.png",
+    highlights: ["Detergente em pó clorado.", "Alvejamento e remoção de manchas.", "Para roupas de algodão e misturas."],
+    description: "Detergente em pó clorado para roupas e tecidos. Indicado para alvejamento e remoção de manchas em roupas de algodão e algodão/poliéster.",
+    indication: "Indicado para alvejamento e remoção de manchas em roupas de algodão e algodão/poliéster.",
+    packaging: "Balde de 5kg"
   },
   {
-    name: "Raylin Desengraxante Multiuso GF",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$30uu0u4skua",
-    highlights: ["Limpeza de tintas gráficas", "Remove óleos e graxas", "Fórmula alcalina", "Base aquosa"],
-    description: "Desengraxante multilimpador desenvolvido para potencializar a limpeza de tintas gráficas em chapas, rolos, molhadores, tinteiros, máquinas, peças e equipamentos em geral.",
-    indication: "Indicado para limpeza de tintas gráficas.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
+    name: "Cetim Detergente em Pó",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias-lavanderia/1772472506/imagens/desktop/1295658_1_174766921813506606.png",
+    highlights: ["Detergente em pó para roupas.", "Pré-lavagem e lavagem de algodão e poliéster.", "Remove graxas, óleos e gorduras.", "Fragrância agradável."],
+    description: "Detergente em pó para roupas, indicado para pré-lavagem e lavagem de roupas de algodão e poliéster, brancas e de cores firmes. Usado para sujidades leves e pesadas, como graxas, óleos e gorduras de origem vegetal, animal, mineral e etc. Pode ser usado em baixa ou alta temperatura e possui fragrância agradável.",
+    indication: "Indicado para pré-lavagem e lavagem de roupas de algodão e poliéster, brancas e de cores firmes.",
+    packaging: "Saco de 6kg"
   },
   {
-    name: "Raylin Desengraxante Multiuso LV",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$bx7zo9m6das",
-    highlights: ["Baixa formação de espuma", "Pode ser usado em lavadoras", "pH neutro", "Remove óleos e graxas"],
-    description: "Solução indicada para uso em lavadoras de alta pressão e aplicações que exigem baixa formação de espuma. Pode ser utilizada em alumínio e suas ligas.",
-    indication: "Indicado para limpeza intensa de pisos, máquinas e equipamentos.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
+    name: "Cetim Pasta Umectante",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias-lavanderia/1772472506/imagens/desktop/1295658_1_174766926993801093.png",
+    highlights: ["Pasta umectante para roupas.", "Remove manchas de tecidos delicados.", "Ideal para lã, seda, nylon e rayon."],
+    description: "Pasta umectante para lavar roupas. Lava e remove manchas de tecidos finos e delicados, sensíveis a produtos alcalinos (lã, seda, nylon, rayon, etc). Aditivo para produtos alcalinos na pré-lavagem e na lavagem de roupas com sujidade pesada. Umectante na primeira etapa do processo de lavagem para sujidades pesada, diminuindo os enxágues iniciais.",
+    indication: "Aditivo para produtos alcalinos na pré-lavagem e na lavagem de roupas com sujidade pesada.",
+    packaging: "Balde de 5kg"
   },
   {
-    name: "Raylin Limpeza Pesada",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$77vufmun6yi",
-    highlights: ["Limpeza intensa", "Alta concentração", "Remove óleos e graxas com eficiência", "Fórmula alcalina de base aquosa"],
-    description: "Desengraxante para limpeza manual intensa de máquinas, pisos, equipamentos e superfícies em geral.",
-    indication: "Indicado para a remoção de óleos e graxas com máxima eficiência.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
+    name: "Cetim Amaciante",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias-lavanderia/1772472506/imagens/desktop/1295658_1_174905691431448949.png",
+    highlights: ["Amacia e suaviza as fibras das roupas, remove resíduos de sabão, deixando-as como novas.", "Deixa um agradável perfume de roupa limpa, facilita a passagem a ferro, recupera as fibras desgastadas."],
+    description: "Amacia e suaviza as fibras das roupas, remove resíduos de sabão, deixando-as como novas. Deixa um agradável perfume de roupa limpa, facilita a passagem a ferro, recupera as fibras desgastadas.",
+    indication: "Indicado para amaciar e suavizar as fibras dos tecidos, além de remover resíduos de sabão.",
+    packaging: "Galão de 5L (caixa com 2 galões de 5L), Bombona de 20L, Bombona de 50L, Tambor de 200L, Container de 1000L - IBC."
   },
   {
-    name: "Raylin Limpeza Pesada SE",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$63ido4g5vj",
-    highlights: ["Remoção eficaz de sujeira pesada", "Baixa formação de espuma", "Fórmula alcalina e concentrada", "Pode ser utilizado em máquinas lavadoras"],
-    description: "Desengraxante indicado para remoção de sujeiras pesadas em máquinas, equipamentos e pisos.",
-    indication: "Indicado para remoção eficaz de óleos e graxas.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
-  },
-  {
-    name: "Raylin DSE",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$xc6ce5xudrg",
-    highlights: ["Limpeza intensa", "Baixa formação de espuma", "Alcalino", "Pode ser usado em lavadoras"],
-    description: "Produto indicado para limpeza manual intensa com versatilidade operacional.",
-    indication: "Indicado para uso em lavadoras de alta pressão.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
-  },
-  {
-    name: "Raylin MSE-N",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$vu6jpk2mptl",
-    highlights: ["Limpeza geral", "Baixa espuma", "Ideal para limpeza pesada", "Compatível com alumínio"],
-    description: "Desengraxante indicado para limpeza de superfícies e operações com máquinas lavadoras.",
-    indication: "Indicado para limpeza geral com uso mecanizado.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
-  },
-  {
-    name: "Raylin SNT",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$qriae5c73xf",
-    highlights: ["Alta rigidez dielétrica", "Rápida evaporação", "Não inflamável", "Remove óleos e graxas"],
-    description: "Desengraxante para componentes elétricos e eletrônicos, mantendo isolamento e segurança.",
-    indication: "Indicado para limpeza de motores, geradores e sistemas elétricos.",
-    packaging: "Galão de 5L, bombona de 20L, bombona de 50L, tambor de 200L e container de 1000L (IBC)."
-  },
-  {
-    name: "Multisolv-L",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776950389/$grec2oyrqe5",
-    highlights: ["Não alcalino", "Não solúvel em água", "Baixa toxicidade", "Sem cheiro"],
-    description: "Solvente sintético para limpeza intensa em aplicações que exigem solvente.",
-    indication: "Indicado para desengraxe técnico de peças e equipamentos.",
-    packaging: "Galão de 5L e bombona de 20L."
+    name: "Cetim Detergente Líquido",
+    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias-lavanderia/1772472506/imagens/desktop/1295658_1_177221236637682999.png",
+    highlights: ["Alta eficiência na lavagem.", "Fórmula concentrada com enzimas."],
+    description: "Detergente líquido concentrado desenvolvido para a lavagem profissional de roupas e tecidos. Possui formulação balanceada com tensoativos e enzimas que promovem excelente remoção de sujidades, mantendo o cuidado com os tecidos and alto rendimento no processo de lavagem. Diluição: 4ml a 7ml/litro.",
+    indication: "Indicado para lavagem de roupas e tecidos em lavanderias profissionais.",
+    packaging: "Galão de 5L (caixa com 2 galões de 5L) e Bombona de 20L."
   }
 ];
 
@@ -242,7 +209,7 @@ const ProductCard: React.FC<{ product: any; idx: number }> = ({ product, idx }) 
   );
 };
 
-export default function DesengraxantesPage() {
+export default function LavanderiaPage() {
   const [activeFaqId, setActiveFaqId] = useState<number | null>(null);
 
   const toggleFaqAccordion = (idx: number) => {
@@ -256,8 +223,8 @@ export default function DesengraxantesPage() {
         {/* Imagem de Fundo com Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias-desengraxantes/1764873651/imagens/desktop/1295641_1_173895050767a6476b104cc.jpg" 
-            alt="Desengraxantes Industriais Banner"
+            src="https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias-lavanderia/1772472506/imagens/desktop/1295658_1_173895082667a648aa8be36.jpg" 
+            alt="Lavanderia Banner"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
@@ -276,10 +243,10 @@ export default function DesengraxantesPage() {
                 CATEGORIAS
               </span>
               <h1 className="text-3xl md:text-5xl font-black text-white uppercase leading-tight tracking-tight mb-8">
-                Desengraxantes Industriais
+                Lavanderia Profissional
               </h1>
               <p className="text-white/90 text-lg md:text-xl font-medium leading-relaxed max-w-2xl">
-                Remova óleos, graxas e resíduos com mais eficiência. Soluções desenvolvidas para limpeza técnica de máquinas, equipamentos, peças e ambientes industriais.
+                Produtos desenvolvidos para processos de lavagem e higienização profissional. Mais eficiência, padronização e desempenho operacional.
               </p>
             </motion.div>
           </div>
@@ -309,7 +276,7 @@ export default function DesengraxantesPage() {
                   <Link 
                     key={i} 
                     to={cat.href}
-                    className={`text-white text-xs md:text-[13px] font-medium transition-colors transition-all whitespace-nowrap hover:text-brand-secondary ${cat.name === 'Desengraxantes' ? 'text-[#00D1FF] font-black' : ''}`}
+                    className={`text-white text-xs md:text-[13px] font-medium transition-colors transition-all whitespace-nowrap hover:text-brand-secondary ${cat.name === 'Lavanderia' ? 'text-[#00D1FF] font-black' : ''}`}
                   >
                     {cat.name}
                   </Link>
@@ -343,7 +310,7 @@ export default function DesengraxantesPage() {
                 viewport={{ once: true }}
                 className="text-2xl md:text-3xl font-bold text-brand-primary mb-6 uppercase"
               >
-                Potência de limpeza para operações que exigem resultado
+                Performance para rotinas de lavagem profissional
               </motion.h2>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -352,11 +319,9 @@ export default function DesengraxantesPage() {
                 transition={{ delay: 0.1 }}
                 className="text-black text-lg font-normal leading-relaxed"
               >
-                Os desengraxantes Multionic foram desenvolvidos para atender demandas de limpeza técnica em ambientes industriais, operacionais e profissionais.
+                A linha para lavanderias Multionic foi desenvolvida para atender diferentes necessidades de lavagem, higienização e conservação têxtil.
                 <br /><br />
-                São soluções voltadas para remoção de resíduos oleosos, graxas e sujeiras pesadas, contribuindo para a manutenção de equipamentos, superfícies e processos produtivos.
-                <br /><br />
-                Com opções para diferentes aplicações, oferecem eficiência, segurança e desempenho em operações que exigem limpeza profunda e alta produtividade.
+                São soluções voltadas para operações que buscam qualidade nos processos, padronização dos resultados e eficiência operacional.
               </motion.p>
             </div>
 
@@ -368,7 +333,7 @@ export default function DesengraxantesPage() {
               className="relative lg:mb-[-8rem] z-10 order-1 lg:order-2"
             >
               <img 
-                src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1784156031/$k3jerm0lu5i" 
+                src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1784156031/$yzi6r7sqwf" 
                 alt="Potência de Limpeza Multionic" 
                 className="w-full h-auto rounded-none shadow-xl pointer-events-none"
                 referrerPolicy="no-referrer"
@@ -564,7 +529,7 @@ export default function DesengraxantesPage() {
       </section>
 
       {/* 9. FAQ SECTION (Mesmo estilo e cores que HomeFAQ) */}
-      <section id="desengraxantes-faq" className="py-24 bg-[#6DB0DF] border-t border-gray-100">
+      <section id="lavanderia-faq" className="py-24 bg-[#6DB0DF] border-t border-gray-100">
         <div className="container-custom max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 uppercase">
@@ -575,24 +540,24 @@ export default function DesengraxantesPage() {
           <div className="space-y-4">
             {[
               {
-                q: "Como escolher o desengraxante industrial ideal?",
-                a: "A escolha depende do tipo de resíduo, superfície, método de aplicação e grau de sujidade. Nossa equipe técnica pode orientar a solução mais adequada para cada operação."
+                q: "Os produtos atendem lavanderias industriais e profissionais?",
+                a: "Sim. A linha foi desenvolvida para operações que exigem padronização e eficiência nos processos de lavagem."
               },
               {
-                q: "Os desengraxantes Multionic podem ser usados em máquinas e equipamentos?",
-                a: "Sim. Existem soluções desenvolvidas para auxiliar na remoção de óleos, graxas e resíduos em máquinas, equipamentos e componentes industriais."
+                q: "Como melhorar a qualidade dos resultados em lavanderias?",
+                a: "A escolha adequada dos produtos e a correta aplicação contribuem para maior consistência nos processos."
               },
               {
-                q: "Os desengraxantes podem ser utilizados em peças metálicas?",
-                a: "Sim. A linha conta com opções voltadas para limpeza de peças, componentes e superfícies metálicas em diferentes processos industriais."
+                q: "Os produtos ajudam na padronização das lavagens?",
+                a: "Sim. As soluções são desenvolvidas para apoiar rotinas mais controladas e previsíveis."
               },
               {
-                q: "Existe desengraxante para limpeza pesada?",
-                a: "Sim. Algumas formulações são indicadas para operações que exigem maior poder de remoção de resíduos oleosos e incrustações."
+                q: "A Multionic atende lavanderias hospitalares?",
+                a: "A indicação depende da necessidade e do processo utilizado. Nossa equipe pode orientar a melhor solução."
               },
               {
-                q: "Como saber qual produto é mais indicado para minha aplicação?",
-                a: "Nossa equipe técnica pode avaliar sua necessidade e indicar a solução mais adequada para sua operação."
+                q: "Como escolher os produtos para lavanderia?",
+                a: "A recomendação depende do tipo de operação, tecidos processados e objetivos da lavagem. Nossa equipe pode te ajudar, entre em contato!"
               }
             ].map((item, idx) => (
               <div key={idx} className="bg-[#3B529B] border-none rounded-none shadow-sm overflow-hidden text-left">

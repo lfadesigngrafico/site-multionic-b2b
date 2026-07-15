@@ -92,7 +92,7 @@ export default function CategoryCarousel() {
                   }}
                   className="absolute w-[220px] h-[220px] md:w-[340px] md:h-[340px] overflow-hidden shadow-2xl"
                 >
-                  <Link to="/solucoes" className="block w-full h-full">
+                  <Link to="/produtos" className="block w-full h-full">
                     <div className="relative w-full h-full group">
                       <img 
                         src={item.image} 
