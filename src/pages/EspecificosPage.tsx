@@ -90,8 +90,28 @@ const categories = [
   }
 ];
 
-const ProductCard: React.FC<{ product: any; idx: number }> = ({ product, idx }) => {
+const ProductCard: React.FC<{ 
+  product: any; 
+  idx: number; 
+  maxTagsHeight: number; 
+  onHeightMeasured: (idx: number, height: number) => void; 
+}> = ({ product, idx, maxTagsHeight, onHeightMeasured }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const tagsRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    if (tagsRef.current) {
+      const handleResize = () => {
+        if (tagsRef.current) {
+          onHeightMeasured(idx, tagsRef.current.clientHeight);
+        }
+      };
+      
+      handleResize();
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, [idx, onHeightMeasured]);
 
   return (
     <motion.div
@@ -124,21 +144,26 @@ const ProductCard: React.FC<{ product: any; idx: number }> = ({ product, idx }) 
 
       {/* 2. Conteúdo Fixo */}
       <div className="p-8 pb-0 flex flex-col">
-        <h3 className="text-xl font-bold text-brand-primary uppercase mb-6 min-h-[3rem]">
+        <h3 className="text-xl font-bold text-brand-primary uppercase mb-6 md:min-h-[4.5rem] flex items-center">
           {product.name}
         </h3>
 
-        <div className="flex flex-wrap gap-2 mb-8">
-          {product.highlights.map((h: string, i: number) => (
-            <span key={i} className="text-[10px] font-bold uppercase tracking-wider text-brand-secondary bg-brand-secondary/5 px-2 py-1 rounded">
-              {h}
-            </span>
-          ))}
+        <div 
+          className="flex flex-wrap gap-2 mb-4 content-start"
+          style={{ minHeight: maxTagsHeight > 0 ? `${maxTagsHeight}px` : undefined }}
+        >
+          <div ref={tagsRef} className="flex flex-wrap gap-2 w-full">
+            {product.highlights.map((h: string, i: number) => (
+              <span key={i} className="text-[10px] font-bold uppercase tracking-wider text-brand-secondary bg-brand-secondary/5 px-2 py-1 rounded">
+                {h}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* 3. Área de Expansão / Botão Saiba Mais */}
-      <div className="mt-auto flex flex-col">
+      <div className="flex-grow flex flex-col">
         {/* Botão Saiba Mais - Apenas Mobile */}
         {!isExpanded && (
           <button 
@@ -151,18 +176,18 @@ const ProductCard: React.FC<{ product: any; idx: number }> = ({ product, idx }) 
         )}
 
         {/* Detalhes do Produto - Sempre visíveis no desktop, toggle no mobile */}
-        <div className={`${isExpanded ? 'block' : 'hidden md:block'} border-t border-gray-100`}>
-          <div className="p-8 pt-6 flex flex-col">
-            <p className="text-black text-sm font-normal leading-relaxed mb-8">
+        <div className={`${isExpanded ? 'flex flex-col' : 'hidden md:flex md:flex-col'} border-t border-gray-100 flex-grow`}>
+          <div className="p-8 pt-6 flex flex-col flex-grow">
+            <p className="text-black text-sm font-normal leading-relaxed mb-8 md:min-h-[8.5rem]">
               {product.description}
             </p>
 
-            <div className="bg-white p-6 rounded-none mb-8 border border-gray-100">
-              <span className="text-[10px] uppercase font-bold text-gray-400 block mb-3 tracking-widest">Indicação principal</span>
+            <div className="bg-white p-6 rounded-none mb-8 border border-gray-100 md:min-h-[6.5rem] flex flex-col justify-center">
+              <span className="text-[10px] uppercase font-bold text-gray-400 block mb-2 tracking-widest">Indicação principal</span>
               <p className="text-brand-primary font-bold text-base leading-snug">{product.indication}</p>
             </div>
 
-            <div className="mb-10">
+            <div className="mb-10 md:min-h-[4.5rem]">
               <span className="text-[10px] uppercase font-bold text-gray-400 block mb-3 tracking-widest">Disponível em</span>
               <div className="flex items-start space-x-3">
                 <Package size={18} className="text-gray-400 flex-shrink-0" />
@@ -170,7 +195,7 @@ const ProductCard: React.FC<{ product: any; idx: number }> = ({ product, idx }) 
               </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-4 mb-8">
+            <div className="grid grid-cols-1 gap-4 mb-8 mt-auto">
               <button className="btn-primary w-full py-4 uppercase font-bold text-xs shadow-none border-none tracking-widest">
                 Solicitar orçamento
               </button>
@@ -195,6 +220,16 @@ const ProductCard: React.FC<{ product: any; idx: number }> = ({ product, idx }) 
 
 export default function EspecificosPage() {
   const [activeFaqId, setActiveFaqId] = useState<number | null>(null);
+  const [measuredHeights, setMeasuredHeights] = useState<Record<number, number>>({});
+
+  const handleHeightMeasured = React.useCallback((idx: number, height: number) => {
+    setMeasuredHeights(prev => {
+      if (prev[idx] === height) return prev;
+      return { ...prev, [idx]: height };
+    });
+  }, []);
+
+  const maxTagsHeight = Math.max(0, ...(Object.values(measuredHeights) as number[]));
 
   const toggleFaqAccordion = (idx: number) => {
     setActiveFaqId(activeFaqId === idx ? null : idx);
@@ -276,7 +311,13 @@ export default function EspecificosPage() {
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
             {products.map((product, idx) => (
-              <ProductCard key={idx} product={product} idx={idx} />
+              <ProductCard 
+                key={idx} 
+                product={product} 
+                idx={idx} 
+                maxTagsHeight={maxTagsHeight}
+                onHeightMeasured={handleHeightMeasured}
+              />
             ))}
           </div>
         </div>
@@ -317,7 +358,7 @@ export default function EspecificosPage() {
               className="relative lg:mb-[-8rem] z-10 order-1 lg:order-2"
             >
               <img 
-                src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1784156031/$awxla8gbi8r" 
+                src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1784341811/$f9umhwf2759" 
                 alt="Potência de Limpeza Multionic" 
                 className="w-full h-auto rounded-none shadow-xl pointer-events-none"
                 referrerPolicy="no-referrer"
