@@ -13,7 +13,7 @@ const Hero = () => (
   <section 
     className="relative h-[700px] flex items-center overflow-hidden bg-[#014486] bg-cover bg-center bg-no-repeat"
     style={{ 
-      backgroundImage: "url('https://pages.greatpages.com.br/www.multionic.com.br-b2b/1764936323/imagens/desktop/1124971_1_17344573766761b820a1b9d190769909.jpg')" 
+      backgroundImage: "url('https://d335luupugsy2.cloudfront.net/cms/files/38500/1784768630/$w3cs44emwy')" 
     }}
   >
     <div className="absolute inset-0 bg-[#014486]/60 pointer-events-none" />

@@ -262,7 +262,7 @@ export default function CozinhaPage() {
   return (
     <div className="bg-white">
       {/* 1. HERO / BANNER PRINCIPAL */}
-      <section className="relative h-[500px] flex items-center overflow-hidden">
+      <section className="relative h-[700px] flex items-center overflow-hidden">
         {/* Imagem de Fundo com Overlay */}
         <div className="absolute inset-0 z-0">
           <img 

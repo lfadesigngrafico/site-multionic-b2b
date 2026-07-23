@@ -40,7 +40,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold text-xs uppercase tracking-widest mb-6 border-b border-white/10 pb-2">Institucional</h4>
             <ul className="space-y-3">
-              <li><a href="#sobre" className="text-white/60 hover:text-white transition-colors text-xs">Sobre a Multionic</a></li>
+              <li><Link to="/sobre" className="text-white/60 hover:text-white transition-colors text-xs">Sobre a Multionic</Link></li>
               <li><a href="#" className="text-white/60 hover:text-white transition-colors text-xs">Nossa história</a></li>
               <li><a href="#" className="text-white/60 hover:text-white transition-colors text-xs">Estrutura industrial</a></li>
               <li><a href="#" className="text-white/60 hover:text-white transition-colors text-xs">Certificações e licenças</a></li>

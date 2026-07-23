@@ -38,7 +38,7 @@ export default function Header() {
     { name: 'Produtos', href: '/produtos', type: 'internal' },
     { name: 'Segmentos atendidos', href: '/segmentos', type: 'internal' },
     { name: 'Sua marca, nossa produção', href: '/b2b/sua-marca-nossa-producao', type: 'internal' },
-    { name: 'Sobre a Multionic', href: '/#sobre', type: 'anchor' },
+    { name: 'Sobre a Multionic', href: '/sobre', type: 'internal' },
     { name: 'Contato', href: '/contato', type: 'internal' },
   ];
 

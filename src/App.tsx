@@ -14,6 +14,7 @@ import SegmentsPage from './pages/SegmentsPage';
 import ContactPage from './pages/ContactPage';
 import SuaMarcaPage from './pages/SuaMarcaPage';
 import OutrosPage from './pages/OutrosPage';
+import AboutPage from './pages/AboutPage';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -47,6 +48,8 @@ export default function App() {
             <Route path="/produtos/outros" element={<OutrosPage />} />
             <Route path="/b2b/sua-marca-nossa-producao" element={<SuaMarcaPage />} />
             <Route path="/segmentos" element={<SegmentsPage />} />
+            <Route path="/sobre" element={<AboutPage />} />
+            <Route path="/sobre-a-multionic" element={<AboutPage />} />
             <Route path="/contato" element={<ContactPage />} />
           </Routes>
         </main>

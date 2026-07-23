@@ -78,13 +78,13 @@ export default function Challenges() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.08 }}
-                className="bg-white p-8 border border-slate-100 shadow-sm relative group flex flex-col justify-between hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:border-[#0877E1]/20"
+                className="bg-white p-8 border border-slate-100 shadow-sm relative group flex flex-col justify-between hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:border-[#6DB0DF]/20"
               >
                 <div>
-                  <div className="w-12 h-12 bg-[#0877E1]/10 rounded-none flex items-center justify-center text-[#0877E1] mb-6 transition-colors duration-300">
+                  <div className="w-12 h-12 bg-[#6DB0DF]/10 rounded-none flex items-center justify-center text-[#6DB0DF] mb-6 transition-colors duration-300">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-lg md:text-xl font-bold text-[#3B529B] mb-3 group-hover:text-[#0877E1] transition-colors duration-300">
+                  <h3 className="text-lg md:text-xl font-bold text-[#3B529B] mb-3 group-hover:text-[#6DB0DF] transition-colors duration-300">
                     {challenge.title}
                   </h3>
                   <p className="text-gray-600 text-sm md:text-base font-normal leading-relaxed">
@@ -93,7 +93,7 @@ export default function Challenges() {
                 </div>
                 
                 {/* Decorative hover elements */}
-                <div className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#0877E1] group-hover:w-full transition-all duration-500" />
+                <div className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#6DB0DF] group-hover:w-full transition-all duration-500" />
               </motion.div>
             );
           })}

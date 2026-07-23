@@ -2,7 +2,7 @@
 
 @theme {
   --color-brand-primary: #3B529B;
-  --color-brand-secondary: #0877e1;
+  --color-brand-secondary: #6DB0DF;
   --color-brand-hover: #065bb5;
   --color-bg-light: #f0f3f5;
   --color-text-main: #333333;
@@ -12,6 +12,10 @@
 }
 
 @layer base {
+  *, *::before, *::after {
+    border-radius: 0 !important;
+  }
+
   body {
     @apply font-sans bg-white text-text-main antialiased font-normal;
   }

@@ -49,7 +49,7 @@ export default function ContactForm() {
                 "Suporte técnico especializado"
               ].map((bullet, i) => (
                 <div key={i} className="flex items-center gap-3">
-                  <span className="text-[#0877E1] font-bold text-lg">✔</span>
+                  <span className="text-[#6DB0DF] font-bold text-lg">✔</span>
                   <span className="text-gray-800 text-sm md:text-base font-medium">{bullet}</span>
                 </div>
               ))}

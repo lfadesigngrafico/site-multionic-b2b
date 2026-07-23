@@ -11,7 +11,11 @@ import {
   MapPin, 
   Clock,
   Shield,
-  ShieldCheck
+  ShieldCheck,
+  Briefcase,
+  Wrench,
+  Tag,
+  HelpCircle
 } from 'lucide-react';
 
 const contactChannels = [
@@ -19,19 +23,19 @@ const contactChannels = [
     title: "Telefone corporativo",
     info: "+55 12 3686-1511",
     sub: "Atendimento de segunda a sexta-feira, das 8h às 17h.",
-    icon: <Phone className="w-8 h-8 text-brand-secondary" />
+    icon: <Phone className="w-8 h-8 text-[#018E6D]" />
   },
   {
     title: "WhatsApp",
     info: "+55 12 3686-1511",
     sub: "Fale com nossa equipe em dias úteis, das 8h às 17h.",
-    icon: <MessageCircle className="w-8 h-8 text-brand-secondary" />
+    icon: <MessageCircle className="w-8 h-8 text-[#018E6D]" />
   },
   {
     title: "E-mail",
     info: "contato@multionic.com.br",
     sub: "Envie sua solicitação e receba o retorno do nosso time.",
-    icon: <Mail className="w-8 h-8 text-brand-secondary" />
+    icon: <Mail className="w-8 h-8 text-[#018E6D]" />
   }
 ];
 
@@ -132,45 +136,151 @@ export default function ContactPage() {
   return (
     <div className="bg-white">
       {/* 1. HERO BANNER */}
-      <section className="relative h-[500px] w-full overflow-hidden mt-[80px]">
+      <section className="relative h-[700px] w-full overflow-hidden flex items-center bg-[#014486]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1776874436/$6swkurl6vlh" 
+            src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1784768630/$c4nh72f2u8n" 
             alt="Contato e Localização" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
           {/* Overlay para legibilidade */}
-          <div className="absolute inset-0 bg-brand-primary/40" />
+          <div className="absolute inset-0 bg-[#014486]/60 pointer-events-none" />
         </div>
 
-        <div className="container-custom h-full relative z-10 flex flex-col justify-center">
-          <div className="max-w-3xl text-left">
-            <motion.h1 
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="text-3xl md:text-5xl font-bold text-white mb-6 uppercase leading-tight"
-            >
-              Contato & localização
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-white text-lg md:text-xl font-normal leading-relaxed"
-            >
-              Temos orgulho de estar sempre próximos dos nossos clientes, oferecendo suporte técnico, atendimento consultivo e soluções sob medida para o seu negócio. Escolha o canal ideal e fale com nosso time.
-            </motion.p>
+        <div className="container-custom relative z-10 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div className="flex flex-col justify-center text-left">
+              <motion.h1 
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="text-3xl md:text-5xl font-bold text-white mb-6 uppercase leading-tight"
+              >
+                Fale com a Multionic
+              </motion.h1>
+              <motion.p 
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.1 }}
+                className="text-white text-lg md:text-xl font-normal leading-relaxed mb-4"
+              >
+                Nossa equipe está pronta para entender sua necessidade e indicar a solução mais adequada para sua operação.
+              </motion.p>
+              <motion.p 
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.15 }}
+                className="text-white text-lg md:text-xl font-normal leading-relaxed"
+              >
+                Seja para produtos, suporte técnico, desenvolvimento de marca própria ou informações comerciais, estamos à disposição para ajudar.
+              </motion.p>
+            </div>
+            <div className="hidden lg:block"></div>
           </div>
         </div>
       </section>
 
-      {/* 2. CHAMADA PRINCIPAL */}
-      <section className="py-8 bg-[#0877e1] text-center">
-        <h2 className="text-xl md:text-2xl font-bold text-white uppercase tracking-tight">
-          Fale conosco e construa uma parceria de sucesso
-        </h2>
+      {/* 2. BLOCO 2 - COMO PODEMOS AJUDAR? */}
+      <section className="py-16 bg-[#F0F3F5] border-b border-[#E5E7EB]">
+        <div className="container-custom">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-2xl md:text-3xl font-bold text-[#014486] uppercase tracking-tight"
+            >
+              Como podemos ajudar?
+            </motion.h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.05 }}
+              className="bg-white p-6 md:p-8 border border-[#E5E7EB] shadow-xs relative group flex flex-col justify-between hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:border-[#6DB0DF]/20 text-left overflow-hidden"
+            >
+              <div>
+                <div className="mb-4 p-3 bg-[#F0F3F5] rounded-none w-fit border border-[#E5E7EB]">
+                  <Briefcase className="w-6 h-6 text-[#6DB0DF]" />
+                </div>
+                <h3 className="text-lg font-bold text-[#014486] mb-2 group-hover:text-[#6DB0DF] transition-colors duration-300">
+                  Solicitação comercial
+                </h3>
+                <p className="text-sm text-[#6B7280] leading-relaxed">
+                  Informações sobre produtos, soluções e oportunidades de negócio.
+                </p>
+              </div>
+              <div className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#6DB0DF] group-hover:w-full transition-all duration-500" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-white p-6 md:p-8 border border-[#E5E7EB] shadow-xs relative group flex flex-col justify-between hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:border-[#6DB0DF]/20 text-left overflow-hidden"
+            >
+              <div>
+                <div className="mb-4 p-3 bg-[#F0F3F5] rounded-none w-fit border border-[#E5E7EB]">
+                  <Wrench className="w-6 h-6 text-[#6DB0DF]" />
+                </div>
+                <h3 className="text-lg font-bold text-[#014486] mb-2 group-hover:text-[#6DB0DF] transition-colors duration-300">
+                  Suporte técnico
+                </h3>
+                <p className="text-sm text-[#6B7280] leading-relaxed">
+                  Orientação sobre aplicações, utilização e escolha de produtos.
+                </p>
+              </div>
+              <div className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#6DB0DF] group-hover:w-full transition-all duration-500" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 }}
+              className="bg-white p-6 md:p-8 border border-[#E5E7EB] shadow-xs relative group flex flex-col justify-between hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:border-[#6DB0DF]/20 text-left overflow-hidden"
+            >
+              <div>
+                <div className="mb-4 p-3 bg-[#F0F3F5] rounded-none w-fit border border-[#E5E7EB]">
+                  <Tag className="w-6 h-6 text-[#6DB0DF]" />
+                </div>
+                <h3 className="text-lg font-bold text-[#014486] mb-2 group-hover:text-[#6DB0DF] transition-colors duration-300">
+                  Marca própria
+                </h3>
+                <p className="text-sm text-[#6B7280] leading-relaxed">
+                  Desenvolvimento, fabricação e envase para sua marca.
+                </p>
+              </div>
+              <div className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#6DB0DF] group-hover:w-full transition-all duration-500" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-white p-6 md:p-8 border border-[#E5E7EB] shadow-xs relative group flex flex-col justify-between hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:border-[#6DB0DF]/20 text-left overflow-hidden"
+            >
+              <div>
+                <div className="mb-4 p-3 bg-[#F0F3F5] rounded-none w-fit border border-[#E5E7EB]">
+                  <HelpCircle className="w-6 h-6 text-[#6DB0DF]" />
+                </div>
+                <h3 className="text-lg font-bold text-[#014486] mb-2 group-hover:text-[#6DB0DF] transition-colors duration-300">
+                  Atendimento geral
+                </h3>
+                <p className="text-sm text-[#6B7280] leading-relaxed">
+                  Dúvidas, solicitações e informações institucionais.
+                </p>
+              </div>
+              <div className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#6DB0DF] group-hover:w-full transition-all duration-500" />
+            </motion.div>
+          </div>
+        </div>
       </section>
 
       {/* 3. BLOCO DE FORMULÁRIO (PRINCIPAL) */}
@@ -182,11 +292,12 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-brand-primary mb-6 uppercase leading-tight">
-                Preencha o formulário e receba o retorno técnico de nossa equipe
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary mb-6 uppercase leading-tight">
+                Receba retorno <br />
+                da nossa equipe
               </h2>
               <p className="text-black text-lg font-normal leading-relaxed mb-8">
-                Conte brevemente sua necessidade e nossa equipe fará o direcionamento mais adequado para o seu atendimento.
+                Preencha o formulário e nossa equipe entrará em contato para entender sua necessidade e direcionar o atendimento mais adequado.
               </p>
             </motion.div>
 
@@ -256,7 +367,7 @@ export default function ContactPage() {
       </section>
 
       {/* 4. CANAIS DE ATENDIMENTO */}
-      <section className="py-24 bg-[#0877e1]">
+      <section className="py-24 bg-[#75BFBA]">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 uppercase">
@@ -279,10 +390,10 @@ export default function ContactPage() {
                 <div className="mb-6 p-4 bg-gray-50 rounded-none">
                   {channel.icon}
                 </div>
-                <h3 className="text-lg font-bold text-brand-primary mb-3 uppercase tracking-tight">
+                <h3 className="text-lg font-bold text-[#018E6D] mb-3 uppercase tracking-tight">
                   {channel.title}
                 </h3>
-                <p className="text-xl font-bold text-brand-secondary mb-3">
+                <p className="text-xl font-bold text-[#018E6D] mb-3">
                   {channel.info}
                 </p>
                 <p className="text-black text-sm font-normal leading-relaxed opacity-60">
@@ -294,109 +405,46 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* 5. DIFERENCIAIS DO ATENDIMENTO */}
-      <section className="py-24 bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-brand-primary mb-4 uppercase">
-              Diferenciais do atendimento Multionic
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {differentials.map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="flex flex-col items-start space-y-4"
-              >
-                <div className="p-3 bg-brand-secondary/10 rounded-none text-brand-secondary">
-                  {item.icon}
-                </div>
-                <h3 className="text-lg font-bold text-brand-primary uppercase tracking-tight">
-                  {item.title}
-                </h3>
-                <p className="text-black text-base font-normal leading-relaxed">
-                  {item.text}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+      {/* 5. ATENDIMENTO ESPECÍFICO */}
+      <section className="py-24 bg-white border-t border-gray-100 overflow-hidden relative group">
+        {/* Background Icon */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none z-0">
+          <ShieldCheck size={450} strokeWidth={1} className="text-[#3B529B]" />
         </div>
-      </section>
 
-      {/* 6. BLOCO COMERCIAL */}
-      <section className="py-20 bg-brand-primary text-white relative">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Coluna Esquerda: Imagem com Overlap */}
-            <div className="relative order-2 lg:order-1">
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="relative lg:-mt-40 lg:-mb-40"
-              >
-                <img 
-                  src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1776874436/$rpcarbod4gh"
-                  alt="Multionic Soluções Técnicas" 
-                  className="w-full h-auto object-contain pointer-events-none"
-                  referrerPolicy="no-referrer"
-                />
-              </motion.div>
-            </div>
-
-            {/* Coluna Direita: Texto e Botões */}
-            <div className="text-left order-1 lg:order-2">
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 uppercase text-white"
-              >
-                Converse com nosso time comercial
-              </motion.h2>
-              <div className="space-y-4 mb-10">
-                <motion.p 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 }}
-                  className="text-white/80 text-lg md:text-xl font-normal leading-relaxed"
-                >
-                  Sua empresa precisa de soluções de alto desempenho capazes de otimizar sua rotina operacional?
-                </motion.p>
-                <motion.p 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
-                  className="text-white/70 text-base font-normal leading-relaxed"
-                >
-                  Estamos prontos para analisar suas necessidades e oferecer opções que tragam resultados reais para o seu negócio.
-                </motion.p>
-              </div>
-      
-              <div className="flex flex-col sm:flex-row justify-start gap-4">
-                <motion.button 
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-brand-secondary text-white px-8 py-4 text-sm font-bold tracking-tight rounded-none hover:bg-white hover:text-brand-primary transition-all duration-300 shadow-none border-none flex items-center justify-center gap-2"
-                >
-                  <MessageCircle size={20} />
-                  Chamar no WhatsApp
-                </motion.button>
-              </div>
-            </div>
+        <div className="container-custom text-center relative z-10">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-primary mb-6 uppercase"
+          >
+            Tem uma necessidade específica?<br />Nosso time pode ajudar.
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-black text-lg md:text-xl max-w-3xl mx-auto mb-12 font-normal leading-relaxed"
+          >
+            Fale com a Multionic para receber direcionamento comercial e técnico com mais segurança, clareza e agilidade.
+          </motion.p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-brand-secondary text-white px-12 py-5 font-bold uppercase tracking-tight hover:bg-brand-primary transition-all flex items-center justify-center gap-2"
+            >
+              <MessageCircle size={20} />
+              Chamar no WhatsApp
+            </motion.button>
           </div>
         </div>
       </section>
 
       {/* 7. BLOCO DE LOCALIZAÇÃO */}
-      <section id="localizacao" className="py-24 bg-white overflow-hidden">
+      <section id="localizacao" className="py-24 bg-[#6DB0DF] overflow-hidden">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -404,31 +452,31 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-brand-primary mb-6 uppercase">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 uppercase">
                 Nossa localização
               </h2>
-              <p className="text-black text-lg font-normal leading-relaxed mb-8">
+              <p className="text-white text-lg font-normal leading-relaxed mb-8">
                 Estamos em Taubaté/SP, com estrutura para atender empresas que buscam soluções químicas profissionais e industriais.
               </p>
               
               <div className="space-y-8">
                 <div className="flex items-start space-x-4">
-                  <div className="mt-1 flex-shrink-0 w-10 h-10 bg-gray-50 rounded-none flex items-center justify-center text-brand-secondary">
+                  <div className="mt-1 flex-shrink-0 w-10 h-10 bg-[#014486] rounded-none flex items-center justify-center text-white">
                     <MapPin size={20} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-brand-primary uppercase text-xs tracking-widest mb-1">Sede Multionic</h4>
-                    <p className="text-black font-normal">Rua Carlos Pedroso da Silveira, 4.900<br />Taubaté/SP — 12043-000</p>
+                    <h4 className="font-bold text-white uppercase text-xs tracking-widest mb-1">Sede Multionic</h4>
+                    <p className="text-white font-normal">Rua Carlos Pedroso da Silveira, 4.900<br />Taubaté/SP — 12043-000</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="mt-1 flex-shrink-0 w-10 h-10 bg-gray-50 rounded-none flex items-center justify-center text-brand-secondary">
+                  <div className="mt-1 flex-shrink-0 w-10 h-10 bg-[#014486] rounded-none flex items-center justify-center text-white">
                     <Clock size={20} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-brand-primary uppercase text-xs tracking-widest mb-1">Horário de funcionamento</h4>
-                    <p className="text-black font-normal">Segunda a sexta-feira<br />das 8h às 17h</p>
+                    <h4 className="font-bold text-white uppercase text-xs tracking-widest mb-1">Horário de funcionamento</h4>
+                    <p className="text-white font-normal">Segunda a sexta-feira<br />das 8h às 17h</p>
                   </div>
                 </div>
               </div>
@@ -504,45 +552,6 @@ export default function ContactPage() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 9. CTA FINAL */}
-
-      <section className="py-24 bg-white border-t border-gray-100 overflow-hidden relative group">
-        {/* Background Icon */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none z-0">
-          <ShieldCheck size={450} strokeWidth={1} className="text-[#3B529B]" />
-        </div>
-
-        <div className="container-custom text-center relative z-10">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-primary mb-6 uppercase"
-          >
-            Tem uma necessidade específica?<br />Nosso time pode ajudar.
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-black text-lg md:text-xl max-w-3xl mx-auto mb-12 font-normal leading-relaxed"
-          >
-            Fale com a Multionic para receber direcionamento comercial e técnico com mais segurança, clareza e agilidade.
-          </motion.p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-brand-secondary text-white px-12 py-5 font-bold uppercase tracking-tight hover:bg-brand-primary transition-all flex items-center justify-center gap-2"
-            >
-              <MessageCircle size={20} />
-              Chamar no WhatsApp
-            </motion.button>
           </div>
         </div>
       </section>

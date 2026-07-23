@@ -53,10 +53,16 @@ export default function SuaMarcaPage() {
   };
 
   return (
-    <div className="bg-white pt-24">
+    <div className="bg-white">
       {/* 1. HERO SECTION */}
-      <section className="relative py-16 md:py-24 bg-white overflow-hidden border-b border-gray-100">
-        <div className="container-custom">
+      <section 
+        className="relative h-[700px] flex items-center overflow-hidden bg-[#014486] bg-cover bg-center bg-no-repeat"
+        style={{ 
+          backgroundImage: "url('https://d335luupugsy2.cloudfront.net/cms/files/38500/1784768630/$9jkodpmj3sw')" 
+        }}
+      >
+        <div className="absolute inset-0 bg-[#014486]/60 pointer-events-none" />
+        <div className="container-custom relative z-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Coluna Esquerda: Texto */}
             <div className="lg:col-span-6 text-left">
@@ -66,22 +72,19 @@ export default function SuaMarcaPage() {
                 transition={{ duration: 0.6 }}
                 className="flex flex-col"
               >
-                <span className="text-brand-secondary text-xs md:text-sm font-bold uppercase tracking-[0.3em] mb-4">
-                  TERCEIRIZAÇÃO INDUSTRIAL
-                </span>
-                <h1 className="text-4xl md:text-5xl lg:text-[56px] font-black text-brand-primary uppercase leading-tight tracking-tight mb-6">
-                  Sua marca.<br />Nossa produção.
+                <h1 className="text-4xl md:text-5xl lg:text-[56px] font-black text-white uppercase leading-tight tracking-tight mb-6">
+                  Sua marca,<br />nossa produção.
                 </h1>
-                <p className="text-text-main text-base md:text-lg font-medium leading-relaxed mb-6">
+                <p className="text-white text-base md:text-lg font-medium leading-relaxed mb-6">
                   Desenvolvemos e fabricamos soluções químicas para empresas que desejam lançar, expandir ou fortalecer sua própria linha de produtos com suporte técnico, estrutura industrial e qualidade produtiva.
                 </p>
-                <p className="text-text-light text-base leading-relaxed mb-8">
+                <p className="text-white/80 text-base leading-relaxed mb-8">
                   Da formulação ao envase, ajudamos marcas a transformar oportunidades em produtos prontos para o mercado.
                 </p>
                 <div>
                   <button 
                     onClick={handleScrollToContact}
-                    className="btn-primary px-8 py-4 uppercase text-sm font-bold tracking-wider hover:bg-brand-hover transition-colors shadow-md inline-flex items-center gap-3 cursor-pointer"
+                    className="bg-[#6DB0DF] hover:bg-[#5ca0cf] text-white px-8 py-4 uppercase text-sm font-bold tracking-wider transition-colors shadow-md inline-flex items-center gap-3 cursor-pointer"
                   >
                     Solicitar avaliação técnica
                     <ArrowRight size={18} />
@@ -90,54 +93,8 @@ export default function SuaMarcaPage() {
               </motion.div>
             </div>
 
-            {/* Coluna Direita: Imagem e Badges */}
-            <div className="lg:col-span-6 relative">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative"
-              >
-                {/* Imagem Principal */}
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-gray-100 bg-gray-50">
-                  <img 
-                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80" 
-                    alt="Linha de envase químico e controle de qualidade industrial"
-                    className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-
-                {/* Floating Badges */}
-                <div className="absolute -top-4 -left-4 bg-white/95 backdrop-blur-md shadow-lg border border-gray-100 px-4 py-2.5 flex items-center gap-2.5 rounded-xl">
-                  <div className="bg-brand-secondary/10 p-1.5 rounded-lg text-brand-secondary">
-                    <FlaskConical size={16} />
-                  </div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">Desenvolvimento</span>
-                </div>
-
-                <div className="absolute top-1/4 -right-4 bg-white/95 backdrop-blur-md shadow-lg border border-gray-100 px-4 py-2.5 flex items-center gap-2.5 rounded-xl">
-                  <div className="bg-brand-secondary/10 p-1.5 rounded-lg text-brand-secondary">
-                    <Settings size={16} />
-                  </div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">Fabricação</span>
-                </div>
-
-                <div className="absolute bottom-1/4 -left-4 bg-white/95 backdrop-blur-md shadow-lg border border-gray-100 px-4 py-2.5 flex items-center gap-2.5 rounded-xl">
-                  <div className="bg-brand-secondary/10 p-1.5 rounded-lg text-brand-secondary">
-                    <Package size={16} />
-                  </div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">Envase</span>
-                </div>
-
-                <div className="absolute -bottom-4 -right-4 bg-white/95 backdrop-blur-md shadow-lg border border-gray-100 px-4 py-2.5 flex items-center gap-2.5 rounded-xl">
-                  <div className="bg-brand-secondary/10 p-1.5 rounded-lg text-brand-secondary">
-                    <ShieldCheck size={16} />
-                  </div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">Controle de Qualidade</span>
-                </div>
-              </motion.div>
-            </div>
+            {/* Coluna Direita: Mantida sem nenhuma imagem */}
+            <div className="hidden lg:block lg:col-span-6"></div>
           </div>
         </div>
       </section>

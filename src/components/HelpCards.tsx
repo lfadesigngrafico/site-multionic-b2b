@@ -9,7 +9,7 @@ const cards = [
         <p className="text-[#333333] text-base md:text-lg leading-relaxed">
           Preciso de um desengraxante para máquinário, <span className="font-bold">mas que não ataque borrachas.</span>
         </p>
-        <p className="text-[#0877e1] text-base md:text-lg font-medium leading-relaxed">
+        <p className="text-[#6DB0DF] text-base md:text-lg font-medium leading-relaxed">
           Precisa de segurança técnica na escolha do produto?
         </p>
         <p className="text-[#333333] text-base md:text-lg font-black tracking-tight pt-2">
@@ -43,7 +43,7 @@ const cards = [
         <p className="text-[#333333] text-base md:text-lg leading-relaxed">
           Devo <span className="font-bold">comprar em quantidade?</span> Consigo <span className="font-bold">preço de atacado?</span> E para <span className="font-bold">quantidades menores?</span>
         </p>
-        <p className="text-[#0877e1] text-base md:text-lg font-bold leading-relaxed">
+        <p className="text-[#6DB0DF] text-base md:text-lg font-bold leading-relaxed">
           Quero entender a relação quantidade X preço. Há negociação para grandes volumes?
         </p>
         <p className="text-[#333333] text-base md:text-lg font-black tracking-tight pt-2">
@@ -79,7 +79,7 @@ export default function HelpCards() {
                   referrerPolicy="no-referrer"
                 />
                 {/* Overlay color match from screenshot */}
-                <div className={`absolute inset-0 opacity-40 ${card.highlight ? 'bg-[#0877e1]' : 'bg-[#014486]'}`} />
+                <div className={`absolute inset-0 opacity-40 ${card.highlight ? 'bg-[#6DB0DF]' : 'bg-[#014486]'}`} />
               </div>
               <div className="p-8 md:p-10 flex flex-col space-y-6 flex-grow">
                 {card.content}
