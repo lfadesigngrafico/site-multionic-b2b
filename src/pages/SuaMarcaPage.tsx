@@ -72,7 +72,7 @@ export default function SuaMarcaPage() {
                 transition={{ duration: 0.6 }}
                 className="flex flex-col"
               >
-                <h1 className="text-4xl md:text-5xl lg:text-[56px] font-black text-white uppercase leading-tight tracking-tight mb-6">
+                <h1 className="text-3xl md:text-4xl lg:text-[42px] font-black text-white uppercase leading-tight tracking-tight mb-6">
                   Sua marca,<br />nossa produção.
                 </h1>
                 <p className="text-white text-base md:text-lg font-medium leading-relaxed mb-6">
@@ -504,8 +504,7 @@ export default function SuaMarcaPage() {
               { title: "Limpeza geral", icon: <Brush size={20} /> },
               { 
                 title: "Soluções específicas", 
-                icon: <Zap size={20} />,
-                highlight: true 
+                icon: <Zap size={20} />
               }
             ].map((cat, idx) => (
               <motion.div
@@ -514,21 +513,16 @@ export default function SuaMarcaPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className={`p-6 border flex items-center justify-between text-left group transition-all duration-300 ${
-                  cat.highlight 
-                    ? "bg-brand-secondary border-brand-secondary text-white shadow-lg shadow-brand-secondary/25 hover:bg-brand-hover hover:border-brand-hover"
-                    : "bg-white/10 border-white/15 text-white hover:bg-white hover:text-brand-primary hover:border-white"
-                }`}
+                className="p-6 bg-white border border-gray-100 flex items-center text-left transition-all duration-300 shadow-md hover:shadow-lg rounded-none"
               >
                 <div className="flex items-center gap-4">
-                  <div className={`p-2 rounded ${cat.highlight ? 'bg-white/10 text-white' : 'text-brand-secondary bg-white/5 group-hover:bg-brand-primary/5 group-hover:text-brand-primary'}`}>
+                  <div className="p-2.5 rounded bg-[#014486]/5 text-[#014486]">
                     {cat.icon}
                   </div>
-                  <span className="font-bold text-sm md:text-base">
+                  <span className="font-bold text-sm md:text-base text-[#014486]">
                     {cat.title}
                   </span>
                 </div>
-                <ArrowRight size={18} className="transform group-hover:translate-x-1.5 transition-transform" />
               </motion.div>
             ))}
           </div>

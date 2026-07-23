@@ -1,11 +1,25 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+
+interface SubCategory {
+  name: string;
+  href: string;
+}
+
+interface NavItem {
+  name: string;
+  href: string;
+  type: 'internal' | 'anchor';
+  subcategories?: SubCategory[];
+}
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
@@ -33,130 +47,242 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY, isMobileMenuOpen]);
 
-  const navLinks = [
+  // Close menus on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+    setOpenMobileSubmenu(null);
+    setActiveDropdown(null);
+  }, [location.pathname]);
+
+  const navLinks: NavItem[] = [
     { name: 'Home', href: '/', type: 'internal' },
-    { name: 'Produtos', href: '/produtos', type: 'internal' },
+    { 
+      name: 'Produtos', 
+      href: '/produtos', 
+      type: 'internal',
+      subcategories: [
+        { name: 'Ver todos os produtos', href: '/produtos' },
+        { name: 'Sabonetes e Higiene Pessoal', href: '/produtos/sabonetes' },
+        { name: 'Desengraxantes Industriais', href: '/produtos/desengraxantes' },
+        { name: 'Linha Cozinha', href: '/produtos/cozinha' },
+        { name: 'Linha Lavanderia', href: '/produtos/lavanderia' },
+        { name: 'Limpeza Geral', href: '/produtos/limpeza-geral' },
+        { name: 'Tratamento de Pisos', href: '/produtos/pisos' },
+        { name: 'Produtos Específicos', href: '/produtos/especificos' },
+        { name: 'Outras Soluções', href: '/produtos/outros' },
+      ]
+    },
     { name: 'Segmentos atendidos', href: '/segmentos', type: 'internal' },
     { name: 'Sua marca, nossa produção', href: '/b2b/sua-marca-nossa-producao', type: 'internal' },
     { name: 'Sobre a Multionic', href: '/sobre', type: 'internal' },
     { name: 'Contato', href: '/contato', type: 'internal' },
   ];
 
+  const toggleMobileSubmenu = (name: string) => {
+    setOpenMobileSubmenu(prev => prev === name ? null : name);
+  };
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 transform ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
       } ${
-        isScrolled || location.pathname !== '/' ? 'bg-white/90 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'
+        isScrolled || location.pathname !== '/' || isMobileMenuOpen
+          ? 'bg-white/95 backdrop-blur-md shadow-md py-3' 
+          : 'bg-transparent py-4 md:py-5'
       }`}
     >
-      <div className="px-4 md:px-8 xl:px-12 flex items-center justify-between w-full">
-        <div className="flex items-center space-x-32">
-          {/* Logo */}
-          <Link to="/" className="flex-shrink-0" onClick={() => setIsMobileMenuOpen(false)}>
-            <img 
-              src="https://pages.greatpages.com.br/www.multionic.com.br-b2b/1764936323/imagens/mobile/1124971_1_175079214239449921.png" 
-              alt="Multionic Logo" 
-              className="h-10 md:h-12 w-auto object-contain"
-              referrerPolicy="no-referrer"
-            />
+      <div className="px-4 sm:px-6 lg:px-6 xl:px-10 2xl:px-12 flex items-center justify-between w-full max-w-[1536px] mx-auto">
+        {/* Logo */}
+        <Link to="/" className="flex-shrink-0" onClick={() => setIsMobileMenuOpen(false)}>
+          <img 
+            src="https://pages.greatpages.com.br/www.multionic.com.br-b2b/1764936323/imagens/mobile/1124971_1_175079214239449921.png" 
+            alt="Multionic Logo" 
+            className="h-8 md:h-9 lg:h-8 xl:h-10 2xl:h-12 w-auto object-contain transition-all"
+            referrerPolicy="no-referrer"
+          />
+        </Link>
+
+        {/* Desktop Menu (1024px and up) */}
+        <nav className="hidden lg:flex items-center space-x-1 lg:space-x-2 xl:space-x-4 2xl:space-x-6">
+          {navLinks.map((link) => {
+            const isAnchor = link.type === 'anchor';
+            const isActive = !isAnchor && (
+              location.pathname === link.href || 
+              (link.href !== '/' && location.pathname.startsWith(link.href))
+            );
+            const hasSub = !!link.subcategories;
+
+            return (
+              <div 
+                key={link.name} 
+                className="relative group"
+                onMouseEnter={() => hasSub && setActiveDropdown(link.name)}
+                onMouseLeave={() => hasSub && setActiveDropdown(null)}
+              >
+                <div className="flex items-center">
+                  <Link 
+                    to={link.href}
+                    className={`font-medium transition-colors text-[12px] xl:text-[13px] 2xl:text-[14px] tracking-normal xl:tracking-wide whitespace-nowrap px-1.5 py-1 rounded hover:text-brand-secondary ${
+                      isActive ? 'text-brand-secondary font-bold' : 'text-black'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+
+                  {hasSub && (
+                    <button 
+                      type="button"
+                      className="ml-0.5 text-black hover:text-brand-secondary focus:outline-none"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setActiveDropdown(activeDropdown === link.name ? null : link.name);
+                      }}
+                      aria-label={`Expandir ${link.name}`}
+                    >
+                      <ChevronDown size={14} className={`transition-transform duration-200 ${activeDropdown === link.name ? 'rotate-180 text-brand-secondary' : ''}`} />
+                    </button>
+                  )}
+                </div>
+
+                {/* Desktop Dropdown */}
+                {hasSub && (
+                  <AnimatePresence>
+                    {(activeDropdown === link.name) && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        transition={{ duration: 0.15 }}
+                        className="absolute top-full left-0 mt-1 w-64 bg-white rounded-none shadow-xl border border-gray-100 py-2 z-50"
+                      >
+                        {link.subcategories?.map((sub) => {
+                          const isSubActive = location.pathname === sub.href;
+                          return (
+                            <Link
+                              key={sub.name}
+                              to={sub.href}
+                              className={`block px-4 py-2 text-xs font-medium transition-colors hover:bg-gray-50 ${
+                                isSubActive ? 'text-brand-secondary font-bold bg-gray-50/80' : 'text-gray-700 hover:text-brand-secondary'
+                              }`}
+                              onClick={() => setActiveDropdown(null)}
+                            >
+                              {sub.name}
+                            </Link>
+                          );
+                        })}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                )}
+              </div>
+            );
+          })}
+        </nav>
+
+        {/* Desktop CTA Button */}
+        <div className="hidden lg:flex items-center">
+          <Link to="/contato">
+            <button className="btn-primary px-3 py-2 xl:px-4 xl:py-2 text-[10px] xl:text-[11px] font-bold tracking-tight shadow-none rounded-none uppercase whitespace-nowrap">
+              Fale com um especialista
+            </button>
           </Link>
-
-          {/* Desktop Menu */}
-          <nav className="hidden xl:flex items-center space-x-16">
-            {navLinks.map((link) => {
-              const isAnchor = link.type === 'anchor';
-              const isActive = !isAnchor && (
-                location.pathname === link.href || 
-                (link.href !== '/' && location.pathname.startsWith(link.href))
-              );
-
-              return link.type === 'internal' ? (
-                <Link 
-                  key={link.name} 
-                  to={link.href}
-                  className={`font-normal transition-colors text-[15px] tracking-wider whitespace-nowrap ${
-                    isActive ? 'text-brand-secondary font-bold' : 'text-black hover:text-brand-secondary'
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ) : (
-                <a 
-                  key={link.name} 
-                  href={link.href}
-                  className={`font-normal transition-colors text-[15px] tracking-wider whitespace-nowrap ${
-                    isActive ? 'text-brand-secondary font-bold' : 'text-black hover:text-brand-secondary'
-                  }`}
-                >
-                  {link.name}
-                </a>
-              );
-            })}
-          </nav>
         </div>
 
-        {/* Desktop Actions */}
-        <div className="hidden lg:flex items-center space-x-3">
-          <button className="btn-primary px-4 py-2 text-[10px] font-bold tracking-tight shadow-none rounded-none">
-            Fale com um especialista
-          </button>
-        </div>
-
-        {/* Mobile Toggle */}
+        {/* Mobile Toggle Button (1023px and below) */}
         <button 
-          className="lg:hidden text-brand-primary p-2"
+          className="lg:hidden text-brand-primary p-2 focus:outline-none"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? "Fechar menu" : "Abrir menu"}
         >
           {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Panel (1023px and below) */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 overflow-hidden"
+            transition={{ duration: 0.25 }}
+            className="lg:hidden bg-white border-t border-gray-100 shadow-xl overflow-hidden max-h-[calc(100vh-70px)] overflow-y-auto"
           >
-            <div className="container-custom py-6 flex flex-col space-y-4">
+            <div className="container-custom py-6 flex flex-col space-y-2">
               {navLinks.map((link) => {
-                const isAnchor = link.type === 'anchor';
-                const isActive = !isAnchor && (
-                  location.pathname === link.href || 
-                  (link.href !== '/' && location.pathname.startsWith(link.href))
-                );
+                const isActive = location.pathname === link.href || (link.href !== '/' && location.pathname.startsWith(link.href));
+                const hasSub = !!link.subcategories;
+                const isSubOpen = openMobileSubmenu === link.name;
 
-                return link.type === 'internal' ? (
-                  <Link 
-                    key={link.name} 
-                    to={link.href}
-                    className={`font-normal text-lg px-2 tracking-wide ${
-                      isActive ? 'text-brand-secondary font-bold' : 'text-black'
-                    }`}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
-                ) : (
-                  <a 
-                    key={link.name} 
-                    href={link.href}
-                    className={`font-normal text-lg px-2 tracking-wide ${
-                      isActive ? 'text-brand-secondary font-bold' : 'text-black'
-                    }`}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {link.name}
-                  </a>
+                return (
+                  <div key={link.name} className="border-b border-gray-50 pb-2">
+                    <div className="flex items-center justify-between py-1">
+                      <Link 
+                        to={link.href}
+                        className={`font-medium text-base md:text-lg tracking-wide ${
+                          isActive ? 'text-brand-secondary font-bold' : 'text-gray-900'
+                        }`}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {link.name}
+                      </Link>
+
+                      {hasSub && (
+                        <button
+                          type="button"
+                          onClick={() => toggleMobileSubmenu(link.name)}
+                          className="p-2 text-gray-500 hover:text-brand-secondary focus:outline-none"
+                          aria-label={`Toggle ${link.name} submenus`}
+                        >
+                          <ChevronDown 
+                            size={20} 
+                            className={`transition-transform duration-200 ${isSubOpen ? 'rotate-180 text-brand-secondary' : ''}`}
+                          />
+                        </button>
+                      )}
+                    </div>
+
+                    {/* Mobile Accordion Submenu */}
+                    {hasSub && (
+                      <AnimatePresence>
+                        {isSubOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="overflow-hidden pl-4 my-1 border-l-2 border-brand-primary/20 space-y-2"
+                          >
+                            {link.subcategories?.map((sub) => {
+                              const isSubActive = location.pathname === sub.href;
+                              return (
+                                <Link
+                                  key={sub.name}
+                                  to={sub.href}
+                                  className={`block py-1.5 text-sm transition-colors ${
+                                    isSubActive ? 'text-brand-secondary font-bold' : 'text-gray-600 hover:text-brand-secondary'
+                                  }`}
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                  {sub.name}
+                                </Link>
+                              );
+                            })}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    )}
+                  </div>
                 );
               })}
-              <div className="pt-4 flex flex-col space-y-3 px-2">
-                <button className="btn-primary w-full py-4 text-sm font-bold tracking-tight shadow-none rounded-none uppercase">
-                  Fale com um especialista
-                </button>
+
+              <div className="pt-4 px-1">
+                <Link to="/contato" onClick={() => setIsMobileMenuOpen(false)}>
+                  <button className="btn-primary w-full py-3.5 text-xs font-bold tracking-tight shadow-none rounded-none uppercase text-center">
+                    Fale com um especialista
+                  </button>
+                </Link>
               </div>
             </div>
           </motion.div>
