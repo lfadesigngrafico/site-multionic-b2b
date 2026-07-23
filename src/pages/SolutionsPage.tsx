@@ -2,7 +2,6 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { 
   FileText,
-  MessageCircle,
   Factory,
   ArrowRight
 } from 'lucide-react';
@@ -280,9 +279,8 @@ const CommercialCTA = () => (
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-brand-secondary text-white px-8 py-4 text-sm font-bold tracking-tight rounded-none hover:bg-white hover:text-brand-primary transition-all duration-300 shadow-none border-none flex items-center justify-center gap-2"
+              className="bg-brand-secondary text-white px-8 py-4 text-sm font-bold tracking-tight rounded-none hover:bg-white hover:text-brand-primary transition-all duration-300 shadow-none border-none flex items-center justify-center"
             >
-              <MessageCircle size={20} />
               Solicitar avaliação técnica
             </motion.button>
           </div>

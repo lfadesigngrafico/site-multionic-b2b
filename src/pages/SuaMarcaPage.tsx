@@ -136,8 +136,13 @@ export default function SuaMarcaPage() {
             >
               <div>
                 <div className="flex items-center justify-between mb-8">
-                  <div className="w-14 h-14 bg-[#F0F3F5] rounded-xl flex items-center justify-center text-brand-secondary">
-                    <Package size={28} />
+                  <div className="flex items-center justify-center">
+                    <img 
+                      src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1784810169/$dlc3jbu83s4" 
+                      alt="Envase" 
+                      className="h-[64px] w-auto object-contain pointer-events-none"
+                      referrerPolicy="no-referrer"
+                    />
                   </div>
                   <span className="text-[10px] font-bold uppercase tracking-widest text-text-light bg-gray-100 px-2.5 py-1 rounded-full">
                     Nível 1
@@ -165,8 +170,13 @@ export default function SuaMarcaPage() {
             >
               <div>
                 <div className="flex items-center justify-between mb-8">
-                  <div className="w-14 h-14 bg-[#F0F3F5] rounded-xl flex items-center justify-center text-brand-secondary">
-                    <Settings size={28} />
+                  <div className="flex items-center justify-center">
+                    <img 
+                      src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1784810169/$1g7x9ewbvo6" 
+                      alt="Fabricação e envase" 
+                      className="h-[64px] w-auto object-contain pointer-events-none"
+                      referrerPolicy="no-referrer"
+                    />
                   </div>
                   <span className="text-[10px] font-bold uppercase tracking-widest text-text-light bg-gray-100 px-2.5 py-1 rounded-full">
                     Nível 2
@@ -197,8 +207,13 @@ export default function SuaMarcaPage() {
               </div>
               <div>
                 <div className="flex items-center justify-between mb-8">
-                  <div className="w-14 h-14 bg-brand-secondary/10 rounded-xl flex items-center justify-center text-brand-secondary">
-                    <FlaskConical size={28} />
+                  <div className="flex items-center justify-center">
+                    <img 
+                      src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1784810169/$ej0celioueu" 
+                      alt="Desenvolvimento, fabricação e envase" 
+                      className="h-[64px] w-auto object-contain pointer-events-none"
+                      referrerPolicy="no-referrer"
+                    />
                   </div>
                   <span className="text-[10px] font-bold uppercase tracking-widest text-brand-secondary bg-brand-secondary/10 px-2.5 py-1 rounded-full">
                     Nível 3
@@ -220,53 +235,52 @@ export default function SuaMarcaPage() {
       </section>
 
       {/* 3. POR QUE DESENVOLVER SUA LINHA COM A MULTIONIC? */}
-      <section className="py-20 md:py-28 bg-[#F0F3F5] overflow-hidden">
-        <div className="container-custom">
+      <section className="py-24 bg-[#75BFBA]">
+        <div className="container-custom max-w-7xl mx-auto px-4">
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center mb-16">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-black text-brand-primary uppercase tracking-tight mb-4"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold text-white uppercase"
             >
               Por que desenvolver sua linha com a Multionic?
             </motion.h2>
-            <div className="w-20 h-1 bg-brand-secondary mx-auto" />
           </div>
 
           {/* Grid de Benefícios */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 justify-center">
             {[
               {
                 title: "Estrutura industrial especializada",
                 desc: "Capacidade produtiva preparada para diferentes volumes e necessidades de mercado.",
-                icon: <Factory size={24} />
+                icon: <Factory className="w-8 h-8 md:w-10 md:h-10" />
               },
               {
                 title: "Suporte técnico durante o processo",
                 desc: "Acompanhamento para apoiar decisões técnicas e produtivas.",
-                icon: <ClipboardList size={24} />
+                icon: <ClipboardList className="w-8 h-8 md:w-10 md:h-10" />
               },
               {
                 title: "Flexibilidade de produção",
                 desc: "Projetos adaptados ao momento e à necessidade de cada marca.",
-                icon: <Sliders size={24} />
+                icon: <Sliders className="w-8 h-8 md:w-10 md:h-10" />
               },
               {
                 title: "Controle de qualidade",
                 desc: "Processos voltados à consistência, segurança e confiabilidade dos produtos.",
-                icon: <ShieldCheck size={24} />
+                icon: <ShieldCheck className="w-8 h-8 md:w-10 md:h-10" />
               },
               {
                 title: "Agilidade para colocar produtos no mercado",
                 desc: "Redução de etapas e maior velocidade na implantação de novas linhas.",
-                icon: <Rocket size={24} />
+                icon: <Rocket className="w-8 h-8 md:w-10 md:h-10" />
               },
               {
                 title: "Experiência no segmento químico",
                 desc: "Décadas atuando no desenvolvimento e fabricação de soluções profissionais.",
-                icon: <Award size={24} />
+                icon: <Award className="w-8 h-8 md:w-10 md:h-10" />
               }
             ].map((benefit, idx) => (
               <motion.div
@@ -275,17 +289,19 @@ export default function SuaMarcaPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="bg-white border border-gray-100 p-8 rounded-none hover:shadow-lg transition-shadow duration-300 flex flex-col text-left"
+                className="flex items-start gap-6"
               >
-                <div className="text-brand-secondary mb-6 bg-brand-secondary/5 w-12 h-12 flex items-center justify-center rounded">
+                <div className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#018E6D] flex items-center justify-center text-white shadow-lg">
                   {benefit.icon}
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-brand-primary mb-3">
-                  {benefit.title}
-                </h3>
-                <p className="text-text-light text-sm md:text-base leading-relaxed">
-                  {benefit.desc}
-                </p>
+                <div className="flex flex-col justify-center pt-2 text-left">
+                  <h3 className="text-lg font-bold text-white mb-2 leading-tight">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-white/90 font-normal text-sm leading-relaxed">
+                    {benefit.desc}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -371,114 +387,114 @@ export default function SuaMarcaPage() {
       </section>
 
       {/* 5. PARA QUEM É ESSA SOLUÇÃO? */}
-      <section className="py-20 md:py-28 bg-[#F0F3F5] overflow-hidden">
-        <div className="container-custom">
+      <section className="py-24 bg-[#3B529B] relative overflow-hidden">
+        <div className="container-custom max-w-7xl mx-auto px-4">
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center mb-16">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-black text-brand-primary uppercase tracking-tight mb-4"
+              className="text-2xl md:text-3xl font-bold text-white uppercase"
             >
               Para quem é essa solução?
             </motion.h2>
-            <div className="w-20 h-1 bg-brand-secondary mx-auto" />
           </div>
 
           {/* Cards de segmentos (3 em cima, 2 centralizados embaixo no desktop) */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-6 lg:gap-8">
             {/* Linha de 3 cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
               {[
                 {
                   title: "Distribuidores",
                   desc: "Amplie seu portfólio com produtos de marca própria.",
-                  icon: <Truck size={24} />
+                  icon: Truck
                 },
                 {
                   title: "Empresas de limpeza profissional",
                   desc: "Desenvolva soluções alinhadas às necessidades dos seus clientes.",
-                  icon: <Sparkles size={24} />
+                  icon: Sparkles
                 },
                 {
                   title: "Redes e atacadistas",
                   desc: "Crie linhas exclusivas para fortalecer posicionamento e margem.",
-                  icon: <Store size={24} />
+                  icon: Store
                 }
-              ].map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.05 }}
-                  className="bg-white border border-gray-100 p-8 rounded-none hover:shadow-lg transition-shadow duration-300 flex flex-col text-left"
-                >
-                  <div className="text-brand-secondary mb-6 bg-brand-secondary/5 w-12 h-12 flex items-center justify-center rounded">
-                    {item.icon}
-                  </div>
-                  <h3 className="text-lg md:text-xl font-bold text-brand-primary mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-text-light text-sm md:text-base leading-relaxed">
-                    {item.desc}
-                  </p>
-                </motion.div>
-              ))}
+              ].map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: idx * 0.08 }}
+                    className="bg-white p-8 border border-slate-100 shadow-sm relative group flex flex-col justify-between hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:border-[#6DB0DF]/20 text-left"
+                  >
+                    <div>
+                      <div className="w-12 h-12 bg-[#6DB0DF]/10 rounded-none flex items-center justify-center text-[#6DB0DF] mb-6 transition-colors duration-300">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <h3 className="text-lg md:text-xl font-bold text-[#3B529B] mb-3 group-hover:text-[#6DB0DF] transition-colors duration-300">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm md:text-base font-normal leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                    <div className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#6DB0DF] group-hover:w-full transition-all duration-500" />
+                  </motion.div>
+                );
+              })}
             </div>
 
             {/* Linha de 2 cards centralizados (Desktop) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[800px] mx-auto w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-[800px] mx-auto w-full">
               {[
                 {
                   title: "Indústrias",
                   desc: "Desenvolva produtos específicos para aplicações próprias ou comercialização.",
-                  icon: <Factory size={24} />
+                  icon: Factory
                 },
                 {
                   title: "Empreendedores",
                   desc: "Transforme uma ideia em uma linha de produtos pronta para o mercado.",
-                  icon: <Lightbulb size={24} />
+                  icon: Lightbulb
                 }
-              ].map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.05 }}
-                  className="bg-white border border-gray-100 p-8 rounded-none hover:shadow-lg transition-shadow duration-300 flex flex-col text-left"
-                >
-                  <div className="text-brand-secondary mb-6 bg-brand-secondary/5 w-12 h-12 flex items-center justify-center rounded">
-                    {item.icon}
-                  </div>
-                  <h3 className="text-lg md:text-xl font-bold text-brand-primary mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-text-light text-sm md:text-base leading-relaxed">
-                    {item.desc}
-                  </p>
-                </motion.div>
-              ))}
+              ].map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: (idx + 3) * 0.08 }}
+                    className="bg-white p-8 border border-slate-100 shadow-sm relative group flex flex-col justify-between hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:border-[#6DB0DF]/20 text-left"
+                  >
+                    <div>
+                      <div className="w-12 h-12 bg-[#6DB0DF]/10 rounded-none flex items-center justify-center text-[#6DB0DF] mb-6 transition-colors duration-300">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <h3 className="text-lg md:text-xl font-bold text-[#3B529B] mb-3 group-hover:text-[#6DB0DF] transition-colors duration-300">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm md:text-base font-normal leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                    <div className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#6DB0DF] group-hover:w-full transition-all duration-500" />
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </div>
       </section>
 
       {/* 6. O QUE PODEMOS PRODUZIR */}
-      <section className="relative py-20 md:py-28 overflow-hidden bg-brand-primary">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1200&q=80" 
-            alt="Produção química avançada" 
-            className="w-full h-full object-cover opacity-20"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-brand-primary/95" />
-        </div>
-
+      <section className="py-20 md:py-28 bg-white overflow-hidden">
         <div className="container-custom relative z-10">
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -486,11 +502,11 @@ export default function SuaMarcaPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight mb-4"
+              className="text-3xl md:text-4xl font-bold text-[#014486] uppercase tracking-tight mb-4"
             >
               O que podemos produzir
             </motion.h2>
-            <div className="w-20 h-1 bg-brand-secondary mx-auto" />
+            <div className="w-20 h-1 bg-[#6DB0DF] mx-auto" />
           </div>
 
           {/* Cards Grid */}
@@ -513,16 +529,17 @@ export default function SuaMarcaPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="p-6 bg-white border border-gray-100 flex items-center text-left transition-all duration-300 shadow-md hover:shadow-lg rounded-none"
+                className="bg-white p-6 border border-slate-100 shadow-sm relative group flex items-center text-left hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:border-[#6DB0DF]/20 overflow-hidden"
               >
                 <div className="flex items-center gap-4">
-                  <div className="p-2.5 rounded bg-[#014486]/5 text-[#014486]">
+                  <div className="w-10 h-10 bg-[#6DB0DF]/10 rounded-none flex items-center justify-center text-[#6DB0DF] group-hover:bg-[#6DB0DF] group-hover:text-white transition-colors duration-300 flex-shrink-0">
                     {cat.icon}
                   </div>
-                  <span className="font-bold text-sm md:text-base text-[#014486]">
+                  <span className="font-bold text-sm md:text-base text-[#3B529B] group-hover:text-[#6DB0DF] transition-colors duration-300">
                     {cat.title}
                   </span>
                 </div>
+                <div className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#6DB0DF] group-hover:w-full transition-all duration-500" />
               </motion.div>
             ))}
           </div>
@@ -708,16 +725,31 @@ export default function SuaMarcaPage() {
       </section>
 
       {/* 8. CTA FINAL */}
-      <section className="relative py-16 bg-brand-primary overflow-hidden">
-        <div className="container-custom relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Esquerda: Texto */}
-            <div className="lg:col-span-8 text-left">
+      <section className="pt-16 pb-0 lg:pt-20 lg:pb-0 bg-white text-[#333333] border-t border-[#E5E7EB] relative">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-end">
+            {/* Coluna Esquerda: Imagem com Overlap no topo e alinhada na base */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative lg:-mt-36 z-10 self-end flex items-end"
+            >
+              <img 
+                src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1776874436/$rpcarbod4gh"
+                alt="Transforme sua ideia em produto Multionic" 
+                className="w-full h-auto object-contain object-bottom pointer-events-none block"
+                referrerPolicy="no-referrer"
+              />
+            </motion.div>
+
+            {/* Coluna Direita: Texto */}
+            <div className="text-left py-10 lg:py-16">
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-2xl md:text-3xl lg:text-4xl font-black text-white uppercase tracking-tight mb-4"
+                className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 uppercase text-[#014486]"
               >
                 Transforme sua ideia em produto
               </motion.h2>
@@ -726,24 +758,20 @@ export default function SuaMarcaPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-white/90 text-sm md:text-lg font-medium leading-relaxed"
+                className="text-[#333333] text-base md:text-lg font-normal leading-relaxed mb-8"
               >
                 Conte com uma estrutura industrial preparada para apoiar o crescimento da sua marca.
               </motion.p>
-            </div>
-
-            {/* Direita: CTA Botão */}
-            <div className="lg:col-span-4 flex justify-center lg:justify-end">
-              <motion.button
-                onClick={handleScrollToContact}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="w-full sm:w-auto bg-white hover:bg-gray-100 text-brand-primary px-8 py-4 uppercase font-bold text-sm tracking-wider shadow-xl transition-all inline-flex items-center justify-center gap-3 cursor-pointer"
-              >
-                Solicitar avaliação técnica
-                <ArrowRight size={18} />
-              </motion.button>
+              <div className="flex flex-col sm:flex-row justify-start gap-4">
+                <motion.button 
+                  onClick={handleScrollToContact}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="bg-[#6DB0DF] text-white px-10 py-5 font-bold uppercase tracking-tight hover:bg-[#014486] transition-all cursor-pointer"
+                >
+                  Solicitar avaliação técnica
+                </motion.button>
+              </div>
             </div>
           </div>
         </div>
