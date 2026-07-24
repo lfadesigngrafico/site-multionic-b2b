@@ -20,7 +20,7 @@ import {
 
 const contactChannels = [
   {
-    title: "Telefone corporativo",
+    title: "Telefone",
     info: "+55 12 3686-1511",
     sub: "Atendimento de segunda a sexta-feira, das 8h às 17h.",
     icon: <Phone className="w-8 h-8 text-[#018E6D]" />
@@ -106,7 +106,7 @@ const faqGroups = [
       { q: "O que significa um produto ser alcalino, não alcalino ou pH neutro?", a: "O pH de um produto indica seu nível de acidez ou alcalinidade, influenciando diretamente sua eficácia e aplicação:\n\nAlcalino: Indicado para remoção de sujeiras pesadas, como óleos e graxas. Muito utilizado em indústrias e limpeza de equipamentos.\nNão Alcalino: Menos agressivo, indicado para superfícies delicadas ou materiais que podem ser danificados por produtos alcalinos.\npH Neutro: Equilibrado, ideal para limpezas que exigem suavidade sem comprometer a eficácia, como em ambientes hospitalares ou superfícies sensíveis.\n\n✅ Saiba Qual pH é Ideal Para Você\nEntre em contato para saber mais." },
       { q: "O que é BTX e o que significa BTX-Free?", a: "BTX se refere a compostos químicos como Benzeno, Tolueno e Xileno, substâncias que podem ser agressivas à saúde e ao meio ambiente. Produtos BTX-Free são formulações mais seguras, ideais para locais que exigem menor toxicidade e menor impacto ambiental, sem perder a eficiência na limpeza." },
       { q: "O que são tensoativos e por que são importantes?", a: "Tensoativos são substâncias que reduzem a tensão superficial entre dois líquidos ou entre um líquido e uma superfície, facilitando a remoção de sujeiras e resíduos. Eles são fundamentais em produtos de limpeza, pois ajudam a dispersar e remover partículas oleosas ou insolúveis em água.\n\n✅ Entenda Como Tensoativos Melhoram a Limpeza\nEntre em contato para saber mais." },
-      { q: "O que é solvente glicólico e qual seu impacto na limpeza?", a: "O solvente glicólico é um poderoso agente de limpeza, altamente eficaz na remoção de óleos, graxas e sujeiras pesadas. Ele oferece alto poder de penetração e dissolução, sendo utilizado em desengraxantes industriais e produtos para limpeza de máquinas, motores e superfícies contaminadas com resíduos difíceis.\n\n✅ Saiba Mais Sobre Solventes Glicólicos" },
+      { q: "O que é solvente glicólico e qual seu impacto na limpeza?", a: "O solvente glicólico é um poderoso agente de limpeza, altamente eficaz na remoção de óleos, graxas e sujeiras pesadas. Ele oferece alto poder de penetração e dissolução, sendo utilizado em desengraxantes industriais e produtos para limpeza de máquinas, motores e superfícies contaminadas com resíduos difíceis." },
       { q: "Produtos com ou sem espuma: qual escolher?", a: "A escolha entre um produto com ou sem espuma depende do seu tipo de aplicação:\n\nCom espuma: Ideal para limpezas em que a espuma ajuda a prolongar o tempo de contato do produto com a superfície, melhorando a remoção de sujeira.\nSem espuma: Indicado para sistemas automatizados e máquinas lavadoras industriais, onde a espuma pode comprometer a eficiência dos equipamentos.\n\n✅ Descubra a Melhor Opção Para o Seu Negócio" },
       { q: "Há negociação para compras de grandes volumes?", a: "Para empresas que utilizam grandes quantidades de produtos químicos, a compra em volume oferece benefícios como preços mais competitivos, frete otimizado e redução de custos operacionais. A Multionic também pode oferecer condições exclusivas para compras em larga escala, distribuidores e revendedores.\n\n✅ Solicite uma Cotação Personalizada" },
       { q: "Quantidade x Preço: como escolher a melhor opção para minha empresa?", a: "Cada operação tem necessidades diferentes. Se sua empresa consome grandes volumes, comprar em maior quantidade pode ser mais vantajoso. No entanto, se precisa testar um produto ou tem menor consumo, oferecemos opções em diferentes tamanhos. Nossa equipe comercial pode ajudar a calcular o melhor custo-benefício para você.\n\n✅ Fale Com Um Especialista e Otimize Seus Custos" },
@@ -456,7 +456,7 @@ export default function ContactPage() {
                 Nossa localização
               </h2>
               <p className="text-white text-lg font-normal leading-relaxed mb-8">
-                Estamos em Taubaté/SP, com estrutura para atender empresas que buscam soluções químicas profissionais e industriais.
+                Estamos localizados em Taubaté/SP e atendemos empresas em diferentes regiões do Brasil.
               </p>
               
               <div className="space-y-8">
