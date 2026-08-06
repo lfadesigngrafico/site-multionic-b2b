@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import Logo from './Logo';
 
 interface SubCategory {
   name: string;
   href: string;
+  image?: string;
+  description?: string;
 }
 
 interface NavItem {
@@ -61,15 +64,46 @@ export default function Header() {
       href: '/produtos', 
       type: 'internal',
       subcategories: [
-        { name: 'Ver todos os produtos', href: '/produtos' },
-        { name: 'Sabonetes e Higiene Pessoal', href: '/produtos/sabonetes' },
-        { name: 'Desengraxantes Industriais', href: '/produtos/desengraxantes' },
-        { name: 'Linha Cozinha', href: '/produtos/cozinha' },
-        { name: 'Linha Lavanderia', href: '/produtos/lavanderia' },
-        { name: 'Limpeza Geral', href: '/produtos/limpeza-geral' },
-        { name: 'Tratamento de Pisos', href: '/produtos/pisos' },
-        { name: 'Produtos Específicos', href: '/produtos/especificos' },
-        { name: 'Outras Soluções', href: '/produtos/outros' },
+        { 
+          name: 'Sabonetes e Higiene Pessoal', 
+          href: '/produtos/sabonetes',
+          description: 'Higiene e proteção para mãos e corpo'
+        },
+        { 
+          name: 'Desengraxantes Industriais', 
+          href: '/produtos/desengraxantes',
+          description: 'Remoção de graxas e óleos pesados'
+        },
+        { 
+          name: 'Linha Cozinha', 
+          href: '/produtos/cozinha',
+          description: 'Limpeza de cozinhas industriais'
+        },
+        { 
+          name: 'Linha Lavanderia', 
+          href: '/produtos/lavanderia',
+          description: 'Cuidado profissional para enxovais'
+        },
+        { 
+          name: 'Limpeza Geral', 
+          href: '/produtos/limpeza-geral',
+          description: 'Detergentes e desinfetantes multiuso'
+        },
+        { 
+          name: 'Tratamento de Pisos', 
+          href: '/produtos/pisos',
+          description: 'Proteção e brilho para grandes áreas'
+        },
+        { 
+          name: 'Produtos Específicos', 
+          href: '/produtos/especificos',
+          description: 'Formulações químicas sob demanda'
+        },
+        { 
+          name: 'Outras Soluções', 
+          href: '/produtos/outros',
+          description: 'Complementos e soluções customizadas'
+        },
       ]
     },
     { name: 'Segmentos atendidos', href: '/segmentos', type: 'internal' },
@@ -95,12 +129,7 @@ export default function Header() {
       <div className="px-4 sm:px-6 lg:px-6 xl:px-10 2xl:px-12 flex items-center justify-between w-full max-w-[1536px] mx-auto">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0" onClick={() => setIsMobileMenuOpen(false)}>
-          <img 
-            src="https://pages.greatpages.com.br/www.multionic.com.br-b2b/1764936323/imagens/mobile/1124971_1_175079214239449921.png" 
-            alt="Multionic Logo" 
-            className="h-8 md:h-9 lg:h-8 xl:h-10 2xl:h-12 w-auto object-contain transition-all"
-            referrerPolicy="no-referrer"
-          />
+          <Logo variant="header" />
         </Link>
 
         {/* Desktop Menu (1024px and up) */}
@@ -145,7 +174,7 @@ export default function Header() {
                   )}
                 </div>
 
-                {/* Desktop Dropdown */}
+                {/* Desktop Mega Dropdown */}
                 {hasSub && (
                   <AnimatePresence>
                     {(activeDropdown === link.name) && (
@@ -154,23 +183,49 @@ export default function Header() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
                         transition={{ duration: 0.15 }}
-                        className="absolute top-full left-0 mt-1 w-64 bg-white rounded-none shadow-xl border border-gray-100 py-2 z-50"
+                        className="absolute top-full -left-12 mt-2 w-[640px] bg-white rounded-none shadow-2xl border border-gray-100 p-5 z-50"
                       >
-                        {link.subcategories?.map((sub) => {
-                          const isSubActive = location.pathname === sub.href;
-                          return (
-                            <Link
-                              key={sub.name}
-                              to={sub.href}
-                              className={`block px-4 py-2 text-xs font-medium transition-colors hover:bg-gray-50 ${
-                                isSubActive ? 'text-brand-secondary font-bold bg-gray-50/80' : 'text-gray-700 hover:text-brand-secondary'
-                              }`}
-                              onClick={() => setActiveDropdown(null)}
-                            >
-                              {sub.name}
-                            </Link>
-                          );
-                        })}
+                        <div className="flex items-center justify-between pb-3 mb-3 border-b border-gray-100">
+                          <span className="text-[11px] font-bold text-brand-primary uppercase tracking-wider">
+                            Linhas de Produtos
+                          </span>
+                          <Link 
+                            to="/produtos"
+                            onClick={() => setActiveDropdown(null)}
+                            className="text-[11px] font-bold text-[#3B529B] hover:text-[#018E6D] transition-colors flex items-center gap-1"
+                          >
+                            Ver todos os produtos <ArrowRight size={12} />
+                          </Link>
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-2">
+                          {link.subcategories?.map((sub) => {
+                            const isSubActive = location.pathname === sub.href;
+                            return (
+                              <Link
+                                key={sub.name}
+                                to={sub.href}
+                                className={`flex items-center gap-3 p-2 rounded hover:bg-gray-50 transition-all group ${
+                                  isSubActive ? 'bg-blue-50/50 border-l-2 border-brand-primary' : ''
+                                }`}
+                                onClick={() => setActiveDropdown(null)}
+                              >
+                                <div className="flex flex-col min-w-0">
+                                  <span className={`text-xs font-bold transition-colors group-hover:text-brand-primary truncate ${
+                                    isSubActive ? 'text-brand-primary' : 'text-gray-800'
+                                  }`}>
+                                    {sub.name}
+                                  </span>
+                                  {sub.description && (
+                                    <span className="text-[10px] text-gray-500 line-clamp-1 leading-tight mt-0.5">
+                                      {sub.description}
+                                    </span>
+                                  )}
+                                </div>
+                              </Link>
+                            );
+                          })}
+                        </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -252,20 +307,32 @@ export default function Header() {
                             animate={{ opacity: 1, height: 'auto' }}
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="overflow-hidden pl-4 my-1 border-l-2 border-brand-primary/20 space-y-2"
+                            className="overflow-hidden pl-2 my-2 space-y-2"
                           >
+                            <Link
+                              to="/produtos"
+                              className="block py-2 px-3 text-xs font-bold text-brand-primary bg-blue-50/50 rounded uppercase tracking-wider"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              → Ver catálogo completo
+                            </Link>
                             {link.subcategories?.map((sub) => {
                               const isSubActive = location.pathname === sub.href;
                               return (
                                 <Link
                                   key={sub.name}
                                   to={sub.href}
-                                  className={`block py-1.5 text-sm transition-colors ${
-                                    isSubActive ? 'text-brand-secondary font-bold' : 'text-gray-600 hover:text-brand-secondary'
+                                  className={`flex items-center gap-3 py-2 px-2 rounded text-sm transition-colors ${
+                                    isSubActive ? 'text-brand-primary font-bold bg-gray-50' : 'text-gray-700 hover:text-brand-primary'
                                   }`}
                                   onClick={() => setIsMobileMenuOpen(false)}
                                 >
-                                  {sub.name}
+                                  <div className="flex flex-col min-w-0">
+                                    <span className="font-semibold text-xs text-gray-900 truncate">{sub.name}</span>
+                                    {sub.description && (
+                                      <span className="text-[10px] text-gray-500 line-clamp-1">{sub.description}</span>
+                                    )}
+                                  </div>
                                 </Link>
                               );
                             })}

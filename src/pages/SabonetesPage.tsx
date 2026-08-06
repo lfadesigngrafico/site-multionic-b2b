@@ -59,43 +59,43 @@ const categories = [
   {
     title: "SABONETES",
     text: "Higiene e proteção com fórmulas suaves e eficientes. Conheça nossas opções para diferentes necessidades.",
-    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b950023172405940.jpg",
+    image: "/images/categories/sabonetes.jpg",
     href: "/produtos/sabonetes"
   },
   {
     title: "DESENGRAXANTES",
     text: "Remova graxas e resíduos com máxima eficácia. Soluções poderosas para indústrias e oficinas.",
-    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b9505e4483220872.jpg",
+    image: "/images/categories/desengraxantes.jpg",
     href: "/produtos/desengraxantes"
   },
   {
     title: "COZINHA INDUSTRIAL",
     text: "Higienização segura e eficiente para cozinhas profissionais. Mantenha o padrão de qualidade do seu negócio.",
-    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b952447433171858.jpg",
+    image: "/images/categories/cozinha.jpg",
     href: "/produtos/cozinha"
   },
   {
     title: "LAVANDERIA",
     text: "Cuidado e performance para tecidos impecáveis. Descubra nossas soluções para lavagem profissional.",
-    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b952f9d683905738.jpg",
+    image: "/images/categories/lavanderia.jpg",
     href: "/produtos/lavanderia"
   },
   {
     title: "LIMPEZA GERAL",
     text: "Produtos versáteis para uma limpeza completa e eficiente. Descubra nossa linha de soluções profissionais.",
-    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b9514d2822242195.jpg",
+    image: "/images/categories/limpeza_geral.jpg",
     href: "/produtos/limpeza-geral"
   },
   {
     title: "TRATAMENTO DE PISOS",
     text: "Proteção e brilho para superfícies impecáveis. Encontre o produto ideal para o seu ambiente.",
-    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b95101a031881655.jpg",
+    image: "/images/categories/pisos.jpg",
     href: "/produtos/pisos"
   },
   {
     title: "PRODUTOS ESPECÍFICOS",
     text: "Soluções químicas avançadas para necessidades especiais. Eficiência e inovação a serviço da sua empresa.",
-    image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b953650615921925.jpg",
+    image: "/images/categories/especificos.jpg",
     href: "/produtos/especificos"
   },
   {

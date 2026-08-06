@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin, Instagram, Linkedin, Send } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,12 +11,7 @@ export default function Footer() {
         {/* Top Section: Logo, Text, Socials */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-12 mb-16 pb-12 border-b border-white/10">
           <div className="flex-shrink-0">
-            <img 
-              src="https://pages.greatpages.com.br/www.multionic.com.br-b2b/1764936323/imagens/mobile/1124971_1_175079214239449921.png" 
-              alt="Multionic" 
-              className="h-10 brightness-0 invert"
-              referrerPolicy="no-referrer"
-            />
+            <Logo variant="footer" />
           </div>
           
           <div className="flex-grow max-w-2xl text-center md:text-left">

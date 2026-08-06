@@ -82,7 +82,7 @@ const categories = [
   {
     title: "SABONETES",
     text: "Soluções para assepsia e higienização das mãos em ambientes industriais, institucionais e profissionais.",
-    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1776808282/$q4zmgv0vrp",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1786050495/$kono40e4c1d",
     href: "/produtos/sabonetes"
   },
   {

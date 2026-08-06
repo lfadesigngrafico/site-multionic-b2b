@@ -4,13 +4,13 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const categories = [
-  { name: "SABONETES", image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b950023172405940.jpg" },
-  { name: "DESENGRAXANTES", image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b9505e4483220872.jpg" },
-  { name: "COZINHA INDUSTRIAL", image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b952447433171858.jpg" },
-  { name: "LAVANDERIA", image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b952f9d683905738.jpg" },
-  { name: "LIMPEZA GERAL", image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b9514d2822242195.jpg" },
-  { name: "TRATAMENTO DE PISOS", image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b95101a031881655.jpg" },
-  { name: "PRODUTOS ESPECÍFICOS", image: "https://pages.greatpages.com.br/www.multionic.com.br-b2b-categorias/1764955387/imagens/desktop/1264715_1_1738097081679941b953650615921925.jpg" },
+  { name: "SABONETES", image: "/images/categories/sabonetes.jpg" },
+  { name: "DESENGRAXANTES", image: "/images/categories/desengraxantes.jpg" },
+  { name: "COZINHA INDUSTRIAL", image: "/images/categories/cozinha.jpg" },
+  { name: "LAVANDERIA", image: "/images/categories/lavanderia.jpg" },
+  { name: "LIMPEZA GERAL", image: "/images/categories/limpeza_geral.jpg" },
+  { name: "TRATAMENTO DE PISOS", image: "/images/categories/pisos.jpg" },
+  { name: "PRODUTOS ESPECÍFICOS", image: "/images/categories/especificos.jpg" },
   { name: "SUA MARCA, NOSSA PRODUÇÃO", image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1779725014/$dx814ryzur" }
 ];
 
