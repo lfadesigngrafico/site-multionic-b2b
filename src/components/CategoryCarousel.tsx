@@ -4,13 +4,13 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const categories = [
-  { name: "SABONETES", image: "/images/categories/sabonetes.jpg" },
-  { name: "DESENGRAXANTES", image: "/images/categories/desengraxantes.jpg" },
-  { name: "COZINHA INDUSTRIAL", image: "/images/categories/cozinha.jpg" },
-  { name: "LAVANDERIA", image: "/images/categories/lavanderia.jpg" },
-  { name: "LIMPEZA GERAL", image: "/images/categories/limpeza_geral.jpg" },
-  { name: "TRATAMENTO DE PISOS", image: "/images/categories/pisos.jpg" },
-  { name: "PRODUTOS ESPECÍFICOS", image: "/images/categories/especificos.jpg" },
+  { name: "SABONETES", image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1786045308/$80eaiks4abk" },
+  { name: "DESENGRAXANTES", image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1786045308/$25n6px0c5lz" },
+  { name: "COZINHA INDUSTRIAL", image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1786045308/$2jf97akfrt3" },
+  { name: "LAVANDERIA", image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1786045308/$dzc7ne5kwhj" },
+  { name: "LIMPEZA GERAL", image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1786045308/$ruwf1m2e67l" },
+  { name: "TRATAMENTO DE PISOS", image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1786045308/$f3czf9txgof" },
+  { name: "PRODUTOS ESPECÍFICOS", image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1786045308/$bksrbhml83m" },
   { name: "SUA MARCA, NOSSA PRODUÇÃO", image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1779725014/$dx814ryzur" }
 ];
 

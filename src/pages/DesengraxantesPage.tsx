@@ -92,43 +92,43 @@ const categories = [
   {
     title: "SABONETES",
     text: "Higiene e proteção com fórmulas suaves e eficientes. Conheça nossas opções para diferentes necessidades.",
-    image: "/images/categories/sabonetes.jpg",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1786045308/$80eaiks4abk",
     href: "/produtos/sabonetes"
   },
   {
     title: "DESENGRAXANTES",
     text: "Remova graxas e resíduos com máxima eficácia. Soluções poderosas para indústrias e oficinas.",
-    image: "/images/categories/desengraxantes.jpg",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1786045308/$25n6px0c5lz",
     href: "/produtos/desengraxantes"
   },
   {
     title: "COZINHA INDUSTRIAL",
     text: "Higienização segura e eficiente para cozinhas profissionais. Mantenha o padrão de qualidade do seu negócio.",
-    image: "/images/categories/cozinha.jpg",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1786045308/$2jf97akfrt3",
     href: "/produtos/cozinha"
   },
   {
     title: "LAVANDERIA",
     text: "Cuidado e performance para tecidos impecáveis. Descubra nossas soluções para lavagem profissional.",
-    image: "/images/categories/lavanderia.jpg",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1786045308/$dzc7ne5kwhj",
     href: "/produtos/lavanderia"
   },
   {
     title: "LIMPEZA GERAL",
     text: "Produtos versáteis para uma limpeza completa e eficiente. Descubra nossa linha de soluções profissionais.",
-    image: "/images/categories/limpeza_geral.jpg",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1786045308/$ruwf1m2e67l",
     href: "/produtos/limpeza-geral"
   },
   {
     title: "TRATAMENTO DE PISOS",
     text: "Proteção e brilho para superfícies impecáveis. Encontre o produto ideal para o seu ambiente.",
-    image: "/images/categories/pisos.jpg",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1786045308/$f3czf9txgof",
     href: "/produtos/pisos"
   },
   {
     title: "PRODUTOS ESPECÍFICOS",
     text: "Soluções químicas avançadas para necessidades especiais. Eficiência e inovação a serviço da sua empresa.",
-    image: "/images/categories/especificos.jpg",
+    image: "https://d335luupugsy2.cloudfront.net/cms/files/38500/1786045308/$bksrbhml83m",
     href: "/produtos/especificos"
   },
   {
