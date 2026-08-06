@@ -166,8 +166,8 @@ const ProductCard: React.FC<{
         />
       </div>
 
-      {/* 2. Conteúdo Fixo */}
-      <div className="p-8 pb-0 flex flex-col">
+      {/* 2. Conteúdo Fixo e Descrição */}
+      <div className="p-8 pb-6 flex flex-col">
         <h3 className="text-xl font-bold text-brand-primary uppercase mb-6 md:min-h-[4.5rem] flex items-center">
           {product.name}
         </h3>
@@ -184,60 +184,48 @@ const ProductCard: React.FC<{
             ))}
           </div>
         </div>
+
+        {/* Descrição em 3 linhas + Saiba Mais discreto */}
+        <div className="pt-2">
+          <p className={`text-black text-sm font-normal leading-relaxed ${!isExpanded ? 'line-clamp-3' : ''}`}>
+            {product.description}
+          </p>
+          <button 
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="mt-3 text-xs font-bold text-[#3B529B] hover:text-[#6DB0DF] transition-colors inline-flex items-center gap-1 cursor-pointer py-1"
+          >
+            <span>{isExpanded ? 'Mostrar menos' : 'Saiba mais'}</span>
+            {isExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+          </button>
+        </div>
       </div>
 
-      {/* 3. Área de Expansão / Botão Saiba Mais */}
-      <div className="flex-grow flex flex-col">
-        {/* Botão Saiba Mais - Apenas Mobile */}
-        {!isExpanded && (
-          <button 
-            onClick={() => setIsExpanded(true)}
-            className="md:hidden w-full bg-[#3B59C8] hover:bg-brand-primary text-white py-4 px-8 flex items-center justify-between transition-colors duration-300 shadow-lg group"
-          >
-            <span className="text-sm font-black uppercase tracking-widest">Saiba mais</span>
-            <ChevronDown size={24} strokeWidth={3} />
-          </button>
-        )}
+      {/* 3. Restante do Card (Visível ao expandir) */}
+      {isExpanded && (
+        <div className="p-8 pt-0 flex flex-col flex-grow border-t border-gray-100 mt-2">
+          <div className="bg-white p-6 rounded-none my-6 border border-gray-100 flex flex-col justify-center">
+            <span className="text-[10px] uppercase font-bold text-gray-400 block mb-2 tracking-widest">Indicação principal</span>
+            <p className="text-brand-primary font-bold text-base leading-snug">{product.indication}</p>
+          </div>
 
-        {/* Detalhes do Produto - Sempre visíveis no desktop, toggle no mobile */}
-        <div className={`${isExpanded ? 'flex flex-col' : 'hidden md:flex md:flex-col'} border-t border-gray-100 flex-grow`}>
-          <div className="p-8 pt-6 flex flex-col flex-grow">
-            <p className="text-black text-sm font-normal leading-relaxed mb-8 md:min-h-[9rem]">
-              {product.description}
-            </p>
-
-            <div className="bg-white p-6 rounded-none mb-8 border border-gray-100 md:min-h-[9.5rem] flex flex-col justify-center">
-              <span className="text-[10px] uppercase font-bold text-gray-400 block mb-2 tracking-widest">Indicação principal</span>
-              <p className="text-brand-primary font-bold text-base leading-snug">{product.indication}</p>
+          <div className="mb-8">
+            <span className="text-[10px] uppercase font-bold text-gray-400 block mb-3 tracking-widest">Disponível em</span>
+            <div className="flex items-start space-x-3">
+              <Package size={18} className="text-gray-400 flex-shrink-0" />
+              <p className="text-[12px] text-gray-500 font-medium leading-tight">{product.packaging}</p>
             </div>
+          </div>
 
-            <div className="mb-10 md:min-h-[4.5rem]">
-              <span className="text-[10px] uppercase font-bold text-gray-400 block mb-3 tracking-widest">Disponível em</span>
-              <div className="flex items-start space-x-3">
-                <Package size={18} className="text-gray-400 flex-shrink-0" />
-                <p className="text-[12px] text-gray-500 font-medium leading-tight">{product.packaging}</p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 gap-4 mb-8 mt-auto">
-              <button className="btn-primary w-full py-4 uppercase font-bold text-xs shadow-none border-none tracking-widest">
-                Solicitar orçamento
-              </button>
-              <button className="btn-gray w-full py-4 uppercase font-bold text-xs shadow-none border-none tracking-widest">
-                Solicitar ficha técnica
-              </button>
-            </div>
-
-            {/* Botão de fechar - Apenas Mobile */}
-            <button 
-              onClick={() => setIsExpanded(false)}
-              className="md:hidden w-full flex items-center justify-center py-2 text-gray-400 hover:text-brand-primary transition-colors cursor-pointer group"
-            >
-              <ChevronUp size={32} strokeWidth={2} className="group-hover:-translate-y-1 transition-transform" />
+          <div className="grid grid-cols-1 gap-4 mb-4 mt-auto">
+            <button className="btn-primary w-full py-4 uppercase font-bold text-xs shadow-none border-none tracking-widest">
+              Solicitar orçamento
+            </button>
+            <button className="btn-gray w-full py-4 uppercase font-bold text-xs shadow-none border-none tracking-widest">
+              Solicitar ficha técnica
             </button>
           </div>
         </div>
-      </div>
+      )}
     </motion.div>
   );
 };
