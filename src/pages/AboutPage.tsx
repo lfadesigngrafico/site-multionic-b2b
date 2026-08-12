@@ -271,85 +271,104 @@ export default function AboutPage() {
         )}
       </AnimatePresence>
 
-      {/* 3. NOSSA HISTÓRIA EM EVOLUÇÃO */}
+      {/* 3. NOSSA HISTÓRIA EM EVOLUÇÃO (TIMELINE FIEL À IMAGEM DE REFERÊNCIA COM PADRÃO DE BOLINHAS) */}
       <section className="py-16 md:py-24 bg-[#6DB0DF] text-white overflow-hidden relative">
-        <div className="container-custom">
-          {/* Header + Nav Controls */}
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 md:mb-16 gap-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
+        {/* Padrão de bolinhas brancas paralelas no plano de fundo */}
+        <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#fff_1.5px,transparent_1.5px)] [background-size:20px_20px] pointer-events-none" />
+
+        <div className="container-custom relative z-10">
+          {/* Header da seção */}
+          <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+            <motion.span 
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.3 }}
-              className="text-left"
+              className="text-xs md:text-sm font-semibold uppercase tracking-widest text-white/90 block mb-2"
             >
-              <span className="text-white/80 font-semibold text-xs md:text-sm uppercase tracking-widest block mb-2">
-                Linha do Tempo
-              </span>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white uppercase">
-                Nossa história em evolução
-              </h2>
-            </motion.div>
-
-            {/* Navigation Buttons */}
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => scrollTimeline('left')}
-                className="w-12 h-12 bg-white/10 hover:bg-white text-white hover:text-[#6DB0DF] flex items-center justify-center transition-all duration-300 cursor-pointer"
-                aria-label="Anterior"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <button
-                onClick={() => scrollTimeline('right')}
-                className="w-12 h-12 bg-white/10 hover:bg-white text-white hover:text-[#6DB0DF] flex items-center justify-center transition-all duration-300 cursor-pointer"
-                aria-label="Próximo"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            </div>
+              LINHA DO TEMPO
+            </motion.span>
+            <motion.h2 
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-wide uppercase"
+            >
+              Nossa história em evolução
+            </motion.h2>
           </div>
 
-          {/* Timeline Connected Horizontal Carousel */}
-          <div className="relative">
-            {/* Connected horizontal line behind the cards */}
-            <div className="absolute top-[32px] left-0 right-0 h-[2px] bg-white/30 z-0 hidden md:block" />
+          {/* Timeline Zigue-Zague Fiel ao Design Solicitado */}
+          <div className="relative max-w-4xl mx-auto px-2 md:px-4">
+            {/* Eixo Vertical Conector (no centro no desktop, à esquerda no mobile) */}
+            <div className="absolute left-5 md:left-1/2 top-4 bottom-4 w-0.5 bg-white/80 -translate-x-1/2" />
 
-            <div 
-              ref={timelineScrollRef}
-              className="flex gap-6 overflow-x-auto scrollbar-none snap-x snap-mandatory py-4 relative z-10 scroll-smooth"
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-            >
-              {timelineEvents.map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: idx * 0.05 }}
-                  className="min-w-[280px] sm:min-w-[320px] max-w-[340px] flex-shrink-0 snap-start bg-white text-[#333333] p-6 sm:p-8 border border-white/20 shadow-lg relative flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300 text-left"
-                >
-                  <div>
-                    {/* Calendar Icon above Year */}
-                    <div className="w-12 h-12 bg-[#6DB0DF]/10 text-[#6DB0DF] flex items-center justify-center mb-4 transition-colors duration-300 group-hover:bg-[#6DB0DF] group-hover:text-white">
-                      <Calendar className="w-6 h-6" />
+            {/* Lista de Marcos em Zigue-Zague */}
+            <div className="space-y-8 md:space-y-12 relative z-10">
+              {timelineEvents.map((item, idx) => {
+                // Ímpares (0, 2, 4...) ficam à DIREITA no desktop, Pares (1, 3, 5...) ficam à ESQUERDA
+                const isRight = idx % 2 === 0;
+
+                return (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.05 }}
+                    className={`flex flex-col md:flex-row items-center relative ${
+                      isRight ? 'md:flex-row' : 'md:flex-row-reverse'
+                    }`}
+                  >
+                    {/* Espaço vazio para manter alinhamento 50% */}
+                    <div className="hidden md:block w-1/2" />
+
+                    {/* Linha Horizontal Conectora no Mobile */}
+                    <div className="block md:hidden absolute top-1/2 left-5 w-5 h-0.5 bg-white/80" />
+
+                    {/* Linha Horizontal Conectora do Nó até o Card */}
+                    <div className={`hidden md:block absolute top-1/2 h-0.5 bg-white/80 ${
+                      isRight 
+                        ? 'left-1/2 w-12' 
+                        : 'right-1/2 w-12'
+                    }`} />
+
+                    {/* Card de Conteúdo conforme Imagem de Referência */}
+                    <div className="w-full md:w-1/2 pl-10 md:pl-0 md:px-8 text-left">
+                      <div className={`bg-white text-[#333333] p-4 sm:p-6 shadow-md relative group hover:shadow-xl transition-all duration-300 text-left ${
+                        isRight ? 'md:text-left md:ml-4' : 'md:text-right md:mr-4'
+                      }`}>
+                        {/* Ícone posicionado no canto superior (no mobile sempre na direita; no desktop varia conforme o lado) */}
+                        <div 
+                          className={`absolute top-4 right-4 ${
+                            isRight ? 'md:right-4 md:left-auto' : 'md:left-4 md:right-auto'
+                          }`}
+                        >
+                          <div className="w-7 h-7 bg-[#6DB0DF]/15 text-[#014486] flex items-center justify-center rounded-none">
+                            <Calendar className="w-4 h-4" />
+                          </div>
+                        </div>
+
+                        {/* Conteúdo do Card */}
+                        <div className={`pt-1 pr-8 ${isRight ? 'md:pr-8 md:pl-0' : 'md:pl-8 md:pr-0'}`}>
+                          <div className="text-2xl font-bold text-[#014486] mb-1">
+                            {item.year}
+                          </div>
+                          <p className="text-sm font-normal text-[#333333] leading-relaxed">
+                            {item.title}
+                          </p>
+                        </div>
+                      </div>
                     </div>
 
-                    {/* Year */}
-                    <div className="text-3xl font-extrabold text-[#014486] mb-3">
-                      {item.year}
+                    {/* Nó Conector na Linha Central (Ponto Azul Escuro com Contorno Branco) */}
+                    <div className="absolute left-5 md:left-1/2 -translate-x-1/2 flex items-center justify-center z-20">
+                      <div className="w-4 h-4 rounded-full bg-[#014486] ring-2 ring-white shadow-md transition-transform duration-300 hover:scale-125" />
                     </div>
 
-                    {/* Event Description */}
-                    <p className="text-sm sm:text-base font-semibold text-[#333333] leading-relaxed">
-                      {item.title}
-                    </p>
-                  </div>
-
-                  {/* Subtle accent bar on bottom */}
-                  <div className="w-full h-1 bg-[#6DB0DF]/20 group-hover:bg-[#6DB0DF] transition-colors duration-300 mt-6" />
-                </motion.div>
-              ))}
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </div>
