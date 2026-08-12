@@ -464,49 +464,45 @@ export default function AboutPage() {
       </section>
 
       {/* 6. ESTRUTURA PREPARADA PARA CRESCER JUNTO COM NOSSOS CLIENTES */}
-      <section className="py-16 md:py-24 bg-[#75BFBA] text-white">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            {/* Coluna texto */}
+      <section className="relative py-20 md:py-28 overflow-hidden bg-black text-white">
+        {/* Imagens de fundo full width com transição dissolve */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+          <AnimatePresence>
+            <motion.img
+              key={structureImageIndex}
+              src={structureImages[structureImageIndex]}
+              alt="Estrutura fabril Multionic"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
+              className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+              referrerPolicy="no-referrer"
+            />
+          </AnimatePresence>
+        </div>
+
+        {/* Camada escurecida suave para facilidade de leitura do texto */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/65 to-black/40 pointer-events-none" />
+
+        {/* Conteúdo de texto sobre as imagens em plano de fundo */}
+        <div className="container-custom relative z-10">
+          <div className="max-w-3xl text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3 }}
-              className="text-left"
             >
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight drop-shadow-md">
                 Estrutura preparada para crescer junto com nossos clientes
               </h2>
-              <p className="text-base md:text-lg text-white/95 mb-4 leading-relaxed font-normal">
+              <p className="text-base md:text-lg text-white mb-4 leading-relaxed font-normal drop-shadow">
                 Investimos continuamente em processos, tecnologia e capacidade produtiva para garantir qualidade, segurança e consistência em cada solução desenvolvida.
               </p>
-              <p className="text-base md:text-lg text-white/95 leading-relaxed font-normal">
+              <p className="text-base md:text-lg text-white leading-relaxed font-normal drop-shadow">
                 Nossa estrutura permite atender diferentes demandas de mercado, desde linhas próprias até projetos de fabricação sob demanda.
               </p>
-            </motion.div>
-
-            {/* Coluna carrossel de imagens */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.98 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: 0.1 }}
-              className="relative w-full h-72 sm:h-80 md:h-[380px] overflow-hidden rounded-xl md:rounded-2xl"
-            >
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={structureImageIndex}
-                  src={structureImages[structureImageIndex]}
-                  alt="Estrutura fabril Multionic"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.8 }}
-                  className="w-full h-full object-cover pointer-events-none absolute inset-0"
-                  referrerPolicy="no-referrer"
-                />
-              </AnimatePresence>
             </motion.div>
           </div>
         </div>

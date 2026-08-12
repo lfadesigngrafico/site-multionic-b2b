@@ -135,19 +135,24 @@ export default function SuaMarcaPage() {
               className="bg-white border border-gray-100 rounded-2xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between mb-8">
-                  <div className="flex items-center justify-center">
-                    <img 
-                      src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1784810169/$dlc3jbu83s4" 
-                      alt="Envase" 
-                      className="h-[64px] w-auto object-contain pointer-events-none"
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-text-light bg-gray-100 px-2.5 py-1 rounded-full">
+                {/* 1. Nível Badge no topo, antes da imagem */}
+                <div className="flex items-center justify-end mb-2">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#014486] bg-[#6DB0DF]/20 px-3 py-1 rounded-full">
                     Nível 1
                   </span>
                 </div>
+
+                {/* 2. Imagem ampliada e centralizada */}
+                <div className="flex items-center justify-center my-6 h-36 md:h-44">
+                  <img 
+                    src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1784810169/$dlc3jbu83s4" 
+                    alt="Envase" 
+                    className="max-h-32 md:max-h-40 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+
+                {/* 3. Título e Descrição */}
                 <h3 className="text-xl md:text-2xl font-bold text-brand-primary uppercase mb-4">
                   Envase
                 </h3>
@@ -169,19 +174,24 @@ export default function SuaMarcaPage() {
               className="bg-white border border-gray-100 rounded-2xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between mb-8">
-                  <div className="flex items-center justify-center">
-                    <img 
-                      src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1784810169/$1g7x9ewbvo6" 
-                      alt="Fabricação e envase" 
-                      className="h-[64px] w-auto object-contain pointer-events-none"
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-text-light bg-gray-100 px-2.5 py-1 rounded-full">
+                {/* 1. Nível Badge no topo, antes da imagem */}
+                <div className="flex items-center justify-end mb-2">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#014486] bg-[#6DB0DF]/20 px-3 py-1 rounded-full">
                     Nível 2
                   </span>
                 </div>
+
+                {/* 2. Imagem ampliada e centralizada */}
+                <div className="flex items-center justify-center my-6 h-36 md:h-44">
+                  <img 
+                    src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1784810169/$1g7x9ewbvo6" 
+                    alt="Fabricação e envase" 
+                    className="max-h-32 md:max-h-40 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+
+                {/* 3. Título e Descrição */}
                 <h3 className="text-xl md:text-2xl font-bold text-brand-primary uppercase mb-4">
                   Fabricação e envase
                 </h3>
@@ -206,19 +216,24 @@ export default function SuaMarcaPage() {
                 Solução Completa
               </div>
               <div>
-                <div className="flex items-center justify-between mb-8">
-                  <div className="flex items-center justify-center">
-                    <img 
-                      src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1784810169/$ej0celioueu" 
-                      alt="Desenvolvimento, fabricação e envase" 
-                      className="h-[64px] w-auto object-contain pointer-events-none"
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-brand-secondary bg-brand-secondary/10 px-2.5 py-1 rounded-full">
+                {/* 1. Nível Badge no topo, antes da imagem */}
+                <div className="flex items-center justify-end mb-2">
+                  <span className="text-xs font-bold uppercase tracking-widest text-brand-secondary bg-brand-secondary/15 px-3 py-1 rounded-full">
                     Nível 3
                   </span>
                 </div>
+
+                {/* 2. Imagem ampliada e centralizada */}
+                <div className="flex items-center justify-center my-6 h-36 md:h-44">
+                  <img 
+                    src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1784810169/$ej0celioueu" 
+                    alt="Desenvolvimento, fabricação e envase" 
+                    className="max-h-32 md:max-h-40 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+
+                {/* 3. Título e Descrição */}
                 <h3 className="text-xl md:text-2xl font-bold text-brand-primary uppercase mb-4">
                   Desenvolvimento, fabricação e envase
                 </h3>
