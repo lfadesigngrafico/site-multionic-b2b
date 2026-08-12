@@ -11,7 +11,9 @@ import {
   CheckCircle2,
   Calendar,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Play,
+  X
 } from 'lucide-react';
 
 const structureImages = [
@@ -99,6 +101,7 @@ const bigNumbers = [
 export default function AboutPage() {
   const timelineScrollRef = useRef<HTMLDivElement>(null);
   const [structureImageIndex, setStructureImageIndex] = useState(0);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -165,51 +168,108 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 2. QUEM SOMOS */}
-      <section className="py-16 md:py-24 bg-white border-y border-[#E5E7EB]">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            {/* Coluna texto */}
+      {/* 2. QUEM SOMOS - Bloco com Vídeo de Fundo e Pop-up */}
+      <section 
+        onClick={() => setIsVideoModalOpen(true)}
+        className="relative py-20 md:py-28 overflow-hidden bg-black text-white group cursor-pointer select-none border-y border-white/10"
+      >
+        {/* Background Video iFrame */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+          <iframe
+            src="https://player.vimeo.com/video/1100694146?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&autopause=0"
+            title="Vídeo de fundo institucional Multionic"
+            className="absolute top-1/2 left-1/2 w-[177.77777778vh] min-w-full h-[56.25vw] min-h-full -translate-x-1/2 -translate-y-1/2 object-cover opacity-90 pointer-events-none transition-transform duration-700 group-hover:scale-105"
+            allow="autoplay; fullscreen"
+          />
+        </div>
+
+        {/* Overlay equilibrado para vídeo bem claro com ótima leitura */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/25 transition-colors duration-500 group-hover:bg-black/30" />
+
+        {/* Content over background video */}
+        <div className="container-custom relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Texto em branco */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3 }}
-              className="text-left"
+              className="lg:col-span-8 text-left"
             >
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#014486] mb-6">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 drop-shadow-md">
                 Quem somos
               </h2>
-              <p className="text-base md:text-lg text-[#333333] mb-4 leading-relaxed font-normal">
+              <p className="text-base md:text-lg text-white mb-4 leading-relaxed font-normal drop-shadow">
                 A Multionic é uma indústria química especializada no desenvolvimento e fabricação de soluções para limpeza, higienização, conservação e eficiência operacional.
               </p>
-              <p className="text-base md:text-lg text-[#333333] mb-4 leading-relaxed font-normal">
+              <p className="text-base md:text-lg text-white mb-4 leading-relaxed font-normal drop-shadow">
                 Ao longo de mais de quatro décadas, construímos uma trajetória baseada em qualidade, desenvolvimento técnico e relacionamento próximo com clientes que buscam mais desempenho, segurança e confiabilidade em suas operações.
               </p>
-              <p className="text-base md:text-lg text-[#333333] leading-relaxed font-normal">
+              <p className="text-base md:text-lg text-white leading-relaxed font-normal drop-shadow">
                 Hoje, atendemos diferentes segmentos com soluções que apoiam desde processos industriais até ambientes institucionais e profissionais.
               </p>
             </motion.div>
 
-            {/* Coluna Vídeo Vimeo */}
+            {/* Indicador discreto de Play */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.98 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: 0.1 }}
-              className="relative w-full aspect-video overflow-hidden border border-[#E5E7EB] shadow-md bg-black"
+              className="lg:col-span-4 flex flex-col items-center lg:items-end justify-center pt-4 lg:pt-0"
             >
+              <div className="inline-flex items-center gap-3 px-4 py-2.5 bg-black/40 backdrop-blur-sm border border-white/30 rounded-full hover:bg-black/60 hover:border-white/60 transition-all duration-300 group/btn">
+                <div className="w-7 h-7 rounded-full bg-white/20 text-white flex items-center justify-center transition-transform duration-300 group-hover/btn:scale-110">
+                  <Play className="w-3.5 h-3.5 fill-white ml-0.5" />
+                </div>
+                <span className="text-white font-medium text-xs uppercase tracking-wider">
+                  Assistir vídeo completo
+                </span>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pop-up / Modal para o Vídeo com Controles Completos */}
+      <AnimatePresence>
+        {isVideoModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsVideoModalOpen(false)}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8 bg-black/90 backdrop-blur-md"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-5xl aspect-video bg-black shadow-2xl rounded-none border border-white/20 overflow-hidden"
+            >
+              {/* Botão fechar */}
+              <button
+                onClick={() => setIsVideoModalOpen(false)}
+                className="absolute top-3 right-3 z-20 w-10 h-10 bg-black/80 hover:bg-[#014486] text-white flex items-center justify-center transition-colors cursor-pointer rounded-none border border-white/20"
+                aria-label="Fechar vídeo"
+              >
+                <X className="w-6 h-6" />
+              </button>
+
+              {/* Player Vimeo com controles completos */}
               <iframe
-                src="https://player.vimeo.com/video/1100694146?badge=0&autopause=0&player_id=0&app_id=58479"
-                title="Vídeo institucional Multionic"
+                src="https://player.vimeo.com/video/1100694146?autoplay=1&badge=0&autopause=0&player_id=0&app_id=58479"
+                title="Vídeo institucional Multionic completo"
                 className="w-full h-full border-0"
                 allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
                 allowFullScreen
               />
             </motion.div>
-          </div>
-        </div>
-      </section>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* 3. NOSSA HISTÓRIA EM EVOLUÇÃO */}
       <section className="py-16 md:py-24 bg-[#6DB0DF] text-white overflow-hidden relative">
@@ -587,6 +647,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
     </div>
   );
 }

@@ -401,94 +401,55 @@ export default function SuaMarcaPage() {
             </motion.h2>
           </div>
 
-          {/* Cards de segmentos (3 em cima, 2 centralizados embaixo no desktop) */}
-          <div className="flex flex-col gap-6 lg:gap-8">
-            {/* Linha de 3 cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-              {[
-                {
-                  title: "Distribuidores",
-                  desc: "Amplie seu portfólio com produtos de marca própria.",
-                  icon: Truck
-                },
-                {
-                  title: "Empresas de limpeza profissional",
-                  desc: "Desenvolva soluções alinhadas às necessidades dos seus clientes.",
-                  icon: Sparkles
-                },
-                {
-                  title: "Redes e atacadistas",
-                  desc: "Crie linhas exclusivas para fortalecer posicionamento e margem.",
-                  icon: Store
-                }
-              ].map((item, idx) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: idx * 0.08 }}
-                    className="bg-white p-8 border border-slate-100 shadow-sm relative group flex flex-col justify-between hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:border-[#6DB0DF]/20 text-left"
-                  >
-                    <div>
-                      <div className="w-12 h-12 bg-[#6DB0DF]/10 rounded-none flex items-center justify-center text-[#6DB0DF] mb-6 transition-colors duration-300">
-                        <Icon className="w-6 h-6" />
-                      </div>
-                      <h3 className="text-lg md:text-xl font-bold text-[#3B529B] mb-3 group-hover:text-[#6DB0DF] transition-colors duration-300">
-                        {item.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm md:text-base font-normal leading-relaxed">
-                        {item.desc}
-                      </p>
+          {/* Cards de segmentos em 4 colunas */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {[
+              {
+                title: "Distribuidores",
+                desc: "Amplie seu portfólio com produtos de marca própria.",
+                icon: Truck
+              },
+              {
+                title: "Empresas de limpeza profissional",
+                desc: "Desenvolva soluções alinhadas às necessidades dos seus clientes.",
+                icon: Sparkles
+              },
+              {
+                title: "Redes e atacadistas",
+                desc: "Crie linhas exclusivas para fortalecer posicionamento e margem.",
+                icon: Store
+              },
+              {
+                title: "Indústrias",
+                desc: "Desenvolva produtos específicos para aplicações próprias ou comercialização.",
+                icon: Factory
+              }
+            ].map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.08 }}
+                  className="bg-white p-8 border border-slate-100 shadow-sm relative group flex flex-col justify-between hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:border-[#6DB0DF]/20 text-left"
+                >
+                  <div>
+                    <div className="w-12 h-12 bg-[#6DB0DF]/10 rounded-none flex items-center justify-center text-[#6DB0DF] mb-6 transition-colors duration-300">
+                      <Icon className="w-6 h-6" />
                     </div>
-                    <div className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#6DB0DF] group-hover:w-full transition-all duration-500" />
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            {/* Linha de 2 cards centralizados (Desktop) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-[800px] mx-auto w-full">
-              {[
-                {
-                  title: "Indústrias",
-                  desc: "Desenvolva produtos específicos para aplicações próprias ou comercialização.",
-                  icon: Factory
-                },
-                {
-                  title: "Empreendedores",
-                  desc: "Transforme uma ideia em uma linha de produtos pronta para o mercado.",
-                  icon: Lightbulb
-                }
-              ].map((item, idx) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: (idx + 3) * 0.08 }}
-                    className="bg-white p-8 border border-slate-100 shadow-sm relative group flex flex-col justify-between hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:border-[#6DB0DF]/20 text-left"
-                  >
-                    <div>
-                      <div className="w-12 h-12 bg-[#6DB0DF]/10 rounded-none flex items-center justify-center text-[#6DB0DF] mb-6 transition-colors duration-300">
-                        <Icon className="w-6 h-6" />
-                      </div>
-                      <h3 className="text-lg md:text-xl font-bold text-[#3B529B] mb-3 group-hover:text-[#6DB0DF] transition-colors duration-300">
-                        {item.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm md:text-base font-normal leading-relaxed">
-                        {item.desc}
-                      </p>
-                    </div>
-                    <div className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#6DB0DF] group-hover:w-full transition-all duration-500" />
-                  </motion.div>
-                );
-              })}
-            </div>
+                    <h3 className="text-lg md:text-xl font-bold text-[#3B529B] mb-3 group-hover:text-[#6DB0DF] transition-colors duration-300">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm md:text-base font-normal leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+                  <div className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#6DB0DF] group-hover:w-full transition-all duration-500" />
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -542,6 +503,55 @@ export default function SuaMarcaPage() {
                 <div className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#6DB0DF] group-hover:w-full transition-all duration-500" />
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* BLOCO PARCEIROS */}
+      <section className="py-16 md:py-24 bg-white border-t border-gray-100">
+        <div className="container-custom text-center">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-2xl md:text-3xl font-bold uppercase text-[#014486] tracking-wider mb-3"
+          >
+            PARCEIROS
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-[#333333] text-base md:text-lg font-normal mb-12"
+          >
+            Alguns clientes de Terceirização Multionic que confiam em nós:
+          </motion.p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-center justify-items-center max-w-5xl mx-auto">
+            <img 
+              src="https://pages.greatpages.com.br/www.multionic.com.br-b2b-comercial/1783444041/imagens/desktop/1301049_1_173922191467aa6b9a323e5528965485.png" 
+              alt="Parceiro Multionic 1" 
+              className="max-h-20 md:max-h-24 w-auto object-contain transition-transform duration-300 hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <img 
+              src="https://pages.greatpages.com.br/www.multionic.com.br-b2b-comercial/1783444041/imagens/desktop/1301049_1_173922191467aa6b9a325df793459543.png" 
+              alt="Parceiro Multionic 2" 
+              className="max-h-20 md:max-h-24 w-auto object-contain transition-transform duration-300 hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <img 
+              src="https://pages.greatpages.com.br/www.multionic.com.br-b2b-comercial/1783444041/imagens/desktop/1301049_1_173922191467aa6b9a327a8991485637.webp" 
+              alt="Parceiro Multionic 3" 
+              className="max-h-20 md:max-h-24 w-auto object-contain transition-transform duration-300 hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <img 
+              src="https://pages.greatpages.com.br/www.multionic.com.br-b2b-comercial/1783444041/imagens/desktop/1301049_1_173922191467aa6b9a32971042623981.png" 
+              alt="Parceiro Multionic 4" 
+              className="max-h-20 md:max-h-24 w-auto object-contain transition-transform duration-300 hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
           </div>
         </div>
       </section>

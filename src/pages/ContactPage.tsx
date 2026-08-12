@@ -94,8 +94,39 @@ const faqGroups = [
   {
     title: "ATENDIMENTO COMERCIAL E SUPORTE",
     questions: [
-      { q: "Como posso falar com o time comercial da Multionic?", a: "Basta clicar aqui → para ser direcionado ao WhatsApp do time comercial da Multionic. Você também pode entrar em contato por e-mail através do formulário na página do departamento comercial clicando aqui → .\n\nSe preferir, ligue para nós no telefone (12) 3686 1511. Nossa equipe está pronta para entender suas necessidades e oferecer as melhores soluções para o seu negócio." },
-      { q: "Quais os horários de atendimento?", a: "Nosso atendimento comercial funciona de segunda a sexta-feira, das 8h às 18h. Mas se precisar de suporte fora desse horário, não se preocupe! Contamos com a Ray, nossa inteligência artificial exclusiva, que está disponível 24 horas por dia, 7 dias por semana, 365 dias por ano via WhatsApp, oferecendo um atendimento conversacional, humanizado e altamente eficiente.\n\nAlém disso, nosso bot de atendimento no Instagram também está sempre ativo, pronto para esclarecer dúvidas, direcionar soluções e agilizar sua experiência, independente do dia ou horário. Nossa tecnologia garante que sua empresa tenha suporte e respostas em tempo real, sem filas de espera e com a qualidade que você merece." },
+      { 
+        q: "Como posso falar com o time comercial da Multionic?", 
+        a: (
+          <span>
+            <a 
+              href="https://wa.me/551236861511" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-[#062e4c] underline font-bold hover:opacity-80 transition-opacity"
+            >
+              Basta clicar aqui →
+            </a>{" "}
+            para ser direcionado ao WhatsApp do time comercial da Multionic. Você também pode entrar em contato por e-mail através do formulário na página do departamento comercial{" "}
+            <a 
+              href="#formulario" 
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="text-[#062e4c] underline font-bold hover:opacity-80 transition-opacity cursor-pointer"
+            >
+              clicando aqui →
+            </a>
+            .
+            <br /><br />
+            Se preferir, ligue para nós no telefone (12) 3686 1511. Nossa equipe está pronta para entender suas necessidades e oferecer as melhores soluções para o seu negócio.
+          </span>
+        ) 
+      },
+      { 
+        q: "Quais os horários de atendimento?", 
+        a: "Nosso atendimento comercial funciona de segunda a sexta-feira, das 8h às 17h." 
+      },
       { q: "A Multionic oferece suporte técnico sobre os produtos?", a: "Sim! Nosso time técnico está disponível para esclarecer dúvidas sobre a aplicação dos produtos, melhores práticas e orientações específicas para sua empresa." },
       { q: "A Multionic assegura a qualidade de seus produtos?", a: "Sim! Todos os produtos da Multionic são desenvolvidos com alto rigor técnico e passam por um controle de qualidade criterioso. Garantimos a conformidade com as especificações técnicas e padrões regulatórios do setor. Caso identifique qualquer inconsistência, nossa equipe está pronta para avaliar e fornecer suporte imediato, assegurando a melhor experiência para sua empresa.\n\nAlém disso, oferecemos suporte técnico especializado para orientar sobre o uso correto dos produtos, garantindo máxima eficiência e segurança em cada aplicação." }
     ]
@@ -284,7 +315,7 @@ export default function ContactPage() {
       </section>
 
       {/* 3. BLOCO DE FORMULÁRIO (PRINCIPAL) */}
-      <section className="py-24 bg-white">
+      <section id="formulario" className="py-24 bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div

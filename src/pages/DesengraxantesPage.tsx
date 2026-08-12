@@ -144,8 +144,9 @@ const ProductCard: React.FC<{
   idx: number; 
   maxTagsHeight: number; 
   onHeightMeasured: (idx: number, height: number) => void; 
-}> = ({ product, idx, maxTagsHeight, onHeightMeasured }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  isExpanded: boolean;
+  onToggleExpand: () => void;
+}> = ({ product, idx, maxTagsHeight, onHeightMeasured, isExpanded, onToggleExpand }) => {
   const tagsRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
@@ -192,7 +193,7 @@ const ProductCard: React.FC<{
       </div>
 
       {/* 2. Conteúdo Fixo e Descrição */}
-      <div className="p-8 pb-6 flex flex-col">
+      <div className="p-8 pb-6 flex flex-col flex-grow">
         <h3 className="text-xl font-bold text-brand-primary uppercase mb-6 md:min-h-[4.5rem] flex items-center">
           {product.name}
         </h3>
@@ -210,24 +211,17 @@ const ProductCard: React.FC<{
           </div>
         </div>
 
-        {/* Descrição em 3 linhas + Saiba Mais discreto */}
+        {/* Descrição em 3 linhas */}
         <div className="pt-2">
           <p className={`text-black text-sm font-normal leading-relaxed ${!isExpanded ? 'line-clamp-3' : ''}`}>
             {product.description}
           </p>
-          <button 
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="mt-3 text-xs font-bold text-[#3B529B] hover:text-[#6DB0DF] transition-colors inline-flex items-center gap-1 cursor-pointer py-1"
-          >
-            <span>{isExpanded ? 'Mostrar menos' : 'Saiba mais'}</span>
-            {isExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
-          </button>
         </div>
       </div>
 
       {/* 3. Restante do Card (Visível ao expandir) */}
       {isExpanded && (
-        <div className="p-8 pt-0 flex flex-col flex-grow border-t border-gray-100 mt-2">
+        <div className="p-8 pt-0 flex flex-col border-t border-gray-100">
           <div className="bg-white p-6 rounded-none my-6 border border-gray-100 flex flex-col justify-center">
             <span className="text-[10px] uppercase font-bold text-gray-400 block mb-2 tracking-widest">Indicação principal</span>
             <p className="text-brand-primary font-bold text-base leading-snug">{product.indication}</p>
@@ -251,6 +245,15 @@ const ProductCard: React.FC<{
           </div>
         </div>
       )}
+
+      {/* 4. Botão Saiba Mais preenchendo a parte inferior */}
+      <button 
+        onClick={onToggleExpand}
+        className="mt-auto w-full bg-brand-primary text-white py-3.5 px-6 font-bold text-sm uppercase tracking-wider hover:bg-brand-hover transition-colors flex items-center justify-between cursor-pointer"
+      >
+        <span>{isExpanded ? 'Mostrar menos' : 'Saiba mais'}</span>
+        {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+      </button>
     </motion.div>
   );
 };
@@ -258,6 +261,27 @@ const ProductCard: React.FC<{
 export default function DesengraxantesPage() {
   const [activeFaqId, setActiveFaqId] = useState<number | null>(null);
   const [measuredHeights, setMeasuredHeights] = useState<Record<number, number>>({});
+  const [cols, setCols] = useState(3);
+  const [expandedRows, setExpandedRows] = useState<Record<number, boolean>>({});
+
+  React.useEffect(() => {
+    const updateCols = () => {
+      if (window.innerWidth < 768) setCols(1);
+      else if (window.innerWidth < 1024) setCols(2);
+      else setCols(3);
+    };
+    updateCols();
+    window.addEventListener('resize', updateCols);
+    return () => window.removeEventListener('resize', updateCols);
+  }, []);
+
+  const toggleRowForProduct = (productIdx: number) => {
+    const rowIndex = Math.floor(productIdx / cols);
+    setExpandedRows(prev => ({
+      ...prev,
+      [rowIndex]: !prev[rowIndex]
+    }));
+  };
 
   const handleHeightMeasured = React.useCallback((idx: number, height: number) => {
     setMeasuredHeights(prev => {
@@ -347,15 +371,20 @@ export default function DesengraxantesPage() {
       <section className="py-24 bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
-            {products.map((product, idx) => (
-              <ProductCard 
-                key={idx} 
-                product={product} 
-                idx={idx} 
-                maxTagsHeight={maxTagsHeight}
-                onHeightMeasured={handleHeightMeasured}
-              />
-            ))}
+            {products.map((product, idx) => {
+              const rowIndex = Math.floor(idx / cols);
+              return (
+                <ProductCard 
+                  key={idx} 
+                  product={product} 
+                  idx={idx} 
+                  maxTagsHeight={maxTagsHeight}
+                  onHeightMeasured={handleHeightMeasured}
+                  isExpanded={!!expandedRows[rowIndex]}
+                  onToggleExpand={() => toggleRowForProduct(idx)}
+                />
+              );
+            })}
           </div>
         </div>
       </section>
