@@ -76,7 +76,7 @@ export default function SegmentsPage() {
       <section 
         className="relative h-[700px] flex items-center overflow-hidden bg-[#014486] bg-cover bg-center bg-no-repeat"
         style={{ 
-          backgroundImage: "url('https://d335luupugsy2.cloudfront.net/cms/files/38500/1786632116/$8jq1fw9c25t')" 
+          backgroundImage: "url('https://d335luupugsy2.cloudfront.net/cms/files/38500/1786646444/$oln2wepck39')" 
         }}
       >
         <div className="absolute inset-0 bg-[#014486]/60 pointer-events-none" />
