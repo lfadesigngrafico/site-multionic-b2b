@@ -301,7 +301,7 @@ export default function AboutPage() {
           {/* Timeline Zigue-Zague Fiel ao Design Solicitado */}
           <div className="relative max-w-4xl mx-auto px-2 md:px-4">
             {/* Eixo Vertical Conector (no centro no desktop, à esquerda no mobile) */}
-            <div className="absolute left-5 md:left-1/2 top-4 bottom-4 w-0.5 bg-white/80 -translate-x-1/2" />
+            <div className="absolute left-6 md:left-1/2 top-4 bottom-4 w-0.5 bg-white/80 -translate-x-1/2 z-0 pointer-events-none" />
 
             {/* Lista de Marcos em Zigue-Zague */}
             <div className="space-y-8 md:space-y-12 relative z-10">
@@ -320,25 +320,25 @@ export default function AboutPage() {
                       isRight ? 'md:flex-row' : 'md:flex-row-reverse'
                     }`}
                   >
-                    {/* Espaço vazio para manter alinhamento 50% */}
+                    {/* Espaço vazio para manter alinhamento 50% no desktop */}
                     <div className="hidden md:block w-1/2" />
 
-                    {/* Linha Horizontal Conectora no Mobile */}
-                    <div className="block md:hidden absolute top-1/2 left-5 w-5 h-0.5 bg-white/80" />
+                    {/* Linha Horizontal Conectora no Mobile (do eixo em left-6 até o card em pl-12) */}
+                    <div className="block md:hidden absolute top-[28px] left-6 w-6 h-0.5 bg-white/80 z-10" />
 
-                    {/* Linha Horizontal Conectora do Nó até o Card */}
+                    {/* Linha Horizontal Conectora do Nó até o Card no Desktop */}
                     <div className={`hidden md:block absolute top-1/2 h-0.5 bg-white/80 ${
                       isRight 
                         ? 'left-1/2 w-12' 
                         : 'right-1/2 w-12'
                     }`} />
 
-                    {/* Card de Conteúdo conforme Imagem de Referência */}
-                    <div className="w-full md:w-1/2 pl-10 md:pl-0 md:px-8 text-left">
+                    {/* Card de Conteúdo */}
+                    <div className="w-full md:w-1/2 pl-12 md:pl-0 md:px-8 text-left">
                       <div className={`bg-white text-[#333333] p-4 sm:p-6 shadow-md relative group hover:shadow-xl transition-all duration-300 text-left ${
                         isRight ? 'md:text-left md:ml-4' : 'md:text-right md:mr-4'
                       }`}>
-                        {/* Ícone posicionado no canto superior (no mobile sempre na direita; no desktop varia conforme o lado) */}
+                        {/* Ícone posicionado no canto superior */}
                         <div 
                           className={`absolute top-4 right-4 ${
                             isRight ? 'md:right-4 md:left-auto' : 'md:left-4 md:right-auto'
@@ -361,9 +361,9 @@ export default function AboutPage() {
                       </div>
                     </div>
 
-                    {/* Nó Conector na Linha Central (Ponto Azul Escuro com Contorno Branco) */}
-                    <div className="absolute left-5 md:left-1/2 -translate-x-1/2 flex items-center justify-center z-20">
-                      <div className="w-4 h-4 rounded-full bg-[#014486] ring-2 ring-white shadow-md transition-transform duration-300 hover:scale-125" />
+                    {/* Nó Conector Quadrado Azul Escuro (alinhado em top-[28px] no mobile e top-1/2 no desktop) */}
+                    <div className="absolute left-6 md:left-1/2 top-[28px] md:top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center z-20">
+                      <div className="w-4 h-4 rounded-none bg-[#014486] ring-2 ring-white shadow-md transition-transform duration-300 hover:scale-125" />
                     </div>
 
                   </motion.div>
