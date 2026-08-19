@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { useRef, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   TrendingUp, 
   Users, 
@@ -9,7 +9,6 @@ import {
   FlaskConical, 
   Shield,
   CheckCircle2,
-  Calendar,
   ChevronLeft,
   ChevronRight,
   Play,
@@ -21,17 +20,6 @@ const structureImages = [
   "https://d335luupugsy2.cloudfront.net/cms/files/38500/1784732257/$302jxckc811",
   "https://d335luupugsy2.cloudfront.net/cms/files/38500/1784732257/$g3drix5fzx6",
   "https://d335luupugsy2.cloudfront.net/cms/files/38500/1784732257/$xdfwjks5ljm"
-];
-
-const timelineEvents = [
-  { year: "1982", title: "Fundação da Multionic" },
-  { year: "1984", title: "Lançamento da linha Unik" },
-  { year: "1990", title: "Ampliação da capacidade industrial" },
-  { year: "2005", title: "Expansão para os mercados institucional e profissional" },
-  { year: "2019", title: "Modernização da operação produtiva" },
-  { year: "2022", title: "Ampliação do portfólio de soluções" },
-  { year: "2024", title: "Fortalecimento da presença nacional e transformação digital" },
-  { year: "2025", title: "Consolidação da nova estratégia de crescimento" }
 ];
 
 const values = [
@@ -99,7 +87,6 @@ const bigNumbers = [
 ];
 
 export default function AboutPage() {
-  const timelineScrollRef = useRef<HTMLDivElement>(null);
   const [structureImageIndex, setStructureImageIndex] = useState(0);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
@@ -109,16 +96,6 @@ export default function AboutPage() {
     }, 4000);
     return () => clearInterval(timer);
   }, []);
-
-  const scrollTimeline = (direction: 'left' | 'right') => {
-    if (timelineScrollRef.current) {
-      const scrollAmount = 340;
-      timelineScrollRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-  };
 
   return (
     <div className="font-sans bg-white text-[#333333]">
@@ -178,13 +155,13 @@ export default function AboutPage() {
           <iframe
             src="https://player.vimeo.com/video/1100694146?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&autopause=0"
             title="Vídeo de fundo institucional Multionic"
-            className="absolute top-1/2 left-1/2 w-[177.77777778vh] min-w-full h-[56.25vw] min-h-full -translate-x-1/2 -translate-y-1/2 object-cover opacity-90 pointer-events-none transition-transform duration-700 group-hover:scale-105"
+            className="absolute top-1/2 left-1/2 w-[177.77777778vh] min-w-full h-[56.25vw] min-h-full -translate-x-1/2 -translate-y-1/2 object-cover opacity-50 brightness-75 pointer-events-none transition-transform duration-700 group-hover:scale-105"
             allow="autoplay; fullscreen"
           />
         </div>
 
-        {/* Overlay equilibrado para vídeo bem claro com ótima leitura */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/25 transition-colors duration-500 group-hover:bg-black/30" />
+        {/* Overlay escuro para maior contraste */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/75 to-black/60 transition-colors duration-500 group-hover:bg-black/65" />
 
         {/* Content over background video */}
         <div className="container-custom relative z-10">
@@ -298,79 +275,29 @@ export default function AboutPage() {
             </motion.h2>
           </div>
 
-          {/* Timeline Zigue-Zague Fiel ao Design Solicitado */}
-          <div className="relative max-w-4xl mx-auto px-2 md:px-4">
-            {/* Eixo Vertical Conector (no centro no desktop, à esquerda no mobile) */}
-            <div className="absolute left-6 md:left-1/2 top-4 bottom-4 w-0.5 bg-white/80 -translate-x-1/2 z-0 pointer-events-none" />
-
-            {/* Lista de Marcos em Zigue-Zague */}
-            <div className="space-y-8 md:space-y-12 relative z-10">
-              {timelineEvents.map((item, idx) => {
-                // Ímpares (0, 2, 4...) ficam à DIREITA no desktop, Pares (1, 3, 5...) ficam à ESQUERDA
-                const isRight = idx % 2 === 0;
-
-                return (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: idx * 0.05 }}
-                    className={`flex flex-col md:flex-row items-center relative ${
-                      isRight ? 'md:flex-row' : 'md:flex-row-reverse'
-                    }`}
-                  >
-                    {/* Espaço vazio para manter alinhamento 50% no desktop */}
-                    <div className="hidden md:block w-1/2" />
-
-                    {/* Linha Horizontal Conectora no Mobile (do eixo em left-6 até o card em pl-12) */}
-                    <div className="block md:hidden absolute top-[28px] left-6 w-6 h-0.5 bg-white/80 z-10" />
-
-                    {/* Linha Horizontal Conectora do Nó até o Card no Desktop */}
-                    <div className={`hidden md:block absolute top-1/2 h-0.5 bg-white/80 ${
-                      isRight 
-                        ? 'left-1/2 w-12' 
-                        : 'right-1/2 w-12'
-                    }`} />
-
-                    {/* Card de Conteúdo */}
-                    <div className="w-full md:w-1/2 pl-12 md:pl-0 md:px-8 text-left">
-                      <div className={`bg-white text-[#333333] p-4 sm:p-6 shadow-md relative group hover:shadow-xl transition-all duration-300 text-left ${
-                        isRight ? 'md:text-left md:ml-4' : 'md:text-right md:mr-4'
-                      }`}>
-                        {/* Ícone posicionado no canto superior */}
-                        <div 
-                          className={`absolute top-4 right-4 ${
-                            isRight ? 'md:right-4 md:left-auto' : 'md:left-4 md:right-auto'
-                          }`}
-                        >
-                          <div className="w-7 h-7 bg-[#6DB0DF]/15 text-[#014486] flex items-center justify-center rounded-none">
-                            <Calendar className="w-4 h-4" />
-                          </div>
-                        </div>
-
-                        {/* Conteúdo do Card */}
-                        <div className={`pt-1 pr-8 ${isRight ? 'md:pr-8 md:pl-0' : 'md:pl-8 md:pr-0'}`}>
-                          <div className="text-2xl font-bold text-[#014486] mb-1">
-                            {item.year}
-                          </div>
-                          <p className="text-sm font-normal text-[#333333] leading-relaxed">
-                            {item.title}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Nó Conector Quadrado Azul Escuro (alinhado em top-[28px] no mobile e top-1/2 no desktop) */}
-                    <div className="absolute left-6 md:left-1/2 top-[28px] md:top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center z-20">
-                      <div className="w-4 h-4 rounded-none bg-[#014486] ring-2 ring-white shadow-md transition-transform duration-300 hover:scale-125" />
-                    </div>
-
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
+          {/* Imagens de substituição da Linha do Tempo */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="relative max-w-6xl mx-auto flex justify-center items-center"
+          >
+            {/* Imagem Desktop */}
+            <img
+              src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1787154899/$cg2ag4aibu"
+              alt="Linha do Tempo Multionic Desktop"
+              className="hidden md:block w-full h-auto object-contain pointer-events-none"
+              referrerPolicy="no-referrer"
+            />
+            {/* Imagem Mobile */}
+            <img
+              src="https://d335luupugsy2.cloudfront.net/cms/files/38500/1787154899/$n43yn6iwgm"
+              alt="Linha do Tempo Multionic Mobile"
+              className="block md:hidden w-full h-auto object-contain pointer-events-none"
+              referrerPolicy="no-referrer"
+            />
+          </motion.div>
         </div>
       </section>
 

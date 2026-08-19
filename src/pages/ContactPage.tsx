@@ -104,7 +104,7 @@ const faqGroups = [
               rel="noopener noreferrer" 
               className="text-[#062e4c] underline font-bold hover:opacity-80 transition-opacity"
             >
-              Basta clicar aqui →
+              Basta clicar aqui
             </a>{" "}
             para ser direcionado ao WhatsApp do time comercial da Multionic. Você também pode entrar em contato por e-mail através do formulário na página do departamento comercial{" "}
             <a 
@@ -115,7 +115,7 @@ const faqGroups = [
               }}
               className="text-[#062e4c] underline font-bold hover:opacity-80 transition-opacity cursor-pointer"
             >
-              clicando aqui →
+              clicando aqui
             </a>
             .
             <br /><br />
@@ -147,7 +147,12 @@ const faqGroups = [
 ];
 
 export default function ContactPage() {
+  const [activeCategoryIdx, setActiveCategoryIdx] = useState<number | null>(0);
   const [activeId, setActiveId] = useState<string | null>(null);
+
+  const toggleCategory = (groupIdx: number) => {
+    setActiveCategoryIdx(activeCategoryIdx === groupIdx ? null : groupIdx);
+  };
 
   const toggleAccordion = (id: string) => {
     setActiveId(activeId === id ? null : id);
@@ -539,50 +544,87 @@ export default function ContactPage() {
             </h2>
           </div>
 
-          <div className="space-y-12">
-            {faqGroups.map((group, groupIdx) => (
-              <div key={groupIdx} className="space-y-4">
-                <h3 className="text-lg md:text-xl font-black text-white uppercase tracking-wider mb-6 border-b border-white/10 pb-2">
-                  {group.title}
-                </h3>
-                <div className="space-y-1">
-                  {group.questions.map((item, idx) => {
-                    const itemId = `${groupIdx}-${idx}`;
-                    return (
-                      <div key={idx} className="bg-[#97dcfe] border-none rounded-none shadow-sm overflow-hidden">
-                        <button 
-                          onClick={() => toggleAccordion(itemId)}
-                          className="w-full flex items-center justify-between px-6 py-5 text-left transition-colors hover:opacity-95"
-                        >
-                          <span className="font-bold text-[#062e4c] text-base md:text-lg">
-                            {item.q}
-                          </span>
-                          <motion.div
-                            animate={{ rotate: activeId === itemId ? 180 : 0 }}
-                          >
-                            <ChevronDown className="text-[#062e4c] w-5 h-5" />
-                          </motion.div>
-                        </button>
-                        <AnimatePresence>
-                          {activeId === itemId && (
-                            <motion.div
-                              initial={{ height: 0, opacity: 0 }}
-                              animate={{ height: "auto", opacity: 1 }}
-                              exit={{ height: 0, opacity: 0 }}
-                              transition={{ duration: 0.3 }}
-                            >
-                              <div className="px-6 pb-6 text-[#062e4c] font-medium text-base leading-relaxed whitespace-pre-line">
-                                {item.a}
+          <div className="space-y-4">
+            {faqGroups.map((group, groupIdx) => {
+              const isCategoryOpen = activeCategoryIdx === groupIdx;
+
+              return (
+                <div 
+                  key={groupIdx} 
+                  className="bg-[#093a5e] border border-white/10 shadow-sm overflow-hidden text-left"
+                >
+                  {/* Botão do Accordion da Categoria */}
+                  <button 
+                    onClick={() => toggleCategory(groupIdx)}
+                    className="w-full flex items-center justify-between px-6 py-5 text-left transition-colors hover:bg-[#0c4773] cursor-pointer"
+                  >
+                    <span className="font-black text-white text-lg md:text-xl uppercase tracking-wider pr-4">
+                      {group.title}
+                    </span>
+                    <motion.div
+                      animate={{ rotate: isCategoryOpen ? 180 : 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="flex-shrink-0"
+                    >
+                      <ChevronDown className="text-white w-6 h-6" />
+                    </motion.div>
+                  </button>
+
+                  {/* Conteúdo Expandível da Categoria (Perguntas) */}
+                  <AnimatePresence>
+                    {isCategoryOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <div className="p-4 sm:p-6 pt-2 border-t border-white/10 space-y-3">
+                          {group.questions.map((item, idx) => {
+                            const itemId = `${groupIdx}-${idx}`;
+                            const isQuestionOpen = activeId === itemId;
+
+                            return (
+                              <div key={idx} className="bg-[#97dcfe] border-none rounded-none shadow-sm overflow-hidden">
+                                <button 
+                                  onClick={() => toggleAccordion(itemId)}
+                                  className="w-full flex items-center justify-between px-6 py-5 text-left transition-colors hover:opacity-95 cursor-pointer"
+                                >
+                                  <span className="font-bold text-[#062e4c] text-base md:text-lg pr-4">
+                                    {item.q}
+                                  </span>
+                                  <motion.div
+                                    animate={{ rotate: isQuestionOpen ? 180 : 0 }}
+                                    transition={{ duration: 0.2 }}
+                                    className="flex-shrink-0"
+                                  >
+                                    <ChevronDown className="text-[#062e4c] w-5 h-5" />
+                                  </motion.div>
+                                </button>
+                                <AnimatePresence>
+                                  {isQuestionOpen && (
+                                    <motion.div
+                                      initial={{ height: 0, opacity: 0 }}
+                                      animate={{ height: "auto", opacity: 1 }}
+                                      exit={{ height: 0, opacity: 0 }}
+                                      transition={{ duration: 0.3 }}
+                                    >
+                                      <div className="px-6 pb-6 text-[#062e4c] font-medium text-base leading-relaxed whitespace-pre-line">
+                                        {item.a}
+                                      </div>
+                                    </motion.div>
+                                  )}
+                                </AnimatePresence>
                               </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                    );
-                  })}
+                            );
+                          })}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
